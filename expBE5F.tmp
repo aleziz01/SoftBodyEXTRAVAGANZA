@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://doisiumnq0wqa"]
+
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_a8s0e"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_f7qed"]
+radius = 31.0161
+
+[sub_resource type="Gradient" id="Gradient_gmcqj"]
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jhw1y"]
+gradient = SubResource("Gradient_gmcqj")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.509174, 0.509174)
+fill_to = Vector2(0.825688, 0.146789)
+
+[node name="Explosion" type="Area2D"]
+script = ExtResource("1_a8s0e")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_f7qed")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("GradientTexture2D_jhw1y")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
