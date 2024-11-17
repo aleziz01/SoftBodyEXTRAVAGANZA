@@ -1,201 +1,18 @@
-[gd_scene load_steps=57 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=59 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
 [ext_resource type="PackedScene" uid="uid://cqn30jpf2ev4" path="res://scenes/rectangleSoft.tscn" id="3_8k3mq"]
+[ext_resource type="Script" path="res://scripts/mainSoftBody.gd" id="4_hht1j"]
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
-[ext_resource type="PackedScene" uid="uid://dw3nhlsdf6d2h" path="res://Irellavnte.tscn" id="5_0gdeu"]
+[ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
+[ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0pi42"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_rvngx"]
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_asuht"]
-resource_local_to_scene = true
-bone_index = 0
-bone2d_node = NodePath("Bone-0")
-target_nodepath = NodePath("Bone-5")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_23mei"]
-resource_local_to_scene = true
-bone_index = 1
-bone2d_node = NodePath("Bone-1")
-target_nodepath = NodePath("Bone-6")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_do7ai"]
-resource_local_to_scene = true
-bone_index = 10
-bone2d_node = NodePath("Bone-10")
-target_nodepath = NodePath("Bone-15")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_sgvil"]
-resource_local_to_scene = true
-bone_index = 11
-bone2d_node = NodePath("Bone-11")
-target_nodepath = NodePath("Bone-16")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_at07p"]
-resource_local_to_scene = true
-bone_index = 12
-bone2d_node = NodePath("Bone-12")
-target_nodepath = NodePath("Bone-17")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_g2ort"]
-resource_local_to_scene = true
-bone_index = 13
-bone2d_node = NodePath("Bone-13")
-target_nodepath = NodePath("Bone-18")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4cepq"]
-resource_local_to_scene = true
-bone_index = 14
-bone2d_node = NodePath("Bone-14")
-target_nodepath = NodePath("Bone-19")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0acdn"]
-resource_local_to_scene = true
-bone_index = 15
-bone2d_node = NodePath("Bone-15")
-target_nodepath = NodePath("Bone-10")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4y7ql"]
-resource_local_to_scene = true
-bone_index = 16
-bone2d_node = NodePath("Bone-16")
-target_nodepath = NodePath("Bone-15")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_g1vgu"]
-resource_local_to_scene = true
-bone_index = 17
-bone2d_node = NodePath("Bone-17")
-target_nodepath = NodePath("Bone-16")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_3fdsx"]
-resource_local_to_scene = true
-bone_index = 18
-bone2d_node = NodePath("Bone-18")
-target_nodepath = NodePath("Bone-17")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_7e704"]
-resource_local_to_scene = true
-bone_index = 19
-bone2d_node = NodePath("Bone-19")
-target_nodepath = NodePath("Bone-18")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_8dp51"]
-resource_local_to_scene = true
-bone_index = 2
-bone2d_node = NodePath("Bone-2")
-target_nodepath = NodePath("Bone-7")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_esusw"]
-resource_local_to_scene = true
-bone_index = 20
-bone2d_node = NodePath("Bone-20")
-target_nodepath = NodePath("Bone-19")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_lgpbf"]
-resource_local_to_scene = true
-bone_index = 21
-bone2d_node = NodePath("Bone-21")
-target_nodepath = NodePath("Bone-19")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_yngpt"]
-resource_local_to_scene = true
-bone_index = 3
-bone2d_node = NodePath("Bone-3")
-target_nodepath = NodePath("Bone-8")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ml36p"]
-resource_local_to_scene = true
-bone_index = 4
-bone2d_node = NodePath("Bone-4")
-target_nodepath = NodePath("Bone-9")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vnfqb"]
-resource_local_to_scene = true
-bone_index = 5
-bone2d_node = NodePath("Bone-5")
-target_nodepath = NodePath("Bone-1")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_cma62"]
-resource_local_to_scene = true
-bone_index = 6
-bone2d_node = NodePath("Bone-6")
-target_nodepath = NodePath("Bone-5")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ue2m2"]
-resource_local_to_scene = true
-bone_index = 7
-bone2d_node = NodePath("Bone-7")
-target_nodepath = NodePath("Bone-6")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_xvbka"]
-resource_local_to_scene = true
-bone_index = 8
-bone2d_node = NodePath("Bone-8")
-target_nodepath = NodePath("Bone-7")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ih8bd"]
-resource_local_to_scene = true
-bone_index = 9
-bone2d_node = NodePath("Bone-9")
-target_nodepath = NodePath("Bone-8")
-editor/draw_gizmo = false
-
-[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_hhaed"]
-resource_local_to_scene = true
-enabled = true
-modification_count = 22
-modifications/0 = SubResource("SkeletonModification2DLookAt_asuht")
-modifications/1 = SubResource("SkeletonModification2DLookAt_23mei")
-modifications/2 = SubResource("SkeletonModification2DLookAt_8dp51")
-modifications/3 = SubResource("SkeletonModification2DLookAt_yngpt")
-modifications/4 = SubResource("SkeletonModification2DLookAt_ml36p")
-modifications/5 = SubResource("SkeletonModification2DLookAt_vnfqb")
-modifications/6 = SubResource("SkeletonModification2DLookAt_cma62")
-modifications/7 = SubResource("SkeletonModification2DLookAt_ue2m2")
-modifications/8 = SubResource("SkeletonModification2DLookAt_xvbka")
-modifications/9 = SubResource("SkeletonModification2DLookAt_ih8bd")
-modifications/10 = SubResource("SkeletonModification2DLookAt_do7ai")
-modifications/11 = SubResource("SkeletonModification2DLookAt_sgvil")
-modifications/12 = SubResource("SkeletonModification2DLookAt_at07p")
-modifications/13 = SubResource("SkeletonModification2DLookAt_g2ort")
-modifications/14 = SubResource("SkeletonModification2DLookAt_4cepq")
-modifications/15 = SubResource("SkeletonModification2DLookAt_0acdn")
-modifications/16 = SubResource("SkeletonModification2DLookAt_4y7ql")
-modifications/17 = SubResource("SkeletonModification2DLookAt_g1vgu")
-modifications/18 = SubResource("SkeletonModification2DLookAt_3fdsx")
-modifications/19 = SubResource("SkeletonModification2DLookAt_7e704")
-modifications/20 = SubResource("SkeletonModification2DLookAt_esusw")
-modifications/21 = SubResource("SkeletonModification2DLookAt_lgpbf")
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_s4wj4"]
-resource_local_to_scene = true
-radius = 28.5
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_cctj3"]
 resource_local_to_scene = true
@@ -382,52 +199,208 @@ modifications/21 = SubResource("SkeletonModification2DLookAt_4o6g6")
 resource_local_to_scene = true
 radius = 28.5
 
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_asuht"]
+resource_local_to_scene = true
+bone_index = 0
+bone2d_node = NodePath("Bone-0")
+target_nodepath = NodePath("Bone-5")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_23mei"]
+resource_local_to_scene = true
+bone_index = 1
+bone2d_node = NodePath("Bone-1")
+target_nodepath = NodePath("Bone-6")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_do7ai"]
+resource_local_to_scene = true
+bone_index = 10
+bone2d_node = NodePath("Bone-10")
+target_nodepath = NodePath("Bone-15")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_sgvil"]
+resource_local_to_scene = true
+bone_index = 11
+bone2d_node = NodePath("Bone-11")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_at07p"]
+resource_local_to_scene = true
+bone_index = 12
+bone2d_node = NodePath("Bone-12")
+target_nodepath = NodePath("Bone-17")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_g2ort"]
+resource_local_to_scene = true
+bone_index = 13
+bone2d_node = NodePath("Bone-13")
+target_nodepath = NodePath("Bone-18")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4cepq"]
+resource_local_to_scene = true
+bone_index = 14
+bone2d_node = NodePath("Bone-14")
+target_nodepath = NodePath("Bone-19")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_0acdn"]
+resource_local_to_scene = true
+bone_index = 15
+bone2d_node = NodePath("Bone-15")
+target_nodepath = NodePath("Bone-10")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_4y7ql"]
+resource_local_to_scene = true
+bone_index = 16
+bone2d_node = NodePath("Bone-16")
+target_nodepath = NodePath("Bone-15")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_g1vgu"]
+resource_local_to_scene = true
+bone_index = 17
+bone2d_node = NodePath("Bone-17")
+target_nodepath = NodePath("Bone-16")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_3fdsx"]
+resource_local_to_scene = true
+bone_index = 18
+bone2d_node = NodePath("Bone-18")
+target_nodepath = NodePath("Bone-17")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_7e704"]
+resource_local_to_scene = true
+bone_index = 19
+bone2d_node = NodePath("Bone-19")
+target_nodepath = NodePath("Bone-18")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_8dp51"]
+resource_local_to_scene = true
+bone_index = 2
+bone2d_node = NodePath("Bone-2")
+target_nodepath = NodePath("Bone-7")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_esusw"]
+resource_local_to_scene = true
+bone_index = 20
+bone2d_node = NodePath("Bone-20")
+target_nodepath = NodePath("Bone-19")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_lgpbf"]
+resource_local_to_scene = true
+bone_index = 21
+bone2d_node = NodePath("Bone-21")
+target_nodepath = NodePath("Bone-19")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_yngpt"]
+resource_local_to_scene = true
+bone_index = 3
+bone2d_node = NodePath("Bone-3")
+target_nodepath = NodePath("Bone-8")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ml36p"]
+resource_local_to_scene = true
+bone_index = 4
+bone2d_node = NodePath("Bone-4")
+target_nodepath = NodePath("Bone-9")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_vnfqb"]
+resource_local_to_scene = true
+bone_index = 5
+bone2d_node = NodePath("Bone-5")
+target_nodepath = NodePath("Bone-1")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_cma62"]
+resource_local_to_scene = true
+bone_index = 6
+bone2d_node = NodePath("Bone-6")
+target_nodepath = NodePath("Bone-5")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ue2m2"]
+resource_local_to_scene = true
+bone_index = 7
+bone2d_node = NodePath("Bone-7")
+target_nodepath = NodePath("Bone-6")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_xvbka"]
+resource_local_to_scene = true
+bone_index = 8
+bone2d_node = NodePath("Bone-8")
+target_nodepath = NodePath("Bone-7")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_ih8bd"]
+resource_local_to_scene = true
+bone_index = 9
+bone2d_node = NodePath("Bone-9")
+target_nodepath = NodePath("Bone-8")
+editor/draw_gizmo = false
+
+[sub_resource type="SkeletonModificationStack2D" id="SkeletonModificationStack2D_hhaed"]
+resource_local_to_scene = true
+enabled = true
+modification_count = 22
+modifications/0 = SubResource("SkeletonModification2DLookAt_asuht")
+modifications/1 = SubResource("SkeletonModification2DLookAt_23mei")
+modifications/2 = SubResource("SkeletonModification2DLookAt_8dp51")
+modifications/3 = SubResource("SkeletonModification2DLookAt_yngpt")
+modifications/4 = SubResource("SkeletonModification2DLookAt_ml36p")
+modifications/5 = SubResource("SkeletonModification2DLookAt_vnfqb")
+modifications/6 = SubResource("SkeletonModification2DLookAt_cma62")
+modifications/7 = SubResource("SkeletonModification2DLookAt_ue2m2")
+modifications/8 = SubResource("SkeletonModification2DLookAt_xvbka")
+modifications/9 = SubResource("SkeletonModification2DLookAt_ih8bd")
+modifications/10 = SubResource("SkeletonModification2DLookAt_do7ai")
+modifications/11 = SubResource("SkeletonModification2DLookAt_sgvil")
+modifications/12 = SubResource("SkeletonModification2DLookAt_at07p")
+modifications/13 = SubResource("SkeletonModification2DLookAt_g2ort")
+modifications/14 = SubResource("SkeletonModification2DLookAt_4cepq")
+modifications/15 = SubResource("SkeletonModification2DLookAt_0acdn")
+modifications/16 = SubResource("SkeletonModification2DLookAt_4y7ql")
+modifications/17 = SubResource("SkeletonModification2DLookAt_g1vgu")
+modifications/18 = SubResource("SkeletonModification2DLookAt_3fdsx")
+modifications/19 = SubResource("SkeletonModification2DLookAt_7e704")
+modifications/20 = SubResource("SkeletonModification2DLookAt_esusw")
+modifications/21 = SubResource("SkeletonModification2DLookAt_lgpbf")
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4wj4"]
+resource_local_to_scene = true
+radius = 28.5
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_ypgr0")
 
 [node name="Rectangle" parent="." instance=ExtResource("3_8k3mq")]
 position = Vector2(268.725, 4.84)
 
-[node name="SquareSoftBody" parent="." instance=ExtResource("1_6q4na")]
+[node name="mainSoftBody" parent="." instance=ExtResource("1_6q4na")]
+script = ExtResource("4_hht1j")
+
+[node name="Camera" type="Camera2D" parent="."]
+script = ExtResource("5_vp50i")
+
+[node name="Sprite2D" type="Sprite2D" parent="Camera"]
+modulate = Color(1, 1, 1, 0)
+texture = ExtResource("6_dsoo8")
 
 [node name="Borders" type="Node2D" parent="."]
-
-[node name="Polygon2D6" type="Polygon2D" parent="Borders"]
-z_index = 5
-position = Vector2(0, 567)
-scale = Vector2(-1, 1)
-color = Color(0, 0.180392, 0.568627, 1)
-polygon = PackedVector2Array(649, -647, 650, -301, 650, -267, 586, -267, 575, -266)
-
-[node name="Polygon2D5" type="Polygon2D" parent="Borders"]
-z_index = 5
-position = Vector2(0, -570.54)
-scale = Vector2(-1, -1)
-color = Color(0, 0.180392, 0.568627, 1)
-polygon = PackedVector2Array(649, -647, 650, -301, 650, -267, 586, -267, 575, -266)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Borders"]
-z_index = 5
-position = Vector2(0, 567)
-color = Color(0, 0.180392, 0.568627, 1)
-polygon = PackedVector2Array(649, -647, 650, -301, 650, -267, 586, -267, 575, -266)
-
-[node name="Polygon2D3" type="Polygon2D" parent="Borders"]
-z_index = 5
-color = Color(0, 0.180392, 0.568627, 1)
-polygon = PackedVector2Array(572, -302, 650, -301, 650, -267, 649, -38)
-
-[node name="Polygon2D" type="Polygon2D" parent="Borders"]
-scale = Vector2(1.04686, 1)
-color = Color(0, 0.1805, 0.57, 1)
-polygon = PackedVector2Array(-648.84, -360, 638.524, -360, 646.696, -300, -650.091, -300)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Borders/Polygon2D"]
-position = Vector2(0, -300.66)
-scale = Vector2(1, -1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Polygon2D/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_ulffr")
 
 [node name="Polygon2D2" type="Polygon2D" parent="Borders"]
 scale = Vector2(1.05238, -1)
@@ -455,428 +428,370 @@ rotation = 1.5708
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder"]
 shape = SubResource("WorldBoundaryShape2D_rvngx")
 
-[node name="Softwall2" parent="Borders" instance=ExtResource("4_lps0u")]
-position = Vector2(618, 60)
+[node name="ProceduralWalls" type="Node2D" parent="Borders"]
 
-[node name="SoftBody2D" parent="Borders/Softwall2" index="0"]
-constant_force = Vector2(100, 0)
-
-[node name="Skeleton2D" parent="Borders/Softwall2/SoftBody2D" index="0"]
-modification_stack = SubResource("SkeletonModificationStack2D_hhaed")
-
-[node name="Bone-0" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="0"]
-position = Vector2(15.7145, 26.9787)
-
-[node name="Bone-2" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="2"]
-position = Vector2(16.1283, 131.947)
-
-[node name="Bone-3" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="3"]
-position = Vector2(16.6832, 191.881)
-
-[node name="Bone-4" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="4"]
-position = Vector2(18.2712, 251.546)
-
-[node name="Bone-5" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="5"]
-position = Vector2(46.3693, 26.9834)
-
-[node name="Bone-6" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="6"]
-position = Vector2(46.2515, 71.9766)
-scale = Vector2(0.999905, 0.999905)
-
-[node name="Bone-7" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="7"]
-position = Vector2(46.0035, 131.959)
-scale = Vector2(1, 1)
-
-[node name="Bone-8" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="8"]
-position = Vector2(45.5116, 191.907)
-scale = Vector2(1, 1)
-
-[node name="Bone-9" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.999982, 0.999982)
-
-[node name="Bone-11" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="11"]
-position = Vector2(18.2712, 348.454)
-
-[node name="Bone-12" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="12"]
-position = Vector2(16.6832, 408.119)
-
-[node name="Bone-13" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="13"]
-position = Vector2(16.1283, 468.053)
-rotation = -0.000402473
-
-[node name="Bone-14" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="14"]
-rotation = -0.000230862
-
-[node name="Bone-15" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
-
-[node name="Bone-16" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="16"]
-scale = Vector2(1, 1)
-
-[node name="Bone-17" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="17"]
-position = Vector2(45.5116, 408.093)
-scale = Vector2(0.999984, 0.999984)
-
-[node name="Bone-18" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="18"]
-position = Vector2(46.0035, 468.041)
-scale = Vector2(0.999861, 0.999861)
-
-[node name="Bone-19" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="19"]
-position = Vector2(46.2515, 528.023)
-
-[node name="Bone-20" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="20"]
-position = Vector2(15.7145, 573.021)
-
-[node name="Bone-21" parent="Borders/Softwall2/SoftBody2D/Skeleton2D" index="21"]
-position = Vector2(46.3693, 573.017)
-scale = Vector2(0.999842, 0.999842)
-
-[node name="Bone-0" parent="Borders/Softwall2/SoftBody2D" index="1"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-0" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-1" parent="Borders/Softwall2/SoftBody2D" index="2"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-1" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-2" parent="Borders/Softwall2/SoftBody2D" index="3"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-2" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-3" parent="Borders/Softwall2/SoftBody2D" index="4"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-3" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-4" parent="Borders/Softwall2/SoftBody2D" index="5"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-4" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-5" parent="Borders/Softwall2/SoftBody2D" index="6"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-5" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-6" parent="Borders/Softwall2/SoftBody2D" index="7"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-6" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-7" parent="Borders/Softwall2/SoftBody2D" index="8"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-7" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-8" parent="Borders/Softwall2/SoftBody2D" index="9"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-8" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-9" parent="Borders/Softwall2/SoftBody2D" index="10"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-9" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-10" parent="Borders/Softwall2/SoftBody2D" index="11"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-10" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-11" parent="Borders/Softwall2/SoftBody2D" index="12"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-11" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-12" parent="Borders/Softwall2/SoftBody2D" index="13"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-12" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-13" parent="Borders/Softwall2/SoftBody2D" index="14"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-13" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-14" parent="Borders/Softwall2/SoftBody2D" index="15"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-14" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-15" parent="Borders/Softwall2/SoftBody2D" index="16"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-15" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-16" parent="Borders/Softwall2/SoftBody2D" index="17"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-16" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-17" parent="Borders/Softwall2/SoftBody2D" index="18"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-17" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-18" parent="Borders/Softwall2/SoftBody2D" index="19"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-18" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-19" parent="Borders/Softwall2/SoftBody2D" index="20"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-19" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-20" parent="Borders/Softwall2/SoftBody2D" index="21"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-20" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Bone-21" parent="Borders/Softwall2/SoftBody2D" index="22"]
-constant_force = Vector2(100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall2/SoftBody2D/Bone-21" index="0"]
-shape = SubResource("CircleShape2D_s4wj4")
-
-[node name="Softwall" parent="Borders" instance=ExtResource("4_lps0u")]
+[node name="Softwall" parent="Borders/ProceduralWalls" instance=ExtResource("4_lps0u")]
 position = Vector2(-618, 60)
 
-[node name="SoftBody2D" parent="Borders/Softwall" index="0"]
-constant_force = Vector2(-100, 0)
+[node name="Polygon2D6" parent="Borders/ProceduralWalls/Softwall" index="1"]
+polygon = PackedVector2Array(649, -647, 650, -301, 651.375, -243.39, 575.375, -241.39, 575, -266)
 
-[node name="Skeleton2D" parent="Borders/Softwall/SoftBody2D" index="0"]
+[node name="Skeleton2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D" index="0"]
 modification_stack = SubResource("SkeletonModificationStack2D_x3mq3")
 
-[node name="Bone-0" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="0"]
+[node name="Bone-0" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="0"]
 position = Vector2(15.7145, 26.9787)
 
-[node name="Bone-2" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="2"]
+[node name="Bone-2" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="2"]
 position = Vector2(16.1283, 131.947)
 
-[node name="Bone-3" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="3"]
+[node name="Bone-3" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="3"]
 position = Vector2(16.6832, 191.881)
 
-[node name="Bone-4" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="4"]
+[node name="Bone-4" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="4"]
 position = Vector2(18.2712, 251.546)
 
-[node name="Bone-5" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="5"]
+[node name="Bone-5" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
 
-[node name="Bone-6" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="6"]
+[node name="Bone-6" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
 scale = Vector2(0.999831, 0.999831)
 
-[node name="Bone-7" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="7"]
+[node name="Bone-7" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
 scale = Vector2(1, 1)
 
-[node name="Bone-8" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="8"]
+[node name="Bone-8" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
-scale = Vector2(1, 1)
 
-[node name="Bone-9" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="9"]
+[node name="Bone-9" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="9"]
 scale = Vector2(0.999982, 0.999982)
 
-[node name="Bone-11" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="11"]
+[node name="Bone-11" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
 
-[node name="Bone-12" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="12"]
+[node name="Bone-12" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="12"]
 position = Vector2(16.6832, 408.119)
 
-[node name="Bone-13" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="13"]
+[node name="Bone-13" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="13"]
 position = Vector2(16.1283, 468.053)
 rotation = -0.000402473
 
-[node name="Bone-14" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="14"]
+[node name="Bone-14" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
 
-[node name="Bone-16" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="16"]
+[node name="Bone-16" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(1, 1)
 
-[node name="Bone-17" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="17"]
+[node name="Bone-17" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="17"]
 position = Vector2(45.5116, 408.093)
 scale = Vector2(0.999984, 0.999984)
 
-[node name="Bone-18" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="18"]
+[node name="Bone-18" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="18"]
 position = Vector2(46.0035, 468.041)
 scale = Vector2(0.999861, 0.999861)
 
-[node name="Bone-19" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="19"]
+[node name="Bone-19" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="19"]
 position = Vector2(46.2515, 528.023)
 
-[node name="Bone-20" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="20"]
+[node name="Bone-20" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="20"]
 position = Vector2(15.7145, 573.021)
 
-[node name="Bone-21" parent="Borders/Softwall/SoftBody2D/Skeleton2D" index="21"]
+[node name="Bone-21" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="21"]
 position = Vector2(46.3693, 573.017)
 scale = Vector2(0.999831, 0.999831)
 
-[node name="Bone-0" parent="Borders/Softwall/SoftBody2D" index="1"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-0" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-0" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-1" parent="Borders/Softwall/SoftBody2D" index="2"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-1" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-1" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-2" parent="Borders/Softwall/SoftBody2D" index="3"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-2" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-2" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-3" parent="Borders/Softwall/SoftBody2D" index="4"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-3" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-3" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-4" parent="Borders/Softwall/SoftBody2D" index="5"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-4" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-4" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-5" parent="Borders/Softwall/SoftBody2D" index="6"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-5" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-5" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-6" parent="Borders/Softwall/SoftBody2D" index="7"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-6" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-6" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-7" parent="Borders/Softwall/SoftBody2D" index="8"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-7" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-7" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-8" parent="Borders/Softwall/SoftBody2D" index="9"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-8" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-8" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-9" parent="Borders/Softwall/SoftBody2D" index="10"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-9" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-9" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-10" parent="Borders/Softwall/SoftBody2D" index="11"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-10" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-10" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-11" parent="Borders/Softwall/SoftBody2D" index="12"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-11" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-11" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-12" parent="Borders/Softwall/SoftBody2D" index="13"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-12" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-12" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-13" parent="Borders/Softwall/SoftBody2D" index="14"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-13" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-13" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-14" parent="Borders/Softwall/SoftBody2D" index="15"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-14" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-14" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-15" parent="Borders/Softwall/SoftBody2D" index="16"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-15" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-15" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-16" parent="Borders/Softwall/SoftBody2D" index="17"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-16" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-16" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-17" parent="Borders/Softwall/SoftBody2D" index="18"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-17" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-17" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-18" parent="Borders/Softwall/SoftBody2D" index="19"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-18" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-18" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-19" parent="Borders/Softwall/SoftBody2D" index="20"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-19" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-19" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-20" parent="Borders/Softwall/SoftBody2D" index="21"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-20" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-20" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Bone-21" parent="Borders/Softwall/SoftBody2D" index="22"]
-constant_force = Vector2(-100, 0)
-
-[node name="CircleShape2D" parent="Borders/Softwall/SoftBody2D/Bone-21" index="0"]
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Bone-21" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Softwall2" parent="Borders/ProceduralWalls" instance=ExtResource("4_lps0u")]
+position = Vector2(618, 60)
+
+[node name="Polygon2D5" parent="Borders/ProceduralWalls/Softwall2" index="0"]
+position = Vector2(-618, -627)
+scale = Vector2(-1, 1)
+
+[node name="Polygon2D6" parent="Borders/ProceduralWalls/Softwall2" index="1"]
+position = Vector2(-618, 506.39)
+scale = Vector2(-1, -1)
+polygon = PackedVector2Array(649, -647, 650, -301, 650, -267, 650, -243.39, 570, -245.39)
+
+[node name="SoftBody2D" parent="Borders/ProceduralWalls/Softwall2" index="2"]
+position = Vector2(-30.255, -360)
+constant_force = Vector2(100, 0)
+
+[node name="Skeleton2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="0"]
+modification_stack = SubResource("SkeletonModificationStack2D_hhaed")
+
+[node name="Bone-0" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="0"]
+position = Vector2(15.7145, 26.9787)
+
+[node name="Bone-2" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="2"]
+position = Vector2(16.1283, 131.947)
+
+[node name="Bone-3" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="3"]
+position = Vector2(16.6832, 191.881)
+
+[node name="Bone-4" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="4"]
+position = Vector2(18.2712, 251.546)
+
+[node name="Bone-5" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
+position = Vector2(46.3693, 26.9834)
+
+[node name="Bone-6" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
+position = Vector2(46.2515, 71.9766)
+scale = Vector2(0.999901, 0.999901)
+
+[node name="Bone-7" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
+position = Vector2(46.0035, 131.959)
+scale = Vector2(1, 1)
+
+[node name="Bone-8" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
+position = Vector2(45.5116, 191.907)
+scale = Vector2(0.999999, 0.999999)
+
+[node name="Bone-9" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="9"]
+scale = Vector2(0.999954, 0.999954)
+
+[node name="Bone-11" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="11"]
+position = Vector2(18.2712, 348.454)
+
+[node name="Bone-12" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="12"]
+position = Vector2(16.6832, 408.119)
+
+[node name="Bone-13" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="13"]
+position = Vector2(16.1283, 468.053)
+rotation = -0.000402363
+
+[node name="Bone-14" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
+rotation = -0.00023094
+
+[node name="Bone-15" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
+
+[node name="Bone-16" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
+scale = Vector2(1, 1)
+
+[node name="Bone-17" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="17"]
+position = Vector2(45.5116, 408.093)
+scale = Vector2(0.999984, 0.999984)
+
+[node name="Bone-18" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="18"]
+position = Vector2(46.0035, 468.041)
+scale = Vector2(0.999861, 0.999861)
+
+[node name="Bone-19" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="19"]
+position = Vector2(46.2515, 528.023)
+
+[node name="Bone-20" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="20"]
+position = Vector2(15.7145, 573.021)
+
+[node name="Bone-21" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="21"]
+position = Vector2(46.3693, 573.017)
+scale = Vector2(0.999831, 0.999831)
+
+[node name="Bone-0" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="1"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-0" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-1" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="2"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-1" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-2" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="3"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-2" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-3" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="4"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-3" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-4" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="5"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-4" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-5" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="6"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-5" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-6" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="7"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-6" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-7" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="8"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-7" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-8" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="9"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-8" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-9" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="10"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-9" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-10" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="11"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-10" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-11" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="12"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-11" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-12" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="13"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-12" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-13" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="14"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-13" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-14" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="15"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-14" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-15" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="16"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-15" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-16" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="17"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-16" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-17" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="18"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-17" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-18" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="19"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-18" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-19" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="20"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-19" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-20" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="21"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-20" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
+
+[node name="Bone-21" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D" index="22"]
+constant_force = Vector2(100, 0)
+
+[node name="CircleShape2D" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Bone-21" index="0"]
+shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 z_index = -1
-position = Vector2(-1, -17)
+position = Vector2(4.65833, -17)
+scale = Vector2(1.00833, 1)
 color = Color(0.018, 0, 0.54, 1)
 polygon = PackedVector2Array(-679, -337, 641, -321, 640, -1, 638, 384, -653, 387)
 
-[node name="BAONG" parent="." instance=ExtResource("5_0gdeu")]
-
-[editable path="Borders/Softwall2"]
-[editable path="Borders/Softwall"]
+[editable path="Borders/ProceduralWalls/Softwall"]
+[editable path="Borders/ProceduralWalls/Softwall2"]
