@@ -1,12 +1,22 @@
 extends Node2D
 
 var explosion=preload("res://scenes/explosion.tscn")
+@onready var cooldownBar: TextureProgressBar = $Camera/CooldownBar
+@onready var timer: Timer = $Camera/CooldownBar/Timer
 
+var cooldown=false
 func _input(event: InputEvent) -> void:
-	if Input.is_action_just_pressed("explode"):
+	if Input.is_action_just_pressed("explode") and !cooldown:
+		cooldown=true
+		cooldownBar.value=0
+		cooldownBar.show()
+		timer.start()
 		var explosionInstance=explosion.instantiate()
 		explosionInstance.global_position=get_global_mouse_position()
 		add_child(explosionInstance)
+		await get_tree().create_timer(0.7).timeout
+		cooldown=false
+		timer.stop()
 
 @onready var softBody=$mainSoftBody
 @onready var camera: Camera2D = $Camera

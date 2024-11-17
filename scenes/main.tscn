@@ -1,4 +1,4 @@
-[gd_scene load_steps=60 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=63 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -7,7 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
+[ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
+[ext_resource type="Texture2D" uid="uid://d15j8tnx5ti6v" path="res://art/redbar.png" id="8_qtoxl"]
 [ext_resource type="PackedScene" uid="uid://3p746m5gx6b4" path="res://scenes/BG.tscn" id="8_srnyt"]
+[ext_resource type="Script" path="res://scripts/cooldown_bar.gd" id="9_g41kd"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -395,11 +398,29 @@ position = Vector2(268.725, 4.84)
 script = ExtResource("4_hht1j")
 
 [node name="Camera" type="Camera2D" parent="."]
+z_index = 99
+texture_filter = 1
 script = ExtResource("5_vp50i")
 
 [node name="Sprite2D" type="Sprite2D" parent="Camera"]
 modulate = Color(1, 1, 1, 0)
 texture = ExtResource("6_dsoo8")
+
+[node name="CooldownBar" type="TextureProgressBar" parent="Camera"]
+z_index = 9
+offset_left = 514.435
+offset_top = -352.43
+offset_right = 543.435
+offset_bottom = -348.43
+scale = Vector2(4, 4)
+max_value = 14.0
+rounded = true
+texture_under = ExtResource("7_bkos6")
+texture_progress = ExtResource("8_qtoxl")
+script = ExtResource("9_g41kd")
+
+[node name="Timer" type="Timer" parent="Camera/CooldownBar"]
+wait_time = 0.05
 
 [node name="Borders" type="Node2D" parent="."]
 
@@ -482,9 +503,6 @@ rotation = -0.000402473
 
 [node name="Bone-14" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
-
-[node name="Bone-15" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="Borders/ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(1, 1)
@@ -606,6 +624,7 @@ position = Vector2(18.2712, 251.546)
 
 [node name="Bone-5" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
+scale = Vector2(1, 1)
 
 [node name="Bone-6" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
@@ -620,7 +639,7 @@ position = Vector2(45.5116, 191.907)
 scale = Vector2(0.999999, 0.999999)
 
 [node name="Bone-9" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.999954, 0.999954)
+scale = Vector2(0.999953, 0.999953)
 
 [node name="Bone-11" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
@@ -634,6 +653,9 @@ rotation = -0.000402363
 
 [node name="Bone-14" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
+
+[node name="Bone-15" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="Borders/ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(1, 1)
@@ -790,6 +812,8 @@ constant_force = Vector2(100, 0)
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="BG" parent="." instance=ExtResource("8_srnyt")]
+
+[connection signal="timeout" from="Camera/CooldownBar/Timer" to="Camera/CooldownBar" method="_on_timer_timeout"]
 
 [editable path="Borders/ProceduralWalls/Softwall"]
 [editable path="Borders/ProceduralWalls/Softwall2"]
