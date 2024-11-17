@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://3p746m5gx6b4"]
+
+[ext_resource type="Script" path="res://scripts/BG.gd" id="1_4n65y"]
+
+[node name="BG" type="Polygon2D"]
+z_index = -1
+position = Vector2(4.65833, -17)
+scale = Vector2(1.00833, 1)
+color = Color(0.018, 0, 0.54, 1)
+polygon = PackedVector2Array(-680.986, -364, 652.903, -348, 640, -1, 657.862, 381, -679.002, 394)
+script = ExtResource("1_4n65y")

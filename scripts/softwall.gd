@@ -19,5 +19,5 @@ func _physics_process(delta: float) -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if global_position.y-700>mainSoftBody.realPos:
+	if global_position.y-800>mainSoftBody.realPos:
 		queue_free()
