@@ -193,14 +193,14 @@ radius = 28.5
 script = ExtResource("1_ujp7r")
 
 [node name="Polygon2D5" type="Polygon2D" parent="."]
-z_index = 5
+z_index = 1
 position = Vector2(618, -627)
 rotation = 3.14159
 color = Color(0, 0.180392, 0.568627, 1)
 polygon = PackedVector2Array(649, -647, 650, -301, 650, -267, 586, -267, 575, -266)
 
 [node name="Polygon2D6" type="Polygon2D" parent="."]
-z_index = 5
+z_index = 1
 position = Vector2(618.375, 506.39)
 rotation = 3.14159
 scale = Vector2(1, -1)

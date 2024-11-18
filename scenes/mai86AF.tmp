@@ -415,11 +415,11 @@ script = ExtResource("9_g41kd")
 wait_time = 0.05
 
 [node name="MetersTraveled" type="RichTextLabel" parent="Camera"]
-offset_left = 506.0
-offset_top = -352.0
-offset_right = 631.0
-offset_bottom = -312.0
-text = "Meters:"
+offset_left = 518.0
+offset_top = -351.845
+offset_right = 627.0
+offset_bottom = -311.845
+text = "Meters:0"
 
 [node name="GAMEOVER" type="Sprite2D" parent="Camera"]
 modulate = Color(1, 1, 1, 0)

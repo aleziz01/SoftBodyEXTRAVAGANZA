@@ -6,7 +6,7 @@ var realPos
 func _ready() -> void:
 	CalculatePos()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	CalculatePos()
 
 func CalculatePos():
@@ -14,3 +14,4 @@ func CalculatePos():
 	for i in skeleton.get_children():
 		tempPos+=i.global_position.y
 	realPos=tempPos/skeleton.get_child_count()
+	global.score=-1*(realPos)/20+13

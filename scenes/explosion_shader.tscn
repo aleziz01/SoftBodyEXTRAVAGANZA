@@ -1,0 +1,25 @@
+[gd_scene load_steps=6 format=3 uid="uid://d3ruouase8npv"]
+
+[ext_resource type="Shader" path="res://shaders/explosion.gdshader" id="1_p6pea"]
+[ext_resource type="Script" path="res://scenes/sprite_2d.gd" id="2_b15c3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jcoah"]
+shader = ExtResource("1_p6pea")
+
+[sub_resource type="Gradient" id="Gradient_xwltd"]
+offsets = PackedFloat32Array(0.012987, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_7748k"]
+gradient = SubResource("Gradient_xwltd")
+width = 128
+height = 128
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+fill_to = Vector2(0.756881, 0.169725)
+
+[node name="ExplosionShader" type="Sprite2D"]
+z_index = 3
+material = SubResource("ShaderMaterial_jcoah")
+texture = SubResource("GradientTexture2D_7748k")
+script = ExtResource("2_b15c3")

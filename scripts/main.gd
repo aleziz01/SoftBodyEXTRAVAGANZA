@@ -5,7 +5,7 @@ var explosion=preload("res://scenes/explosion.tscn")
 @onready var timer: Timer = $Camera/CooldownBar/Timer
 
 var cooldown=false
-func _input(event: InputEvent) -> void:
+func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("explode") and !cooldown:
 		cooldown=true
 		cooldownBar.value=0
@@ -20,14 +20,19 @@ func _input(event: InputEvent) -> void:
 
 @onready var softBody=$mainSoftBody
 @onready var camera: Camera2D = $Camera
+@onready var meters_traveled: RichTextLabel = $Camera/MetersTraveled
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if camera and camera.global_position.y-softBody.realPos<-450 and !global.gameOver:
 		global.gameOver=true
 		gameover()
+	meters_traveled.text="METERS:"+str(global.score)
 
-@onready var gameOverSprite: Sprite2D = $Camera/Sprite2D
+@onready var gameOverSprite: Sprite2D = $Camera/GAMEOVER
+@onready var highest_score: RichTextLabel = $Camera/GAMEOVER/HighestScore
+
 func gameover():
+	highest_score.text="Meters traveled: " + str(global.maxScore)
 	while gameOverSprite.modulate.a<1:
 		gameOverSprite.modulate.a+=1.0/255.0
 		await get_tree().create_timer(0.01).timeout
