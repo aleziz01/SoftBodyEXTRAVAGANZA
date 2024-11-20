@@ -1,0 +1,48 @@
+[gd_scene load_steps=5 format=3 uid="uid://d2uvggob4m72v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nsfm2"]
+radius = 130.035
+
+[sub_resource type="Gradient" id="Gradient_1k865"]
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8wp2i"]
+gradient = SubResource("Gradient_1k865")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_e0eb4"]
+particle_flag_align_y = true
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+emission_shape = 2
+emission_sphere_radius = 120.0
+angle_min = 1.07288e-05
+angle_max = 1.07288e-05
+orbit_velocity_min = 9.49949e-08
+orbit_velocity_max = 1.0
+gravity = Vector3(0, 0, 0)
+radial_accel_min = -100.0
+radial_accel_max = 100.0
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+scale_max = 10.0
+color = Color(0.792, 0, 0.99, 1)
+color_ramp = SubResource("GradientTexture1D_8wp2i")
+hue_variation_min = -2.23517e-08
+hue_variation_max = -2.23517e-08
+
+[node name="BlackHole" type="Area2D"]
+gravity_space_override = 1
+gravity_point = true
+gravity_point_center = Vector2(0, 0)
+gravity_direction = Vector2(0, 0)
+gravity = 10000.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_nsfm2")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+amount = 120
+process_material = SubResource("ParticleProcessMaterial_e0eb4")
+trail_enabled = true
+trail_lifetime = 0.4
+trail_section_subdivisions = 8

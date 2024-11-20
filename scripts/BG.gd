@@ -3,6 +3,7 @@ var bg = preload("res://scenes/BG.tscn")
 @onready var mainSoftBody: Node2D = $"../mainSoftBody"
 var spawnedBG=false
 var rng=RandomNumberGenerator.new()
+
 func _physics_process(_delta: float) -> void:
 	if(mainSoftBody.realPos-700<global_position.y and !spawnedBG):
 		spawnedBG=true
