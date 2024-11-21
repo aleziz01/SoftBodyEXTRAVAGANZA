@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var skeleton=get_child(0).get_child(0)
+@onready var softBody=get_child(0)
 var realPos
 
 func _ready() -> void:

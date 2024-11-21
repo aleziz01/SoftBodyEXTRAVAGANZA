@@ -1,6 +1,6 @@
 extends Polygon2D
 var bg = preload("res://scenes/BG.tscn")
-@onready var mainSoftBody: Node2D = $"../mainSoftBody"
+@onready var mainSoftBody: Node2D = $"../../mainSoftBody"
 var spawnedBG=false
 var rng=RandomNumberGenerator.new()
 
