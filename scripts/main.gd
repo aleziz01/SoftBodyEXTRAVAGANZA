@@ -6,7 +6,7 @@ var explosion=preload("res://scenes/explosion.tscn")
 
 var cooldown=false
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("explode") and !cooldown and !global.gameOver and !global.paused:
+	if Input.is_action_just_pressed("explode") and !cooldown and !global.gameOver:
 		cooldown=true
 		cooldownBar.value=0
 		cooldownBar.show()
@@ -17,13 +17,25 @@ func _input(_event: InputEvent) -> void:
 		await get_tree().create_timer(0.7).timeout
 		cooldown=false
 		timer.stop()
+	if Input.is_action_just_pressed("pause"):
+		get_tree().paused=true
+		global.paused=true
+		checkForUnpause()
+
+func checkForUnpause():
+	await get_tree().create_timer(0.05).timeout
+	while(get_tree().paused):
+		if Input.is_action_just_pressed("pause"):
+			get_tree().paused=false
+			global.paused=false
+		await get_tree().create_timer(0.01).timeout
 
 @onready var softBody=$mainSoftBody
 @onready var camera: Camera2D = $Hud
 @onready var meters_traveled: RichTextLabel = $Hud/MetersTraveled
 
 func _process(_delta: float) -> void:
-	if camera and camera.global_position.y-softBody.realPos<-450 and !global.gameOver and !global.paused:
+	if camera and camera.global_position.y-softBody.realPos<-450 and !global.gameOver:
 		global.gameOver=true
 		gameover()
 	meters_traveled.text="METERS:"+str(global.score+1)
