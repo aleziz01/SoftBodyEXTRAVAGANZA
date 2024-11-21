@@ -1,11 +1,11 @@
 extends Node2D
 
 
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	run()
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+var rng=RandomNumberGenerator.new()
+func run() -> void:
+	while(true):
+		await get_tree().create_timer(0.1).timeout
+		#have separate spawn functions for all positive objects.
