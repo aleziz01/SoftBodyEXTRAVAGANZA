@@ -8,7 +8,7 @@ var spawnedwall=false
 var postSpawnedwall=false
 var rng=RandomNumberGenerator.new()
 var isMinimum=false
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if(mainSoftBody.realPos-700<global_position.y and !spawnedwall and !global.gameOver):
 		spawnedwall=true
 		var wallInstance=wall.instantiate()
@@ -40,10 +40,10 @@ func _physics_process(delta: float) -> void:
 		get_parent().add_child.call_deferred(wallInstance)
 
 func AmI_Minimum():
-	var max=global_position.y-1
+	var maximum=global_position.y-1
 	for i in get_tree().get_nodes_in_group("wall"):
-		max=max(max,i.global_position.y)
-	if max==global_position.y:
+		maximum=max(maximum,i.global_position.y)
+	if maximum==global_position.y:
 		isMinimum=true
 	
 var DEATH=false

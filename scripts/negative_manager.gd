@@ -27,7 +27,6 @@ func BlackHoleSpawn():
 		var BlackHoleInstance=BlackHole.instantiate()
 		BlackHoleInstance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-540,540),randf_range(2000,4000))
 		BlackHoleContainer.add_child(BlackHoleInstance)
-		print((global.score-3000)/100)
 
 func BlockSpawn():
 	#Falling Block Spawning
