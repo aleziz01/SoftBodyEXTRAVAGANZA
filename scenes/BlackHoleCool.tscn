@@ -1,4 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://d2uvggob4m72v"]
+[gd_scene load_steps=6 format=3 uid="uid://d2uvggob4m72v"]
+
+[ext_resource type="Script" path="res://scripts/blackHole.gd" id="1_hoahr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsfm2"]
 radius = 130.035
@@ -36,6 +38,7 @@ gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 gravity = 7000.0
+script = ExtResource("1_hoahr")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nsfm2")
