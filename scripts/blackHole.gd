@@ -12,7 +12,4 @@ func unload():
 		if(global.gameOver and global_position.y+500<mainSoftBody.realPos):
 			queue_free()
 		if(!global.gameOver and !triedToKill and global_position.y-2000>mainSoftBody.realPos):
-			triedToKill=true
-			var kill=bool(randi_range(0,1))
-			if kill:
-				queue_free()
+			queue_free()
