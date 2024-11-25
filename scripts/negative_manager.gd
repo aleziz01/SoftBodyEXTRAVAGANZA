@@ -12,7 +12,7 @@ func run() -> void:
 	while(true):
 		await get_tree().create_timer(0.1).timeout
 		#have separate spawn functions for all negative objects.
-		if(get_tree().paused==false and !global.gameOver):
+		if(get_tree().paused==false and !global.gameOver and global.gameStarted):
 			BlackHoleSpawn()
 			BlockSpawn()
 
@@ -26,6 +26,7 @@ func BlackHoleSpawn():
 	if DecisiveNumber<clamp((global.score-3000)/100,0,2000):
 		var BlackHoleInstance=BlackHole.instantiate()
 		BlackHoleInstance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-540,540),randf_range(2000,4000))
+		BlackHoleInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		BlackHoleContainer.add_child(BlackHoleInstance)
 
 func BlockSpawn():
@@ -34,4 +35,5 @@ func BlockSpawn():
 	if DecisiveNumber<=clamp((global.score)/100,0,2000):
 		var BlockInstance=Block.instantiate()
 		BlockInstance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-540,540),randf_range(1500,3000))
+		BlockInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		BlockHolder.add_child(BlockInstance)

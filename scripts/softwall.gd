@@ -47,7 +47,7 @@ func AmI_Minimum():
 		isMinimum=true
 	
 var DEATH=false
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if global_position.y-800>mainSoftBody.realPos and !global.gameOver:
 		queue_free()
 	elif global.gameOver and global_position.y+800<mainSoftBody.realPos:

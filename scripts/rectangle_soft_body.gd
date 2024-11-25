@@ -1,10 +1,10 @@
 extends Node2D
 
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	unload()
 var triedToKill=false
-@onready var mainSoftBody: Node2D = $"../../../mainSoftBody"
+@export var mainSoftBody:Node2D
 
 func unload():
 	while(true):

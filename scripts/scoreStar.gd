@@ -9,10 +9,10 @@ func _on_body_entered(body: Node2D) -> void:
 		global.starScore+=scoreValue
 		queue_free()
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	unload()
 
-@onready var mainSoftBody: Node2D = $"../../../mainSoftBody"
+var mainSoftBody: Node2D
 
 func unload():
 	while(true):

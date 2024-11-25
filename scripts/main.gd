@@ -6,7 +6,7 @@ var explosion=preload("res://scenes/explosion.tscn")
 
 var cooldown=false
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("explode") and !cooldown and !global.gameOver:
+	if Input.is_action_just_pressed("explode") and !cooldown and !global.gameOver and global.gameStarted:
 		cooldown=true
 		cooldownBar.value=0
 		cooldownBar.show()

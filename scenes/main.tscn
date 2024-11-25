@@ -440,16 +440,16 @@ script = ExtResource("9_g41kd")
 wait_time = 0.05
 
 [node name="MetersTraveled" type="RichTextLabel" parent="Hud"]
-offset_left = 489.0
+offset_left = 480.0
 offset_top = -352.0
-offset_right = 631.0
+offset_right = 622.0
 offset_bottom = -312.0
 text = "Meters:"
 
 [node name="ScoreShower" type="Label" parent="Hud"]
-offset_left = 490.0
+offset_left = 480.0
 offset_top = -331.0
-offset_right = 640.0
+offset_right = 639.0
 offset_bottom = -280.0
 text = "Score:"
 
@@ -861,11 +861,13 @@ shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Trees" type="Node2D" parent="MiscFunStuff"]
 
-[node name="FunTree" parent="MiscFunStuff/Trees" instance=ExtResource("13_b20hn")]
+[node name="FunTree" parent="MiscFunStuff/Trees" node_paths=PackedStringArray("mainSoftBody") instance=ExtResource("13_b20hn")]
 position = Vector2(237.395, 0)
+mainSoftBody = NodePath("../../../mainSoftBody")
 
-[node name="FunTree2" parent="MiscFunStuff/Trees" instance=ExtResource("13_b20hn")]
+[node name="FunTree2" parent="MiscFunStuff/Trees" node_paths=PackedStringArray("mainSoftBody") instance=ExtResource("13_b20hn")]
 position = Vector2(-237.05, 0)
+mainSoftBody = NodePath("../../../mainSoftBody")
 
 [node name="WallBandaid2" type="Polygon2D" parent="MiscFunStuff"]
 rotation = 3.14159

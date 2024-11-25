@@ -1,6 +1,6 @@
 extends Area2D
 
-func _ready() -> void:
+func _enter_tree() -> void:
 	unload()
 	$"25Score".mainSoftBody=mainSoftBody
 

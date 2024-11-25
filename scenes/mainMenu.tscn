@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://bnbabv6l5b7tk"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_gr1ag"]
+[ext_resource type="Texture2D" uid="uid://b5quxwcakd6dm" path="res://art/placeholder/Play.png" id="2_5dity"]
 [ext_resource type="Script" path="res://scripts/control_info.gd" id="2_ls8vr"]
-[ext_resource type="Texture2D" uid="uid://b41ppn37rhyr0" path="res://art/placeholder/block.png" id="2_vggpa"]
 [ext_resource type="Texture2D" uid="uid://wjigsx5sprf8" path="res://art/cursor.png" id="3_2idun"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="4_47hhn"]
 
@@ -25,7 +25,7 @@ offset_left = 474.0
 offset_top = 73.0
 offset_right = 538.0
 offset_bottom = 137.0
-texture_normal = ExtResource("2_vggpa")
+texture_normal = ExtResource("2_5dity")
 
 [node name="controlInfoButton" type="TextureButton" parent="CanvasLayer/MainMenu"]
 offset_left = -626.595

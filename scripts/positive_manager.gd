@@ -9,7 +9,7 @@ func run() -> void:
 	while(true):
 		await get_tree().create_timer(0.1).timeout
 		#have separate spawn functions for all positive objects.
-		if(get_tree().paused==false and !global.gameOver):
+		if(get_tree().paused==false and !global.gameOver and global.gameStarted):
 			if global.maxScore<4500:
 				score1Spawn()
 				score1Spawn()
@@ -33,6 +33,7 @@ func score1Spawn():
 	if DecisiveNumber<=clamp((global.score),0,2000):
 		var scoreStar1Instance=scoreStar1.instantiate()
 		scoreStar1Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
+		scoreStar1Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(scoreStar1Instance)
 
 func score5Spawn():
@@ -40,6 +41,7 @@ func score5Spawn():
 	if DecisiveNumber<clamp((global.score-2000)/3,0,2000):
 		var scoreStar5Instance=scoreStar5.instantiate()
 		scoreStar5Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
+		scoreStar5Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(scoreStar5Instance)
 
 func score25Spawn():
@@ -47,4 +49,5 @@ func score25Spawn():
 	if DecisiveNumber<clamp((global.score-5000)/7,0,2000):
 		var scoreStar25Instance=scoreStar25.instantiate()
 		scoreStar25Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
+		scoreStar25Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(scoreStar25Instance)
