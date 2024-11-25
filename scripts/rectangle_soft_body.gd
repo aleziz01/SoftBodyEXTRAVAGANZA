@@ -3,9 +3,8 @@ extends Node2D
 
 func _ready() -> void:
 	unload()
-
-@onready var mainSoftBody: Node2D = $"../../mainSoftBody"
 var triedToKill=false
+@onready var mainSoftBody: Node2D = $"../../../mainSoftBody"
 
 func unload():
 	while(true):

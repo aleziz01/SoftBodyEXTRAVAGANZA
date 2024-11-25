@@ -2,6 +2,8 @@ extends Area2D
 
 func _enter_tree() -> void:
 	$GPUParticles2D.emitting=true
+	if global.gameStarted==false:
+		queue_free()
 
 func _on_layer1_entered(body: Node2D) -> void: #makes it so that when the bodies Stop Moving EXPLOSIONS affect Them.
 	var tempAngle=get_angle_to(body.global_position)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=31 format=3 uid="uid://cqn30jpf2ev4"]
 
-[ext_resource type="Script" path="res://scenes/rectangle_soft_body.gd" id="1_4fnbr"]
+[ext_resource type="Script" path="res://scripts/rectangle_soft_body.gd" id="1_4fnbr"]
 [ext_resource type="Texture2D" uid="uid://vyqs6geg2adv" path="res://art/placeholder/smalltree.png" id="1_cvqah"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_ofwmc"]
 

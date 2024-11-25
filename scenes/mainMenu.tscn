@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://bnbabv6l5b7tk"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_gr1ag"]
+[ext_resource type="Script" path="res://scripts/control_info.gd" id="2_ls8vr"]
+[ext_resource type="Texture2D" uid="uid://b41ppn37rhyr0" path="res://art/placeholder/block.png" id="2_vggpa"]
+[ext_resource type="Texture2D" uid="uid://wjigsx5sprf8" path="res://art/cursor.png" id="3_2idun"]
+[ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="4_47hhn"]
+
+[node name="MainMenu" type="Node2D"]
+texture_filter = 1
+script = ExtResource("1_gr1ag")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="MainMenu" type="Node2D" parent="CanvasLayer"]
+
+[node name="ExitButton" type="TextureButton" parent="CanvasLayer/MainMenu"]
+offset_left = -101.0
+offset_right = 102.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="TextureButton" parent="CanvasLayer/MainMenu"]
+offset_left = 474.0
+offset_top = 73.0
+offset_right = 538.0
+offset_bottom = 137.0
+texture_normal = ExtResource("2_vggpa")
+
+[node name="controlInfoButton" type="TextureButton" parent="CanvasLayer/MainMenu"]
+offset_left = -626.595
+offset_top = 221.495
+offset_right = -498.595
+offset_bottom = 349.495
+texture_normal = ExtResource("4_47hhn")
+
+[node name="GameLogo" type="Sprite2D" parent="CanvasLayer/MainMenu"]
+
+[node name="ControlInfo" type="Node2D" parent="CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+script = ExtResource("2_ls8vr")
+
+[node name="ExplosionHolder" type="Node2D" parent="CanvasLayer/ControlInfo"]
+
+[node name="Instructions" type="RichTextLabel" parent="CanvasLayer/ControlInfo"]
+offset_left = -238.0
+offset_top = 82.705
+offset_right = -79.0
+offset_bottom = 153.705
+scale = Vector2(3, 3)
+text = "The only control is
+clicking to explode stuff"
+
+[node name="CursorSprite" type="Sprite2D" parent="CanvasLayer/ControlInfo"]
+position = Vector2(0, -85)
+scale = Vector2(5, 5)
+texture = ExtResource("3_2idun")
+
+[node name="BackButton" type="TextureButton" parent="CanvasLayer/ControlInfo"]
+offset_left = 500.0
+offset_top = 223.575
+offset_right = 628.0
+offset_bottom = 351.575
+texture_normal = ExtResource("4_47hhn")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[connection signal="pressed" from="CanvasLayer/MainMenu/ExitButton" to="." method="_on_exit_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/MainMenu/controlInfoButton" to="." method="_on_control_info_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/ControlInfo/BackButton" to="CanvasLayer/ControlInfo" method="_on_back_button_pressed"]
