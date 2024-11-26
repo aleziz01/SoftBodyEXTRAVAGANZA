@@ -17,18 +17,6 @@ func _input(_event: InputEvent) -> void:
 		await get_tree().create_timer(0.7).timeout
 		cooldown=false
 		timer.stop()
-	if Input.is_action_just_pressed("pause"):
-		get_tree().paused=true
-		global.paused=true
-		checkForUnpause()
-
-func checkForUnpause():
-	await get_tree().create_timer(0.05).timeout
-	while(get_tree().paused):
-		if Input.is_action_just_pressed("pause"):
-			get_tree().paused=false
-			global.paused=false
-		await get_tree().create_timer(0.01).timeout
 
 @onready var softBody=$mainSoftBody
 @onready var camera: Camera2D = $Hud

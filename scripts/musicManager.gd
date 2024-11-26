@@ -25,9 +25,9 @@ func _on_finished() -> void:
 func showNewSong():
 	whatSong.text="SONG: OST" + str(pastNumb) #pastNumb=realNumb at this point
 	while(whatSong.position.x<=-630):
-		whatSong.position.x+=0.5
+		whatSong.position.x+=0.5*int(!global.paused)
 		await get_tree().create_timer(0.01).timeout
 	await get_tree().create_timer(2).timeout
 	while(whatSong.position.x>-850):
-		whatSong.position.x-=0.5
+		whatSong.position.x-=0.5*int(!global.paused)
 		await get_tree().create_timer(0.01).timeout

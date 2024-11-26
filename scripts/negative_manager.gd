@@ -12,7 +12,7 @@ func run() -> void:
 	while(true):
 		await get_tree().create_timer(0.1).timeout
 		#have separate spawn functions for all negative objects.
-		if(get_tree().paused==false and !global.gameOver and global.gameStarted):
+		if(global.paused==false and !global.gameOver and global.gameStarted):
 			BlackHoleSpawn()
 			BlockSpawn()
 
