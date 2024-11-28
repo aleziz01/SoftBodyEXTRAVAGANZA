@@ -38,3 +38,10 @@ func gameover():
 	while gameOverSprite.modulate.a<1:
 		gameOverSprite.modulate.a+=1.0/255.0*float(!global.paused)
 		await get_tree().create_timer(0.01).timeout
+
+
+func _on_save_pressed() -> void:
+	global.saveGame()
+
+func _on_load_pressed() -> void:
+	global.loadGame()

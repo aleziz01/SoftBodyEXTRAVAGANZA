@@ -465,6 +465,13 @@ offset_right = 101.0
 offset_bottom = 107.0
 text = "hgteertgh"
 
+[node name="save" type="Button" parent="Hud/GAMEOVER"]
+offset_left = 529.565
+offset_top = 291.115
+offset_right = 622.565
+offset_bottom = 351.115
+text = "SAVE"
+
 [node name="PauseMenu" type="Node2D" parent="Hud"]
 modulate = Color(1, 1, 1, 0)
 z_index = 99
@@ -900,8 +907,17 @@ z_index = 300
 color = Color(0, 0, 0, 0.670588)
 polygon = PackedVector2Array(-710, -413, 718, -410, 712, 387, -756, 375)
 
+[node name="Button" type="Button" parent="MainMenu"]
+offset_left = 320.395
+offset_top = 318.59
+offset_right = 362.395
+offset_bottom = 349.59
+text = "load"
+
 [connection signal="timeout" from="Hud/CooldownBar/Timer" to="Hud/CooldownBar" method="_on_timer_timeout"]
+[connection signal="pressed" from="Hud/GAMEOVER/save" to="." method="_on_save_pressed"]
 [connection signal="finished" from="musicManager" to="musicManager" method="_on_finished"]
+[connection signal="pressed" from="MainMenu/Button" to="." method="_on_load_pressed"]
 
 [editable path="ProceduralWalls/Softwall"]
 [editable path="ProceduralWalls/Softwall2"]
