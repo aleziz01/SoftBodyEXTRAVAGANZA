@@ -1,4 +1,4 @@
-[gd_scene load_steps=69 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=71 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -13,10 +13,12 @@
 [ext_resource type="PackedScene" uid="uid://3p746m5gx6b4" path="res://scenes/BG.tscn" id="8_srnyt"]
 [ext_resource type="Script" path="res://scripts/cooldown_bar.gd" id="9_g41kd"]
 [ext_resource type="PackedScene" uid="uid://cqn30jpf2ev4" path="res://scenes/rectangleSoftBody.tscn" id="13_b20hn"]
-[ext_resource type="AudioStream" uid="uid://dfq2l767sly8l" path="res://music/OST1.mp3" id="14_x080g"]
 [ext_resource type="Script" path="res://scripts/musicManager.gd" id="15_l1ccf"]
-[ext_resource type="PackedScene" uid="uid://bnbabv6l5b7tk" path="res://scenes/mainMenu.tscn" id="16_fcv6q"]
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="16_6rno6"]
+[ext_resource type="Texture2D" uid="uid://b5quxwcakd6dm" path="res://art/placeholder/Play.png" id="17_d8p8p"]
 [ext_resource type="Script" path="res://scenes/pause_menu.gd" id="17_j4ad6"]
+[ext_resource type="Script" path="res://scripts/control_info.gd" id="18_6ribo"]
+[ext_resource type="Texture2D" uid="uid://wjigsx5sprf8" path="res://art/cursor.png" id="19_lrjy6"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -546,6 +548,7 @@ scale = Vector2(0.999995, 0.999995)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
+scale = Vector2(1, 1)
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="9"]
 scale = Vector2(0.99998, 0.99998)
@@ -562,9 +565,6 @@ rotation = -0.000402473
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
-
-[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -715,6 +715,9 @@ rotation = -0.000402363
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
 
+[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
+
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
 
@@ -731,6 +734,7 @@ position = Vector2(46.2515, 528.023)
 
 [node name="Bone-20" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="20"]
 position = Vector2(15.7145, 573.021)
+scale = Vector2(1, 1)
 
 [node name="Bone-21" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="21"]
 position = Vector2(46.3693, 573.017)
@@ -895,29 +899,90 @@ color = Color(0, 0.180392, 0.568627, 1)
 polygon = PackedVector2Array(-670, 283, -579, 283, -572, 326, -671, 328)
 
 [node name="musicManager" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("14_x080g")
 autoplay = true
-parameters/looping = false
 script = ExtResource("15_l1ccf")
 
-[node name="MainMenu" parent="." instance=ExtResource("16_fcv6q")]
+[node name="MainMenu" type="Node2D" parent="."]
 z_index = 300
+texture_filter = 1
+script = ExtResource("16_6rno6")
 
 [node name="bg" type="Polygon2D" parent="MainMenu"]
 color = Color(0, 0, 0, 0.670588)
 polygon = PackedVector2Array(-710, -413, 718, -410, 712, 387, -756, 375)
 
-[node name="Button" type="Button" parent="MainMenu"]
+[node name="loadsave" type="Button" parent="MainMenu"]
 offset_left = 320.395
 offset_top = 318.59
 offset_right = 362.395
 offset_bottom = 349.59
 text = "load"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="MainMenu"]
+follow_viewport_enabled = true
+
+[node name="MainMenu" type="Node2D" parent="MainMenu/CanvasLayer"]
+
+[node name="ExitButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu"]
+offset_left = -101.0
+offset_right = 102.0
+offset_bottom = 40.0
+
+[node name="PlayButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu"]
+offset_left = 474.0
+offset_top = 73.0
+offset_right = 538.0
+offset_bottom = 137.0
+texture_normal = ExtResource("17_d8p8p")
+
+[node name="controlInfoButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu"]
+offset_left = -626.595
+offset_top = 221.495
+offset_right = -498.595
+offset_bottom = 349.495
+texture_normal = ExtResource("6_dsoo8")
+
+[node name="GameLogo" type="Sprite2D" parent="MainMenu/CanvasLayer/MainMenu"]
+
+[node name="ControlInfo" type="Node2D" parent="MainMenu/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+script = ExtResource("18_6ribo")
+
+[node name="ExplosionHolder" type="Node2D" parent="MainMenu/CanvasLayer/ControlInfo"]
+
+[node name="Instructions" type="RichTextLabel" parent="MainMenu/CanvasLayer/ControlInfo"]
+offset_left = -238.0
+offset_top = 82.705
+offset_right = -79.0
+offset_bottom = 153.705
+scale = Vector2(3, 3)
+text = "The only control is
+clicking to explode stuff"
+
+[node name="CursorSprite" type="Sprite2D" parent="MainMenu/CanvasLayer/ControlInfo"]
+position = Vector2(0, -85)
+scale = Vector2(5, 5)
+texture = ExtResource("19_lrjy6")
+
+[node name="BackButton" type="TextureButton" parent="MainMenu/CanvasLayer/ControlInfo"]
+offset_left = 500.0
+offset_top = 223.575
+offset_right = 628.0
+offset_bottom = 351.575
+texture_normal = ExtResource("6_dsoo8")
+
+[node name="Camera2D" type="Camera2D" parent="MainMenu"]
+
 [connection signal="timeout" from="Hud/CooldownBar/Timer" to="Hud/CooldownBar" method="_on_timer_timeout"]
 [connection signal="pressed" from="Hud/GAMEOVER/save" to="." method="_on_save_pressed"]
 [connection signal="finished" from="musicManager" to="musicManager" method="_on_finished"]
-[connection signal="pressed" from="MainMenu/Button" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MainMenu/loadsave" to="." method="_on_load_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/ExitButton" to="MainMenu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/PlayButton" to="musicManager" method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/controlInfoButton" to="MainMenu" method="_on_control_info_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/ControlInfo/BackButton" to="MainMenu/CanvasLayer/ControlInfo" method="_on_back_button_pressed"]
 
 [editable path="ProceduralWalls/Softwall"]
 [editable path="ProceduralWalls/Softwall2"]
