@@ -36,7 +36,9 @@ func showNewSong():
 		whatSong.position.x-=0.5*int(!global.paused)
 		await get_tree().create_timer(0.01).timeout
 
-
+var playButtonPressed=false
 func _on_play_button_pressed() -> void:
-	_on_finished()
-	showNewSong()
+	if !playButtonPressed:
+		playButtonPressed=true
+		_on_finished()
+		showNewSong()

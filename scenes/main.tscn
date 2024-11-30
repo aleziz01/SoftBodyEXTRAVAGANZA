@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=106 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -15,10 +15,31 @@
 [ext_resource type="PackedScene" uid="uid://cqn30jpf2ev4" path="res://scenes/rectangleSoftBody.tscn" id="13_b20hn"]
 [ext_resource type="Script" path="res://scripts/musicManager.gd" id="15_l1ccf"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="16_6rno6"]
-[ext_resource type="Texture2D" uid="uid://b5quxwcakd6dm" path="res://art/placeholder/Play.png" id="17_d8p8p"]
+[ext_resource type="Texture2D" uid="uid://yjjh1i5l6mxt" path="res://art/Buttons/exitButton1.png" id="17_1te21"]
+[ext_resource type="Texture2D" uid="uid://cu7um5qobewkq" path="res://art/placeholder/tree.png" id="17_4iqs5"]
 [ext_resource type="Script" path="res://scenes/pause_menu.gd" id="17_j4ad6"]
 [ext_resource type="Script" path="res://scripts/control_info.gd" id="18_6ribo"]
+[ext_resource type="Texture2D" uid="uid://csrklv1c4yb2r" path="res://art/Buttons/exitButton3.png" id="18_oqsoo"]
+[ext_resource type="Texture2D" uid="uid://4mqbodkq3gur" path="res://art/Buttons/Newgame1.png" id="18_ot0lk"]
+[ext_resource type="Texture2D" uid="uid://dmylp83juyuy5" path="res://art/Buttons/exitButton2.png" id="19_747ei"]
+[ext_resource type="Texture2D" uid="uid://lwujush58eo4" path="res://art/Buttons/Newgame3.png" id="19_cm7bm"]
 [ext_resource type="Texture2D" uid="uid://wjigsx5sprf8" path="res://art/cursor.png" id="19_lrjy6"]
+[ext_resource type="Texture2D" uid="uid://c0mlj8uik4iqx" path="res://art/Buttons/Newgame2.png" id="20_iisou"]
+[ext_resource type="Script" path="res://scenes/shop_tab.gd" id="21_1i7fy"]
+[ext_resource type="Texture2D" uid="uid://cr6r7tv3t4q3g" path="res://art/Buttons/Controls1.png" id="21_a3ssr"]
+[ext_resource type="Texture2D" uid="uid://bpgyhb3bitr3a" path="res://art/Buttons/ShopButton.png" id="21_nuic8"]
+[ext_resource type="Texture2D" uid="uid://dwb6jt2x88lbu" path="res://art/Buttons/ShopButton3.png" id="22_ndgir"]
+[ext_resource type="Texture2D" uid="uid://b32ekk7y7eaky" path="res://art/Buttons/Controls3.png" id="22_oaesl"]
+[ext_resource type="Texture2D" uid="uid://b5ltl5tqdwhgg" path="res://art/Buttons/ShopButton2.png" id="23_gurur"]
+[ext_resource type="Texture2D" uid="uid://bl2mwjhqer4yj" path="res://art/Buttons/Controls2.png" id="23_selwl"]
+[ext_resource type="Texture2D" uid="uid://b8wfrgis4vlqa" path="res://art/Buttons/continueButton1.png" id="29_wb5he"]
+[ext_resource type="Texture2D" uid="uid://bncv8elmds8xw" path="res://art/Buttons/continueButton3.png" id="30_5hwsn"]
+[ext_resource type="Texture2D" uid="uid://bvauyayqqrnja" path="res://art/Buttons/continueButton2.png" id="31_q002q"]
+[ext_resource type="Texture2D" uid="uid://bqfl7i0qqaqpp" path="res://art/Buttons/noButtonSpritesheet.png" id="33_2y8cf"]
+[ext_resource type="Texture2D" uid="uid://dwejpp7krgak" path="res://art/Buttons/yesbutton.png" id="33_cqayo"]
+[ext_resource type="Script" path="res://scenes/AnimatedButton.gd" id="34_poa2k"]
+[ext_resource type="Texture2D" uid="uid://bephrebo0or5r" path="res://art/Buttons/yeshold.png" id="35_4xd3x"]
+[ext_resource type="Texture2D" uid="uid://ds0h1am6xgttv" path="res://art/Buttons/nohold.png" id="37_awcro"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -396,6 +417,106 @@ modifications/21 = SubResource("SkeletonModification2DLookAt_lgpbf")
 resource_local_to_scene = true
 radius = 28.5
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_orrb6"]
+atlas = ExtResource("33_cqayo")
+region = Rect2(0, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g8e6p"]
+atlas = ExtResource("33_cqayo")
+region = Rect2(120, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6hct8"]
+atlas = ExtResource("33_cqayo")
+region = Rect2(180, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e5p8d"]
+atlas = ExtResource("33_cqayo")
+region = Rect2(240, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a6xgh"]
+atlas = ExtResource("33_cqayo")
+region = Rect2(300, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ydiub"]
+atlas = ExtResource("33_cqayo")
+region = Rect2(360, 0, 60, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_eu07f"]
+animations = [{
+"frames": [{
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_orrb6")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_g8e6p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6hct8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e5p8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a6xgh")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_ydiub")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 30.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mnlkq"]
+atlas = ExtResource("33_2y8cf")
+region = Rect2(0, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4m5fk"]
+atlas = ExtResource("33_2y8cf")
+region = Rect2(60, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0075c"]
+atlas = ExtResource("33_2y8cf")
+region = Rect2(120, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_frcuv"]
+atlas = ExtResource("33_2y8cf")
+region = Rect2(180, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qye2y"]
+atlas = ExtResource("33_2y8cf")
+region = Rect2(240, 0, 60, 46)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rg38q"]
+atlas = ExtResource("33_2y8cf")
+region = Rect2(300, 0, 60, 46)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_urrsj"]
+animations = [{
+"frames": [{
+"duration": 0.01,
+"texture": SubResource("AtlasTexture_mnlkq")
+}, {
+"duration": 2.0,
+"texture": SubResource("AtlasTexture_4m5fk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0075c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_frcuv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qye2y")
+}, {
+"duration": 1.5,
+"texture": SubResource("AtlasTexture_rg38q")
+}],
+"loop": false,
+"name": &"pressed",
+"speed": 30.0
+}]
+
 [node name="Main&Hudcontroller" type="Node2D"]
 script = ExtResource("1_ypgr0")
 
@@ -466,13 +587,6 @@ offset_top = 67.0
 offset_right = 101.0
 offset_bottom = 107.0
 text = "hgteertgh"
-
-[node name="save" type="Button" parent="Hud/GAMEOVER"]
-offset_left = 529.565
-offset_top = 291.115
-offset_right = 622.565
-offset_bottom = 351.115
-text = "SAVE"
 
 [node name="PauseMenu" type="Node2D" parent="Hud"]
 modulate = Color(1, 1, 1, 0)
@@ -551,7 +665,7 @@ position = Vector2(45.5116, 191.907)
 scale = Vector2(1, 1)
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.99998, 0.99998)
+scale = Vector2(0.999955, 0.999955)
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
@@ -565,6 +679,9 @@ rotation = -0.000402473
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -686,10 +803,11 @@ position = Vector2(18.2712, 251.546)
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
+scale = Vector2(1, 1)
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
-scale = Vector2(0.999896, 0.999896)
+scale = Vector2(0.999895, 0.999895)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
@@ -710,13 +828,10 @@ position = Vector2(16.6832, 408.119)
 
 [node name="Bone-13" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="13"]
 position = Vector2(16.1283, 468.053)
-rotation = -0.000402363
+rotation = -0.000402874
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
-
-[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -911,38 +1026,87 @@ script = ExtResource("16_6rno6")
 color = Color(0, 0, 0, 0.670588)
 polygon = PackedVector2Array(-710, -413, 718, -410, 712, 387, -756, 375)
 
-[node name="loadsave" type="Button" parent="MainMenu"]
-offset_left = 320.395
-offset_top = 318.59
-offset_right = 362.395
-offset_bottom = 349.59
-text = "load"
-
 [node name="CanvasLayer" type="CanvasLayer" parent="MainMenu"]
 follow_viewport_enabled = true
 
 [node name="MainMenu" type="Node2D" parent="MainMenu/CanvasLayer"]
-
-[node name="ExitButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu"]
-offset_left = -101.0
-offset_right = 102.0
-offset_bottom = 40.0
-
-[node name="PlayButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu"]
-offset_left = 474.0
-offset_top = 73.0
-offset_right = 538.0
-offset_bottom = 137.0
-texture_normal = ExtResource("17_d8p8p")
-
-[node name="controlInfoButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu"]
-offset_left = -626.595
-offset_top = 221.495
-offset_right = -498.595
-offset_bottom = 349.495
-texture_normal = ExtResource("6_dsoo8")
+texture_filter = 1
 
 [node name="GameLogo" type="Sprite2D" parent="MainMenu/CanvasLayer/MainMenu"]
+position = Vector2(368, -119)
+scale = Vector2(0.810938, 0.723437)
+texture = ExtResource("17_4iqs5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MainMenu/CanvasLayer/MainMenu"]
+offset_left = -626.0
+offset_top = -344.0
+offset_right = -548.0
+offset_bottom = -223.0
+scale = Vector2(2.2, 2)
+
+[node name="PlayButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("18_ot0lk")
+texture_pressed = ExtResource("19_cm7bm")
+texture_hover = ExtResource("20_iisou")
+
+[node name="ContinueButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("29_wb5he")
+texture_pressed = ExtResource("30_5hwsn")
+texture_hover = ExtResource("31_q002q")
+
+[node name="controlInfoButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("21_a3ssr")
+texture_pressed = ExtResource("22_oaesl")
+texture_hover = ExtResource("23_selwl")
+
+[node name="shopButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("21_nuic8")
+texture_pressed = ExtResource("22_ndgir")
+texture_hover = ExtResource("23_gurur")
+
+[node name="ExitButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/VBoxContainer"]
+layout_mode = 2
+texture_normal = ExtResource("17_1te21")
+texture_pressed = ExtResource("18_oqsoo")
+texture_hover = ExtResource("19_747ei")
+
+[node name="Container" type="Sprite2D" parent="MainMenu/CanvasLayer/MainMenu"]
+z_index = 99
+scale = Vector2(2, 2)
+
+[node name="YesButton" type="AnimatedSprite2D" parent="MainMenu/CanvasLayer/MainMenu/Container"]
+position = Vector2(-30, 0)
+sprite_frames = SubResource("SpriteFrames_eu07f")
+animation = &"pressed"
+script = ExtResource("34_poa2k")
+
+[node name="YesButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/Container/YesButton"]
+z_index = 5
+offset_left = -18.0
+offset_top = -11.0
+offset_right = 16.0
+offset_bottom = 10.0
+disabled = true
+texture_hover = ExtResource("35_4xd3x")
+
+[node name="NoButton" type="AnimatedSprite2D" parent="MainMenu/CanvasLayer/MainMenu/Container"]
+position = Vector2(30, 0)
+sprite_frames = SubResource("SpriteFrames_urrsj")
+animation = &"pressed"
+script = ExtResource("34_poa2k")
+
+[node name="NoButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/Container/NoButton"]
+z_index = 5
+offset_left = -18.0
+offset_top = -11.0
+offset_right = 16.0
+offset_bottom = 10.0
+disabled = true
+texture_hover = ExtResource("37_awcro")
 
 [node name="ControlInfo" type="Node2D" parent="MainMenu/CanvasLayer"]
 modulate = Color(1, 1, 1, 0)
@@ -970,19 +1134,44 @@ offset_left = 500.0
 offset_top = 223.575
 offset_right = 628.0
 offset_bottom = 351.575
+disabled = true
 texture_normal = ExtResource("6_dsoo8")
+
+[node name="ShopTab" type="Node2D" parent="MainMenu/CanvasLayer"]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+script = ExtResource("21_1i7fy")
+
+[node name="BackButton" type="TextureButton" parent="MainMenu/CanvasLayer/ShopTab"]
+offset_left = -612.075
+offset_top = 206.915
+offset_right = -484.075
+offset_bottom = 334.915
+disabled = true
+texture_normal = ExtResource("6_dsoo8")
+
+[node name="buyButton" type="Button" parent="MainMenu/CanvasLayer/ShopTab"]
+offset_left = -254.0
+offset_top = 10.0
+offset_right = -151.0
+offset_bottom = 41.0
+text = "buy buy buy"
 
 [node name="Camera2D" type="Camera2D" parent="MainMenu"]
 
 [connection signal="timeout" from="Hud/CooldownBar/Timer" to="Hud/CooldownBar" method="_on_timer_timeout"]
-[connection signal="pressed" from="Hud/GAMEOVER/save" to="." method="_on_save_pressed"]
 [connection signal="finished" from="musicManager" to="musicManager" method="_on_finished"]
-[connection signal="pressed" from="MainMenu/loadsave" to="." method="_on_load_pressed"]
-[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/ExitButton" to="MainMenu" method="_on_exit_button_pressed"]
-[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/PlayButton" to="musicManager" method="_on_play_button_pressed"]
-[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/PlayButton" to="MainMenu" method="_on_play_button_pressed"]
-[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/controlInfoButton" to="MainMenu" method="_on_control_info_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/PlayButton" to="musicManager" method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/PlayButton" to="MainMenu" method="_on_new_game_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/ContinueButton" to="musicManager" method="_on_play_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/ContinueButton" to="MainMenu" method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/controlInfoButton" to="MainMenu" method="_on_control_info_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/shopButton" to="MainMenu" method="_on_shop_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/ExitButton" to="MainMenu" method="_on_exit_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/Container/YesButton/YesButton" to="MainMenu" method="_on_yes_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/Container/NoButton/NoButton" to="MainMenu" method="_on_no_button_pressed"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/ControlInfo/BackButton" to="MainMenu/CanvasLayer/ControlInfo" method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/ShopTab/BackButton" to="MainMenu/CanvasLayer/ShopTab" method="_on_back_button_pressed"]
 
 [editable path="ProceduralWalls/Softwall"]
 [editable path="ProceduralWalls/Softwall2"]
