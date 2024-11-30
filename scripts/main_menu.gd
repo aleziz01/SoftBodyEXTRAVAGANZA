@@ -13,8 +13,8 @@ func _on_exit_button_pressed() -> void:
 	get_tree().quit()
 
 @onready var container: Sprite2D = $CanvasLayer/MainMenu/Container
-@onready var yes_button: TextureButton = $CanvasLayer/MainMenu/Container/YesButton/YesButton
-@onready var no_button: TextureButton = $CanvasLayer/MainMenu/Container/NoButton/NoButton
+@onready var yes_button: TextureButton = $CanvasLayer/MainMenu/Container/YesButton
+@onready var no_button: TextureButton = $CanvasLayer/MainMenu/Container/NoButton
 
 func _on_new_game_button_pressed() -> void:
 	container.show()
@@ -24,7 +24,6 @@ func _on_new_game_button_pressed() -> void:
 func hideContainer():
 	no_button.disabled=true
 	yes_button.disabled=true
-	await get_tree().create_timer(0.08).timeout
 	container.hide()
 
 func _on_no_button_pressed() -> void:
@@ -32,6 +31,7 @@ func _on_no_button_pressed() -> void:
 
 func _on_yes_button_pressed() -> void:
 	hideContainer()
+	$CanvasLayer/PointLight2D.queue_free()
 	global.saveGame()
 	global.gameStarted=true
 	global.fadeOut(main_menu)
@@ -45,6 +45,7 @@ func _on_yes_button_pressed() -> void:
 
 func _on_continue_button_pressed() -> void:
 	global.loadGame()
+	$CanvasLayer/PointLight2D.queue_free()
 	global.gameStarted=true
 	global.fadeOut(main_menu)
 	global.fadeOut(control_info)

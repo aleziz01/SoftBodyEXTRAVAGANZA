@@ -10,11 +10,11 @@ func run() -> void:
 		await get_tree().create_timer(0.1).timeout
 		#have separate spawn functions for all positive objects.
 		if(get_tree().paused==false and !global.gameOver and global.gameStarted):
-			if global.maxScore<4500:
+			if global.score<4500:
 				score1Spawn()
 				score1Spawn()
 				score1Spawn()
-			if global.maxScore<12500:
+			if global.score<12500:
 				score5Spawn()
 				score5Spawn()
 				score5Spawn()

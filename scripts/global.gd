@@ -53,3 +53,9 @@ func loadGame():
 		for i in nodeData.keys():
 			global.set(i, nodeData[i])
 	print(maxScore, " " ,starScore)
+
+func _notification(what):
+	if what == NOTIFICATION_WM_CLOSE_REQUEST:
+		saveGame()
+		await get_tree().create_timer(0.1).timeout
+		get_tree().quit()
