@@ -1,6 +1,6 @@
 [gd_scene load_steps=27 format=3 uid="uid://djsf0hc7nic0e"]
 
-[ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/placeholder/coin.png" id="1_8rc4t"]
+[ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="1_8rc4t"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_o74m3"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_kxr1l"]

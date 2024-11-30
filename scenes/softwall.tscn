@@ -1,6 +1,6 @@
 [gd_scene load_steps=28 format=3 uid="uid://kbrko0njxype"]
 
-[ext_resource type="Texture2D" uid="uid://lcf76kvy4tk" path="res://art/placeholder/wall.png" id="1_27hkw"]
+[ext_resource type="Texture2D" uid="uid://lcf76kvy4tk" path="res://art/wall.png" id="1_27hkw"]
 [ext_resource type="Script" path="res://scripts/softwall.gd" id="1_ujp7r"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_ftc32"]
 
