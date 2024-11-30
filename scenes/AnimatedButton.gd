@@ -6,6 +6,7 @@ func _ready() -> void:
 
 func _on_button_pressed() -> void:
 	get_child(0).hide()
+	frame=1
 	play("pressed")
 
 func _on_animation_finished() -> void:

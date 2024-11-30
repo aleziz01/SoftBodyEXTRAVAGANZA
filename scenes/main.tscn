@@ -444,10 +444,10 @@ region = Rect2(360, 0, 60, 46)
 [sub_resource type="SpriteFrames" id="SpriteFrames_eu07f"]
 animations = [{
 "frames": [{
-"duration": 0.01,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_orrb6")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_g8e6p")
 }, {
 "duration": 1.0,
@@ -459,7 +459,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_a6xgh")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_ydiub")
 }],
 "loop": false,
@@ -494,10 +494,10 @@ region = Rect2(300, 0, 60, 46)
 [sub_resource type="SpriteFrames" id="SpriteFrames_urrsj"]
 animations = [{
 "frames": [{
-"duration": 0.01,
+"duration": 0.1,
 "texture": SubResource("AtlasTexture_mnlkq")
 }, {
-"duration": 2.0,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4m5fk")
 }, {
 "duration": 1.0,
@@ -509,7 +509,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qye2y")
 }, {
-"duration": 1.5,
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_rg38q")
 }],
 "loop": false,
@@ -1075,6 +1075,7 @@ texture_pressed = ExtResource("18_oqsoo")
 texture_hover = ExtResource("19_747ei")
 
 [node name="Container" type="Sprite2D" parent="MainMenu/CanvasLayer/MainMenu"]
+visible = false
 z_index = 99
 scale = Vector2(2, 2)
 
