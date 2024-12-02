@@ -18,9 +18,18 @@ func run() -> void:
 				score5Spawn()
 				score5Spawn()
 				score5Spawn()
-			score25Spawn()
-			score25Spawn()
-			score25Spawn()
+			if global.score<25000:
+				score25Spawn()
+				score25Spawn()
+				score25Spawn()
+			if global.score<50000:
+				score50Spawn()
+				score50Spawn()
+				score50Spawn()
+			score100Spawn()
+			score100Spawn()
+			score100Spawn()
+			score400Spawn()
 
 var scoreStar1=preload("res://scenes/1ScoreStar.tscn")
 var scoreStar5=preload("res://scenes/5ScoreStar.tscn")
@@ -51,3 +60,27 @@ func score25Spawn():
 		scoreStar25Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
 		scoreStar25Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(scoreStar25Instance)
+
+func score50Spawn():
+	var DecisiveNumber=rng.randi_range(0,3000)
+	if DecisiveNumber<clamp((global.score-10000)/10,0,2000):
+		var scoreStar50Instance=scoreStar25.instantiate()
+		scoreStar50Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
+		scoreStar50Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		scoreStarsHolder.add_child(scoreStar50Instance)
+
+func score100Spawn():
+	var DecisiveNumber=rng.randi_range(0,3000)
+	if DecisiveNumber<clamp((global.score-20000)/13,0,2000):
+		var scoreStar100Instance=scoreStar25.instantiate()
+		scoreStar100Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
+		scoreStar100Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		scoreStarsHolder.add_child(scoreStar100Instance)
+
+func score400Spawn():
+	var DecisiveNumber=rng.randi_range(0,3000)
+	if DecisiveNumber<clamp((global.score-45000)/20,0,2000):
+		var scoreStar400Instance=scoreStar25.instantiate()
+		scoreStar400Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
+		scoreStar400Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		scoreStarsHolder.add_child(scoreStar400Instance)

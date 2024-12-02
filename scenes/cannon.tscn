@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://cerybj7coydvo"]
+
+[ext_resource type="Script" path="res://scripts/cannon.gd" id="1_kv5iv"]
+
+[node name="Cannon" type="Node2D"]
+position = Vector2(575, -300)
+script = ExtResource("1_kv5iv")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-55, -33, 42, -33, 42, 33, -55, 33, 0, 0)

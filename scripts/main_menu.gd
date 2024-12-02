@@ -31,6 +31,11 @@ func _on_no_button_pressed() -> void:
 
 func _on_yes_button_pressed() -> void:
 	hideContainer()
+	control_info_button.disabled=true
+	play_button.disabled=true
+	exit_button.disabled=true
+	shop_button.disabled=true
+	continue_button.disabled=true
 	$CanvasLayer/PointLight2D.queue_free()
 	global.saveGame()
 	global.gameStarted=true
@@ -44,6 +49,11 @@ func _on_yes_button_pressed() -> void:
 
 
 func _on_continue_button_pressed() -> void:
+	control_info_button.disabled=true
+	play_button.disabled=true
+	exit_button.disabled=true
+	shop_button.disabled=true
+	continue_button.disabled=true
 	global.loadGame()
 	$CanvasLayer/PointLight2D.queue_free()
 	global.gameStarted=true
@@ -52,7 +62,7 @@ func _on_continue_button_pressed() -> void:
 	global.fadeOut(self)
 	await get_tree().create_timer(1).timeout
 	global.fadeIn($"../Hud")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(4).timeout
 	queue_free()
 
 

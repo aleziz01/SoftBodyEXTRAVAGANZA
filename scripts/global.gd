@@ -4,6 +4,7 @@ var gameStarted:bool=false
 var gameOver=false
 var score:int=0
 var maxScore:int=0
+var HighScore:int=0
 var starScore:int=0
 var paused:bool=false
 
@@ -27,7 +28,7 @@ func fadeIn(node):
 func save():
 	var save_dict={
 		#global variables that save across playtimes
-		"maxScore":maxScore,
+		"HighScore":max(maxScore,HighScore),
 		"starScore":starScore
 	}
 	return save_dict
@@ -52,7 +53,7 @@ func loadGame():
 		var nodeData=json.data
 		for i in nodeData.keys():
 			global.set(i, nodeData[i])
-	print(maxScore, " " ,starScore)
+	print(HighScore, " <-HighScore " ,maxScore, " <-MaxScore " , starScore, " <-StarScore ")
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
