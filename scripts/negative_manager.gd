@@ -43,7 +43,7 @@ func BlockSpawn():
 
 func CannonSpawn():
 	var DecisiveNumber=rng.randi_range(0,4000)
-	if DecisiveNumber<=clamp((global.score-3000)/100,0,2000):
+	if DecisiveNumber<clamp((global.score-3000)/100,0,2000):
 		var CannonInstance=Cannon.instantiate()
 		var sign=sign(randi_range(-101,100))
 		CannonInstance.scale.x=sign

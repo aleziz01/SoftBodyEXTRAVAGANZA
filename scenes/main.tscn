@@ -1,4 +1,4 @@
-[gd_scene load_steps=153 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=152 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://scripts/negative_manager.gd" id="3_c72lr"]
 [ext_resource type="Script" path="res://scripts/mainSoftBody.gd" id="4_hht1j"]
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
-[ext_resource type="PackedScene" uid="uid://cerybj7coydvo" path="res://scenes/cannon.tscn" id="4_ug34y"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
 [ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
@@ -862,8 +861,6 @@ script = ExtResource("3_c72lr")
 
 [node name="CannonHolder" type="Node2D" parent="NegativeManager"]
 
-[node name="Cannon" parent="NegativeManager/CannonHolder" instance=ExtResource("4_ug34y")]
-
 [node name="mainSoftBody" parent="." instance=ExtResource("1_6q4na")]
 script = ExtResource("4_hht1j")
 
@@ -1452,8 +1449,8 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-7" type="Bone2D" parent="MiscFunStuff/Trees/FunTree/SoftBody2D/Skeleton2D"]
 position = Vector2(49.9988, 74.9167)
-rotation = 1.62698
-scale = Vector2(0.999996, 0.999996)
+rotation = 1.62697
+scale = Vector2(0.999995, 0.999995)
 rest = Transform2D(-0.0561523, 0.998422, -0.998422, -0.0561523, 49.9988, 74.9167)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -1624,7 +1621,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-20" type="Bone2D" parent="MiscFunStuff/Trees/FunTree/SoftBody2D/Skeleton2D"]
 position = Vector2(97.8635, 42.106)
-rotation = -2.87632
+rotation = -2.87631
 scale = Vector2(0.999999, 0.999999)
 rest = Transform2D(-0.96502, -0.262177, 0.262177, -0.96502, 97.8635, 42.106)
 auto_calculate_length_and_angle = false
@@ -3234,7 +3231,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-6" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(49.151, 59.0912)
 rotation = 1.51728
-scale = Vector2(0.999999, 0.999999)
+scale = Vector2(0.999998, 0.999998)
 rest = Transform2D(0.0534989, 0.998568, -0.998568, 0.0534989, 49.151, 59.0912)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -3247,8 +3244,8 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-7" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(49.9988, 74.9167)
-rotation = 1.62698
-scale = Vector2(0.999996, 0.999996)
+rotation = 1.62697
+scale = Vector2(0.999995, 0.999995)
 rest = Transform2D(-0.0561523, 0.998422, -0.998422, -0.0561523, 49.9988, 74.9167)
 auto_calculate_length_and_angle = false
 length = 18.0
