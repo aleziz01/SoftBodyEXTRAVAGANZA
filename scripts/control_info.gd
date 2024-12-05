@@ -43,7 +43,9 @@ func _process(delta: float) -> void:
 
 func _on_back_button_pressed() -> void:
 	global.switchFades(main_menu,self)
-	back_button.disabled=true
+	for i in get_children():
+		if i is TextureButton:
+			i.disabled=true
 	await get_tree().create_timer(1.2).timeout
 	control_info_button.disabled=false
 	exit_button.disabled=false

@@ -1,4 +1,4 @@
-[gd_scene load_steps=152 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=155 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -44,6 +44,9 @@
 [ext_resource type="Texture2D" uid="uid://b4n04qoooflom" path="res://art/Buttons/yesdefault.png" id="37_7quev"]
 [ext_resource type="Texture2D" uid="uid://ds0h1am6xgttv" path="res://art/Buttons/nohold.png" id="37_awcro"]
 [ext_resource type="Texture2D" uid="uid://bvu64nn0y0qv2" path="res://art/Buttons/nopress.png" id="38_rncog"]
+[ext_resource type="PackedScene" uid="uid://dygc6c25k8hn4" path="res://scenes/buy_button.tscn" id="45_3rlqg"]
+[ext_resource type="Texture2D" uid="uid://bymt51eurls62" path="res://art/Buttons/Buy.png" id="45_v27il"]
+[ext_resource type="Texture2D" uid="uid://voewqd2a4xfc" path="res://art/Buttons/Boom size.png" id="46_wptiy"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -1013,9 +1016,6 @@ rotation = -0.000402473
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
 
-[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
-
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
 
@@ -1164,6 +1164,9 @@ rotation = -0.000402874
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1449,7 +1452,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-7" type="Bone2D" parent="MiscFunStuff/Trees/FunTree/SoftBody2D/Skeleton2D"]
 position = Vector2(49.9988, 74.9167)
-rotation = 1.62697
+rotation = 1.62698
 scale = Vector2(0.999995, 0.999995)
 rest = Transform2D(-0.0561523, 0.998422, -0.998422, -0.0561523, 49.9988, 74.9167)
 auto_calculate_length_and_angle = false
@@ -3244,7 +3247,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-7" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(49.9988, 74.9167)
-rotation = 1.62697
+rotation = 1.62698
 scale = Vector2(0.999995, 0.999995)
 rest = Transform2D(-0.0561523, 0.998422, -0.998422, -0.0561523, 49.9988, 74.9167)
 auto_calculate_length_and_angle = false
@@ -4972,6 +4975,7 @@ texture_pressed = ExtResource("30_5hwsn")
 texture_hover = ExtResource("31_q002q")
 
 [node name="controlInfoButton" type="TextureButton" parent="MainMenu/CanvasLayer/MainMenu/VBoxContainer"]
+visible = false
 layout_mode = 2
 texture_normal = ExtResource("21_a3ssr")
 texture_pressed = ExtResource("22_oaesl")
@@ -5061,12 +5065,18 @@ offset_bottom = 334.915
 disabled = true
 texture_normal = ExtResource("6_dsoo8")
 
-[node name="buyButton" type="Button" parent="MainMenu/CanvasLayer/ShopTab"]
-offset_left = -254.0
-offset_top = 10.0
-offset_right = -151.0
-offset_bottom = 41.0
-text = "buy buy buy"
+[node name="BuyButton1" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
+offset_left = -317.9
+offset_top = -150.505
+offset_right = -253.9
+offset_bottom = -110.505
+scale = Vector2(3, 3)
+texture_normal = ExtResource("45_v27il")
+texture_disabled = ExtResource("6_dsoo8")
+
+[node name="Item" parent="MainMenu/CanvasLayer/ShopTab/BuyButton1" index="1"]
+position = Vector2(32, -32)
+texture = ExtResource("46_wptiy")
 
 [node name="PointLight2D" type="PointLight2D" parent="MainMenu/CanvasLayer"]
 position = Vector2(-0.999969, -1)
@@ -5092,3 +5102,4 @@ texture = SubResource("GradientTexture1D_546j0")
 
 [editable path="ProceduralWalls/Softwall"]
 [editable path="ProceduralWalls/Softwall2"]
+[editable path="MainMenu/CanvasLayer/ShopTab/BuyButton1"]

@@ -7,6 +7,7 @@ var maxScore:int=0
 var HighScore:int=0
 var starScore:int=0
 var paused:bool=false
+var Upgrades=[0,0,0,0,0,0,0,0,0,0]
 
 func _process(_delta: float) -> void:
 	maxScore=max(score,maxScore)
@@ -29,7 +30,8 @@ func save():
 	var save_dict={
 		#global variables that save across playtimes
 		"HighScore":max(maxScore,HighScore),
-		"starScore":starScore
+		"starScore":starScore,
+		"Upgrades":Upgrades
 	}
 	return save_dict
 
@@ -53,7 +55,7 @@ func loadGame():
 		var nodeData=json.data
 		for i in nodeData.keys():
 			global.set(i, nodeData[i])
-	print(HighScore, " <-HighScore " ,maxScore, " <-MaxScore " , starScore, " <-StarScore ")
+	print(HighScore, " <-HighScore " ,maxScore, " <-MaxScore " , starScore, " <-StarScore ", Upgrades[0],"<-ExplosionSizeUpgrade")
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:
