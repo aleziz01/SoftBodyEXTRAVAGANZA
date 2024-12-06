@@ -80,6 +80,9 @@ func _on_continue_button_pressed() -> void:
 @onready var shop_button: TextureButton = $CanvasLayer/MainMenu/VBoxContainer/shopButton
 @onready var continue_button: TextureButton = $CanvasLayer/MainMenu/VBoxContainer/ContinueButton
 
+@onready var shop_sprite: AnimatedSprite2D = $CanvasLayer/ShopTab/ShopSprite
+
+
 func _on_control_info_button_pressed() -> void:
 	global.switchFades(control_info,main_menu)
 	control_info_button.disabled=true
@@ -99,3 +102,19 @@ func _on_shop_button_pressed() -> void:
 	continue_button.disabled=true
 	await get_tree().create_timer(1.2).timeout
 	shop_back_button.disabled=false
+	shop_tab.shopOpened=true
+	playShopAnimationForward()
+
+func playShopAnimationForward():
+	shop_sprite.frame=0
+	shop_sprite.play("default")
+	shop_sprite.speed_scale=1
+	while(shop_sprite.frame<=14):
+		if shop_sprite.frame>=12:
+			for i in shop_tab.get_children():
+				if i!=shop_tab.get_child(0) and i is TextureButton and i.position.y<=-150:
+					i.show()
+		await get_tree().create_timer(0.01).timeout
+	for i in shop_tab.get_children():
+		if i!=shop_tab.get_child(0) and i is TextureButton:
+			i.show()

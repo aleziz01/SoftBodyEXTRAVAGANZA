@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=173 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -45,8 +45,7 @@
 [ext_resource type="Texture2D" uid="uid://ds0h1am6xgttv" path="res://art/Buttons/nohold.png" id="37_awcro"]
 [ext_resource type="Texture2D" uid="uid://bvu64nn0y0qv2" path="res://art/Buttons/nopress.png" id="38_rncog"]
 [ext_resource type="PackedScene" uid="uid://dygc6c25k8hn4" path="res://scenes/buy_button.tscn" id="45_3rlqg"]
-[ext_resource type="Texture2D" uid="uid://bymt51eurls62" path="res://art/Buttons/Buy.png" id="45_v27il"]
-[ext_resource type="Texture2D" uid="uid://voewqd2a4xfc" path="res://art/Buttons/Boom size.png" id="46_wptiy"]
+[ext_resource type="Texture2D" uid="uid://dl2d4vrwsiftw" path="res://art/Buttons/ShopSpritesheet.png" id="45_pai6o"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -842,6 +841,140 @@ modifications/24 = SubResource("SkeletonModification2DLookAt_slntb")
 resource_local_to_scene = true
 radius = 6.0
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahcnv"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(0, 0, 43, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh8up"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(0, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12w5c"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(102, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dmwlj"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(204, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ni27v"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(306, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ga6xm"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(408, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ycm8t"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(510, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2idlh"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(612, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_55ge7"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(714, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2suye"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(816, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qfewr"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(918, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t70es"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1020, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ttm8d"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1122, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ngjm"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1224, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6fp0v"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1326, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5hdyb"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1428, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cagbn"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1530, 0, 102, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b4ruy"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1632, 0, 102, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_v5wis"]
+animations = [{
+"frames": [{
+"duration": 0.1,
+"texture": SubResource("AtlasTexture_ahcnv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh8up")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12w5c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dmwlj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ni27v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ga6xm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ycm8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2idlh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_55ge7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2suye")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qfewr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t70es")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ttm8d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0ngjm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6fp0v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5hdyb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cagbn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b4ruy")
+}],
+"loop": false,
+"name": &"default",
+"speed": 20.0
+}]
+
 [sub_resource type="Gradient" id="Gradient_ccwbb"]
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_546j0"]
@@ -1001,7 +1134,7 @@ position = Vector2(45.5116, 191.907)
 scale = Vector2(1, 1)
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.999949, 0.999949)
+scale = Vector2(0.999948, 0.999948)
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
@@ -1015,6 +1148,9 @@ rotation = -0.000402473
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1136,6 +1272,7 @@ position = Vector2(18.2712, 251.546)
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
+scale = Vector2(1, 1)
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
@@ -1160,13 +1297,10 @@ position = Vector2(16.6832, 408.119)
 
 [node name="Bone-13" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="13"]
 position = Vector2(16.1283, 468.053)
-rotation = -0.000402874
+rotation = -0.000402363
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
-
-[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1453,7 +1587,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-7" type="Bone2D" parent="MiscFunStuff/Trees/FunTree/SoftBody2D/Skeleton2D"]
 position = Vector2(49.9988, 74.9167)
 rotation = 1.62698
-scale = Vector2(0.999995, 0.999995)
+scale = Vector2(0.999981, 0.999981)
 rest = Transform2D(-0.0561523, 0.998422, -0.998422, -0.0561523, 49.9988, 74.9167)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -3166,7 +3300,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-1" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(29.7521, 43.4819)
-rotation = -0.276841
+rotation = -0.276842
 scale = Vector2(1, 1)
 rest = Transform2D(0.961923, -0.27332, 0.27332, 0.961923, 29.7521, 43.4819)
 auto_calculate_length_and_angle = false
@@ -3180,7 +3314,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-2" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(27.7485, 58.2025)
-rotation = -0.772306
+rotation = -0.772305
 rest = Transform2D(0.716304, -0.697788, 0.697788, 0.716304, 27.7485, 58.2025)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -3193,7 +3327,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-3" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(31.9997, 74.9583)
-rotation = -0.746524
+rotation = -0.746525
 scale = Vector2(1, 1)
 rest = Transform2D(0.734053, -0.679092, 0.679092, 0.734053, 31.9997, 74.9583)
 auto_calculate_length_and_angle = false
@@ -3248,7 +3382,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-7" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(49.9988, 74.9167)
 rotation = 1.62698
-scale = Vector2(0.999995, 0.999995)
+scale = Vector2(0.999981, 0.999981)
 rest = Transform2D(-0.0561523, 0.998422, -0.998422, -0.0561523, 49.9988, 74.9167)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -5065,18 +5199,41 @@ offset_bottom = 334.915
 disabled = true
 texture_normal = ExtResource("6_dsoo8")
 
-[node name="BuyButton1" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = -317.9
-offset_top = -150.505
-offset_right = -253.9
-offset_bottom = -110.505
-scale = Vector2(3, 3)
-texture_normal = ExtResource("45_v27il")
-texture_disabled = ExtResource("6_dsoo8")
+[node name="ShopSprite" type="AnimatedSprite2D" parent="MainMenu/CanvasLayer/ShopTab"]
+position = Vector2(128.99, -15.19)
+scale = Vector2(10, 10)
+sprite_frames = SubResource("SpriteFrames_v5wis")
 
-[node name="Item" parent="MainMenu/CanvasLayer/ShopTab/BuyButton1" index="1"]
-position = Vector2(32, -32)
-texture = ExtResource("46_wptiy")
+[node name="BuyButton1" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
+visible = false
+offset_left = -231.0
+offset_top = -175.0
+offset_right = -91.0
+offset_bottom = -75.0
+price = 20
+exponentiationNumber = 4
+
+[node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton1" index="0"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 110.0
+offset_right = 130.0
+offset_bottom = 179.0
+
+[node name="BuyButton2" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
+visible = false
+offset_left = -71.0
+offset_top = -175.92
+offset_right = 69.0
+offset_bottom = -75.92
+upgradeIndex = 1
+
+[node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton2" index="0"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 110.0
+offset_right = 130.0
+offset_bottom = 180.0
 
 [node name="PointLight2D" type="PointLight2D" parent="MainMenu/CanvasLayer"]
 position = Vector2(-0.999969, -1)
@@ -5103,3 +5260,4 @@ texture = SubResource("GradientTexture1D_546j0")
 [editable path="ProceduralWalls/Softwall"]
 [editable path="ProceduralWalls/Softwall2"]
 [editable path="MainMenu/CanvasLayer/ShopTab/BuyButton1"]
+[editable path="MainMenu/CanvasLayer/ShopTab/BuyButton2"]

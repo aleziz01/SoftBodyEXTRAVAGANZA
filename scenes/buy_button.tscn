@@ -3,10 +3,12 @@
 [ext_resource type="Script" path="res://scenes/buy_button.gd" id="1_l1ibr"]
 
 [node name="BuyButton" type="TextureButton"]
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 46.0
+offset_bottom = 34.0
 script = ExtResource("1_l1ibr")
 
-[node name="Frame" type="Sprite2D" parent="."]
-
-[node name="Item" type="Sprite2D" parent="."]
+[node name="Price" type="RichTextLabel" parent="."]
+offset_left = 4.0
+offset_top = 38.0
+offset_right = 43.0
+offset_bottom = 63.0

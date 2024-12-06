@@ -1,6 +1,7 @@
 extends Node2D
 
 @onready var main_menu: Node2D = $"../MainMenu"
+@onready var shop_sprite: AnimatedSprite2D = $ShopSprite
 
 #buttons to show and enable
 @onready var control_info_button: TextureButton = $"../MainMenu/VBoxContainer/controlInfoButton"
@@ -12,8 +13,10 @@ extends Node2D
 #buttons to hide and disable
 @onready var back_button: TextureButton = $BackButton
 
+var shopOpened=false
 func _on_back_button_pressed() -> void:
 	global.switchFades(main_menu,self)
+	playShopAnimationBack()
 	for i in get_children():
 		if i is TextureButton:
 			i.disabled=true
@@ -24,12 +27,24 @@ func _on_back_button_pressed() -> void:
 	continue_button.disabled=false
 	shop_button.disabled=false
 
+func playShopAnimationBack():
+	shop_sprite.frame=17
+	shop_sprite.play("default")
+	shop_sprite.speed_scale=-1
+	while(shop_sprite.frame>=12):
+		if shop_sprite.frame<=14:
+			for i in get_children():
+				if i!=get_child(0) and i is TextureButton and i.position.y>=-150:
+					i.hide()
+		await get_tree().create_timer(0.01).timeout
+	for i in get_children():
+		if i!=get_child(0) and i is TextureButton:
+			i.hide()
+
 func _ready() -> void:
-	for i in get_children(0):
-		if i!=get_child(0):
-			i.connect("pressed",checkPrices)
+	checkPrices()
 
 func checkPrices():
 	for i in get_children():
-		if i!=get_child(0):
+		if i!=get_child(0) and i is TextureButton:
 			i.checkPrice()
