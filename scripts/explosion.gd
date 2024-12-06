@@ -2,7 +2,7 @@ extends Area2D
 
 #apply all upgrades to the explosion
 func _ready() -> void:
-	gravity-=2000*pow(2,global.Upgrades[1])
+	gravity-=2000*pow(2,global.Upgrades[1]-1)
 	scale=Vector2(1.0+global.Upgrades[0]/20.0,1.0+global.Upgrades[0]/20.0) #apply the explosionSize Upgrade
 
 func _enter_tree() -> void:

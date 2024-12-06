@@ -31,7 +31,7 @@ func playShopAnimationBack():
 	shop_sprite.frame=17
 	shop_sprite.play("default")
 	shop_sprite.speed_scale=-1
-	while(shop_sprite.frame>=12):
+	while(shop_sprite.frame>=12): #code looks kinda bad here, can change later if u want
 		if shop_sprite.frame<=14:
 			for i in get_children():
 				if i!=get_child(0) and i is TextureButton and i.position.y>=-150:

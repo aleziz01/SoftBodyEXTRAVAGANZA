@@ -13,15 +13,14 @@ func _ready() -> void:
 	connect("pressed",_on_button_pressed)
 	for i in global.Upgrades[upgradeIndex]:
 		price*=4
-		print("increased")
 	priceLabel.text=str(price)
-	print(price)
 
 func _process(delta: float) -> void:
 	checkPrice()
 
 func _on_button_pressed():
 	global.starScore-=price
+	global.saveGame()
 	global.Upgrades[upgradeIndex]+=1
 	price*=exponentiationNumber
 	priceLabel.text=str(price)

@@ -55,7 +55,8 @@ func loadGame():
 		var nodeData=json.data
 		for i in nodeData.keys():
 			global.set(i, nodeData[i])
-	print(HighScore, " <-HighScore " ,maxScore, " <-MaxScore " , starScore, " <-StarScore ", Upgrades[0],"<-ExplosionSizeUpgrade")
+	print(HighScore, " <-HighScore " ,maxScore, " <-MaxScore " , starScore, " <-StarScore ", Upgrades[0]," <-ExplosionSizeUpgrade ",
+	Upgrades[1]," <-ExplosionPowerUpgrade ")
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

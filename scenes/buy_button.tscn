@@ -8,6 +8,7 @@ offset_bottom = 34.0
 script = ExtResource("1_l1ibr")
 
 [node name="Price" type="RichTextLabel" parent="."]
+layout_mode = 0
 offset_left = 4.0
 offset_top = 38.0
 offset_right = 43.0
