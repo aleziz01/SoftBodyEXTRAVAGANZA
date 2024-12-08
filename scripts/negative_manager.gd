@@ -14,14 +14,30 @@ func run() -> void:
 		await get_tree().create_timer(0.1).timeout
 		#have separate spawn functions for all negative objects.
 		if(global.paused==false and !global.gameOver and global.gameStarted):
-			BlackHoleSpawn()
-			BlockSpawn()
-			CannonSpawn()
+			if global.score<20000:
+				BlockSpawn()
+			if global.score>20000:
+				HarderBlockSpawn()
+			if global.score<30000:
+				BlackHoleSpawn()
+				CannonSpawn()
+			if global.score>30000:
+				BiggerBlackHoleSpawn()
+				HarderCannonSpawn()
 
 
 @onready var BlackHoleContainer: Node2D = $BlackHoles
 @onready var BlockHolder: Node2D = $BlockHolder
 @onready var CannonHolder: Node2D = $CannonHolder
+
+func HarderBlockSpawn():
+	pass
+
+func BiggerBlackHoleSpawn():
+	pass
+
+func HarderCannonSpawn():
+	pass
 
 func BlackHoleSpawn():
 	#Black Hole Spawning

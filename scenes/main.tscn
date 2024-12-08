@@ -1,4 +1,4 @@
-[gd_scene load_steps=180 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=181 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -53,6 +53,7 @@
 [ext_resource type="Texture2D" uid="uid://bvu64nn0y0qv2" path="res://art/Buttons/nopress.png" id="38_rncog"]
 [ext_resource type="PackedScene" uid="uid://dygc6c25k8hn4" path="res://scenes/buy_button.tscn" id="45_3rlqg"]
 [ext_resource type="Texture2D" uid="uid://dl2d4vrwsiftw" path="res://art/Buttons/ShopSpritesheet.png" id="45_pai6o"]
+[ext_resource type="PackedScene" uid="uid://c42jo216jtsx3" path="res://scenes/harder_block_body.tscn" id="54_rvndq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -1013,6 +1014,13 @@ z_index = 99
 texture_filter = 1
 script = ExtResource("5_vp50i")
 
+[node name="HarderBlockHolder" type="Node2D" parent="Hud"]
+
+[node name="HarderBlockBody" parent="Hud/HarderBlockHolder" instance=ExtResource("54_rvndq")]
+
+[node name="Timer" parent="Hud/HarderBlockHolder/HarderBlockBody" index="1"]
+autostart = true
+
 [node name="WhatSong" type="RichTextLabel" parent="Hud"]
 offset_left = -850.0
 offset_top = -349.0
@@ -1608,7 +1616,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-7" type="Bone2D" parent="MiscFunStuff/Trees/FunTree/SoftBody2D/Skeleton2D"]
 position = Vector2(49.9988, 74.9167)
-rotation = 1.62698
+rotation = 1.62697
 scale = Vector2(0.999981, 0.999981)
 rest = Transform2D(-0.0561523, 0.998422, -0.998422, -0.0561523, 49.9988, 74.9167)
 auto_calculate_length_and_angle = false
@@ -5278,6 +5286,7 @@ texture = SubResource("GradientTexture1D_546j0")
 [connection signal="pressed" from="MainMenu/CanvasLayer/ControlInfo/BackButton" to="MainMenu/CanvasLayer/ControlInfo" method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/ShopTab/BackButton" to="MainMenu/CanvasLayer/ShopTab" method="_on_back_button_pressed"]
 
+[editable path="Hud/HarderBlockHolder/HarderBlockBody"]
 [editable path="ProceduralWalls/Softwall"]
 [editable path="ProceduralWalls/Softwall2"]
 [editable path="MainMenu/CanvasLayer/ShopTab/BuyButton1"]
