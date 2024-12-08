@@ -5,6 +5,7 @@ var OST2=preload("res://music/OST2.mp3")
 var OST3=preload("res://music/OST3.mp3")
 @onready var whatSong: RichTextLabel = $"../Hud/WhatSong"
 
+@onready var initialVolumeDB=volume_db
 var rng=RandomNumberGenerator.new()
 var pastNumb=1
 
@@ -14,13 +15,13 @@ func _on_finished() -> void:
 		randNumb=rng.randi_range(1,3)
 	if randNumb==1:
 		stream=OST1
-		volume_db=0
+		volume_db=initialVolumeDB
 	elif randNumb==2:
 		stream=OST2
-		volume_db=0
+		volume_db=initialVolumeDB
 	elif randNumb==3:
 		stream=OST3
-		volume_db=-2
+		volume_db=initialVolumeDB
 	pastNumb=randNumb
 	showNewSong()
 	await get_tree().create_timer(3).timeout

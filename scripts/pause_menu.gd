@@ -23,7 +23,6 @@ func updateBG():
 			await get_tree().create_timer(0.001).timeout
 		fading=false
 		self.modulate.a=1.0
-		print("modulated")
 	else:
 		fading=true
 		while(self.modulate.a>0.0 and fading):
@@ -31,4 +30,3 @@ func updateBG():
 			await get_tree().create_timer(0.001).timeout
 		fading=false
 		self.modulate.a=0.0
-		print("modulated")

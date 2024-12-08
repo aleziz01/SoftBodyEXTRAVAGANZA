@@ -1,4 +1,4 @@
-[gd_scene load_steps=174 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=180 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -13,14 +13,20 @@
 [ext_resource type="PackedScene" uid="uid://3p746m5gx6b4" path="res://scenes/BG.tscn" id="8_srnyt"]
 [ext_resource type="Script" path="res://scripts/cooldown_bar.gd" id="9_g41kd"]
 [ext_resource type="Script" path="res://scenes/gameover.gd" id="11_13u7c"]
+[ext_resource type="Texture2D" uid="uid://b2wsrbncoaccj" path="res://art/Buttons/quit1.png" id="12_tms64"]
+[ext_resource type="Texture2D" uid="uid://c3l5oypo1ht7b" path="res://art/Buttons/quit3.png" id="13_3ssb8"]
 [ext_resource type="Script" path="res://scripts/rectangle_soft_body.gd" id="14_7utkm"]
+[ext_resource type="Texture2D" uid="uid://bhyw07qexpwv6" path="res://art/Buttons/quit2.png" id="14_mr7is"]
 [ext_resource type="Texture2D" uid="uid://vyqs6geg2adv" path="res://art/smalltree.png" id="15_ia0wq"]
 [ext_resource type="Script" path="res://scripts/musicManager.gd" id="15_l1ccf"]
+[ext_resource type="Texture2D" uid="uid://42w3s8r50xiy" path="res://art/Buttons/retry1.png" id="15_tjfag"]
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="16_6rno6"]
+[ext_resource type="Texture2D" uid="uid://edhipfif1doj" path="res://art/Buttons/retry3.png" id="16_635je"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="16_ce73a"]
 [ext_resource type="Texture2D" uid="uid://yjjh1i5l6mxt" path="res://art/Buttons/exitButton1.png" id="17_1te21"]
 [ext_resource type="Texture2D" uid="uid://cu7um5qobewkq" path="res://art/tree.png" id="17_4iqs5"]
 [ext_resource type="Script" path="res://scripts/pause_menu.gd" id="17_j4ad6"]
+[ext_resource type="Texture2D" uid="uid://bouv4rlctxjg8" path="res://art/Buttons/retry2.png" id="17_oe0hs"]
 [ext_resource type="Script" path="res://scripts/control_info.gd" id="18_6ribo"]
 [ext_resource type="Texture2D" uid="uid://csrklv1c4yb2r" path="res://art/Buttons/exitButton3.png" id="18_oqsoo"]
 [ext_resource type="Texture2D" uid="uid://4mqbodkq3gur" path="res://art/Buttons/Newgame1.png" id="18_ot0lk"]
@@ -1056,17 +1062,23 @@ offset_bottom = 107.0
 text = "hgteertgh"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Hud/GAMEOVER"]
-offset_left = 457.005
+offset_left = 480.265
 offset_top = 171.22
-offset_right = 497.005
-offset_bottom = 211.22
+offset_right = 520.265
+offset_bottom = 217.22
 scale = Vector2(4, 4)
 
 [node name="Quit" type="TextureButton" parent="Hud/GAMEOVER/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("12_tms64")
+texture_pressed = ExtResource("13_3ssb8")
+texture_hover = ExtResource("14_mr7is")
 
 [node name="Retry" type="TextureButton" parent="Hud/GAMEOVER/VBoxContainer"]
 layout_mode = 2
+texture_normal = ExtResource("15_tjfag")
+texture_pressed = ExtResource("16_635je")
+texture_hover = ExtResource("17_oe0hs")
 
 [node name="PauseMenu" type="Node2D" parent="Hud"]
 modulate = Color(1, 1, 1, 0)
@@ -1142,6 +1154,7 @@ scale = Vector2(0.999993, 0.999993)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
+scale = Vector2(1, 1)
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="9"]
 scale = Vector2(0.999948, 0.999948)
@@ -1327,6 +1340,7 @@ position = Vector2(46.2515, 528.023)
 
 [node name="Bone-20" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="20"]
 position = Vector2(15.7145, 573.021)
+scale = Vector2(1, 1)
 
 [node name="Bone-21" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="21"]
 position = Vector2(46.3693, 573.017)
@@ -1554,6 +1568,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="MiscFunStuff/Trees/FunTree/SoftBody2D/Skeleton2D"]
 position = Vector2(26.8889, 103.449)
 rotation = -1.3933
+scale = Vector2(1, 1)
 rest = Transform2D(0.176564, -0.984289, 0.984289, 0.176564, 26.8889, 103.449)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -3334,6 +3349,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-3" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(31.9997, 74.9583)
 rotation = -0.746524
+scale = Vector2(1, 1)
 rest = Transform2D(0.734053, -0.679092, 0.679092, 0.734053, 31.9997, 74.9583)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -3479,6 +3495,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-14" type="Bone2D" parent="MiscFunStuff/Trees/FunTree2/SoftBody2D/Skeleton2D"]
 position = Vector2(81.756, 37.7299)
 rotation = 2.21583
+scale = Vector2(1, 1)
 rest = Transform2D(-0.601226, 0.799079, -0.799079, -0.601226, 81.756, 37.7299)
 auto_calculate_length_and_angle = false
 length = 18.0
@@ -5070,6 +5087,7 @@ color = Color(0, 0.180392, 0.568627, 1)
 polygon = PackedVector2Array(-670, 283, -579, 283, -572, 326, -671, 328)
 
 [node name="musicManager" type="AudioStreamPlayer" parent="."]
+volume_db = -10.0
 autoplay = true
 script = ExtResource("15_l1ccf")
 
@@ -5245,6 +5263,8 @@ texture = SubResource("GradientTexture1D_546j0")
 [node name="Camera2D" type="Camera2D" parent="MainMenu"]
 
 [connection signal="timeout" from="Hud/CooldownBar/Timer" to="Hud/CooldownBar" method="_on_timer_timeout"]
+[connection signal="pressed" from="Hud/GAMEOVER/VBoxContainer/Quit" to="Hud/GAMEOVER" method="_on_quit_pressed"]
+[connection signal="pressed" from="Hud/GAMEOVER/VBoxContainer/Retry" to="Hud/GAMEOVER" method="_on_retry_pressed"]
 [connection signal="finished" from="musicManager" to="musicManager" method="_on_finished"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/PlayButton" to="MainMenu" method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/ContinueButton" to="musicManager" method="_on_play_button_pressed"]

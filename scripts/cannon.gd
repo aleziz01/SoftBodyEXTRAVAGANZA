@@ -5,9 +5,6 @@ extends Node2D
 var fired=false
 var angle=0
 
-func _ready() -> void:
-	print("spawned", global_position)
-
 func _process(_delta: float) -> void:
 	if global_position.y+100>mainSoftBody.realPos and !fired:
 		fired=true

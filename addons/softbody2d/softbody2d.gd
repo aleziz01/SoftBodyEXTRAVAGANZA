@@ -142,7 +142,7 @@ const MAX_REGIONS := 200
 ## Set properties related to the generated joints between rigidbodies.
 @export_group("Joint")
 
-## The joint type. Pin yields a more sturdy softbody, and uses [PinJoint2D], while sprint a more soft one, and uses [DampedSpringJoint2D].
+## The joint type. Pin yields a more sturdy softbody, and uses [PinJoint2D], while spring a more soft one, and uses [DampedSpringJoint2D].
 @export_enum("pin", "spring") var joint_type:= "pin":
 	set (value):
 		if joint_type == value:
