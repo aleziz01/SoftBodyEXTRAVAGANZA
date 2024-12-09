@@ -4,6 +4,7 @@ extends Node2D
 var BlackHole=preload("res://scenes/BlackHoleCool.tscn")
 var Block=preload("res://scenes/rectangleSoftBody.tscn")
 var Cannon=preload("res://scenes/cannon.tscn")
+var HarderBlock=preload("res://scenes/harder_block_body.tscn")
 
 func _ready() -> void:
 	run()
@@ -18,6 +19,7 @@ func run() -> void:
 				BlockSpawn()
 			if global.score>20000:
 				HarderBlockSpawn()
+				HarderBlockSpawn()
 			if global.score<30000:
 				BlackHoleSpawn()
 				CannonSpawn()
@@ -29,9 +31,16 @@ func run() -> void:
 @onready var BlackHoleContainer: Node2D = $BlackHoles
 @onready var BlockHolder: Node2D = $BlockHolder
 @onready var CannonHolder: Node2D = $CannonHolder
+@onready var HarderBlockHolder: Node2D = $"../Hud/HarderBlockHolder"
 
 func HarderBlockSpawn():
-	pass
+	#Falling Block Spawning
+	var DecisiveNumber=rng.randi_range(0,5000)
+	if DecisiveNumber<=clamp((global.score)/500,0,2000):
+		var HarderBlockInstance=HarderBlock.instantiate()
+		HarderBlockInstance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-540,540),randf_range(1500,3000))
+		HarderBlockInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		HarderBlockHolder.add_child(HarderBlockInstance)
 
 func BiggerBlackHoleSpawn():
 	pass

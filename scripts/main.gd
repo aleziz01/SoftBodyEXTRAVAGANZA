@@ -36,8 +36,8 @@ func _process(_delta: float) -> void:
 @onready var gameOverSprite: Sprite2D = $Hud/GAMEOVER
 @onready var highest_score: RichTextLabel = $Hud/GAMEOVER/HighestScore
 
+signal GameOver
 func gameover():
+	emit_signal("GameOver")
 	highest_score.text="Meters traveled: " + str(global.maxScore)
-	while gameOverSprite.modulate.a<1:
-		gameOverSprite.modulate.a+=1.0/255.0*float(!global.paused)
-		await get_tree().create_timer(0.01).timeout
+	global.fadeIn(gameOverSprite)

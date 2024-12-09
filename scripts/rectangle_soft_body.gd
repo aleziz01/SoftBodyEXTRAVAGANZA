@@ -3,6 +3,7 @@ extends Node2D
 
 func _enter_tree() -> void:
 	unload()
+	rotation=randf_range(0,360)
 var triedToKill=false
 @export var mainSoftBody:Node2D
 
