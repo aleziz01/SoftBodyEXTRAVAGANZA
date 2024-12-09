@@ -1,8 +1,12 @@
 extends Area2D
 
-func _enter_tree() -> void:
+@export var ScoreStar:Area2D
+
+func _ready() -> void:
+	var scaler=randf_range(1.4,1.8)
+	scale=Vector2(scaler,scaler)
+	ScoreStar.mainSoftBody=mainSoftBody
 	unload()
-	$"25Score".mainSoftBody=mainSoftBody
 
 @onready var mainSoftBody: Node2D = $"../../../mainSoftBody"
 

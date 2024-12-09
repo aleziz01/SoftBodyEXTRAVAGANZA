@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dau2ogyjubxbh"]
 
-[ext_resource type="Script" path="res://scenes/cannon_explosion.gd" id="1_jhjlw"]
+[ext_resource type="Script" path="res://scripts/cannon_explosion.gd" id="1_jhjlw"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wd7u"]
 radius = 83.0542

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dygc6c25k8hn4"]
 
-[ext_resource type="Script" path="res://scenes/buy_button.gd" id="1_l1ibr"]
+[ext_resource type="Script" path="res://scripts/buy_button.gd" id="1_l1ibr"]
 
 [node name="BuyButton" type="TextureButton"]
 offset_right = 46.0

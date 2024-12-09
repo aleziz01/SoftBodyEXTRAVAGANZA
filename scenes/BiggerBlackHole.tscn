@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://d2uvggob4m72v"]
+[gd_scene load_steps=7 format=3 uid="uid://co58inqe4hygt"]
 
-[ext_resource type="Script" path="res://scripts/blackHole.gd" id="1_hoahr"]
-[ext_resource type="PackedScene" uid="uid://d4kunc0wicdcp" path="res://scenes/25ScoreStar.tscn" id="2_3cq4h"]
+[ext_resource type="Script" path="res://scripts/blackHole.gd" id="1_7llse"]
+[ext_resource type="PackedScene" uid="uid://c7hwdcsbjqof2" path="res://scenes/400ScoreStar.tscn" id="2_silkx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nsfm2"]
 radius = 130.035
@@ -33,14 +33,15 @@ color_ramp = SubResource("GradientTexture1D_8wp2i")
 hue_variation_min = -2.23517e-08
 hue_variation_max = -2.23517e-08
 
-[node name="BlackHole" type="Area2D" node_paths=PackedStringArray("ScoreStar")]
+[node name="BiggerBlackHole" type="Area2D" node_paths=PackedStringArray("ScoreStar")]
+scale = Vector2(1.5, 1.5)
 gravity_space_override = 1
 gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
-gravity = 7000.0
-script = ExtResource("1_hoahr")
-ScoreStar = NodePath("25Score")
+gravity = 20000.0
+script = ExtResource("1_7llse")
+ScoreStar = NodePath("400Score")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nsfm2")
@@ -53,5 +54,4 @@ trail_enabled = true
 trail_lifetime = 0.4
 trail_section_subdivisions = 8
 
-[node name="25Score" parent="." instance=ExtResource("2_3cq4h")]
-position = Vector2(0, -6.115)
+[node name="400Score" parent="." instance=ExtResource("2_silkx")]

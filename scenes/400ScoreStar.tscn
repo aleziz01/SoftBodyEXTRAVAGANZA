@@ -15,7 +15,7 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cg518")
 
 [node name="Sprite" type="Node2D" parent="."]
-modulate = Color(1, 0.516667, 0, 1)
+modulate = Color(1, 0, 0.85, 1)
 position = Vector2(0, 0.1)
 
 [node name="Polygon2D4" type="Polygon2D" parent="Sprite"]

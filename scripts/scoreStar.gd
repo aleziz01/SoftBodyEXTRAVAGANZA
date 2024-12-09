@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 		global.starScore+=scoreValue
 		queue_free()
 
-func _enter_tree() -> void:
+func _ready() -> void:
 	unload()
 
 var mainSoftBody: Node2D

@@ -5,6 +5,7 @@ var BlackHole=preload("res://scenes/BlackHoleCool.tscn")
 var Block=preload("res://scenes/rectangleSoftBody.tscn")
 var Cannon=preload("res://scenes/cannon.tscn")
 var HarderBlock=preload("res://scenes/harder_block_body.tscn")
+var BiggerBlackHole=preload("res://scenes/BiggerBlackHole.tscn")
 
 func _ready() -> void:
 	run()
@@ -17,14 +18,16 @@ func run() -> void:
 		if(global.paused==false and !global.gameOver and global.gameStarted):
 			if global.score<20000:
 				BlockSpawn()
-			if global.score>20000:
-				HarderBlockSpawn()
-				HarderBlockSpawn()
 			if global.score<30000:
 				BlackHoleSpawn()
 				CannonSpawn()
+			if global.score>20000:
+				HarderBlockSpawn()
+				HarderBlockSpawn()
 			if global.score>30000:
 				BiggerBlackHoleSpawn()
+				BiggerBlackHoleSpawn()
+				HarderCannonSpawn()
 				HarderCannonSpawn()
 
 
@@ -32,6 +35,7 @@ func run() -> void:
 @onready var BlockHolder: Node2D = $BlockHolder
 @onready var CannonHolder: Node2D = $CannonHolder
 @onready var HarderBlockHolder: Node2D = $"../Hud/HarderBlockHolder"
+@onready var BiggerBlackHoleContainer: Node2D = $BiggerBlackHoles
 
 func HarderBlockSpawn():
 	#Falling Block Spawning
@@ -43,7 +47,13 @@ func HarderBlockSpawn():
 		HarderBlockHolder.add_child(HarderBlockInstance)
 
 func BiggerBlackHoleSpawn():
-	pass
+	#Black Hole Spawning
+	var DecisiveNumber=rng.randi_range(0,5000)
+	if DecisiveNumber<clamp((global.score-10000)/600,0,2000):
+		var BiggerBlackHoleInstance=BiggerBlackHole.instantiate()
+		BiggerBlackHoleInstance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-540,540),randf_range(2000,4000))
+		BiggerBlackHoleInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		BiggerBlackHoleContainer.add_child(BiggerBlackHoleInstance)
 
 func HarderCannonSpawn():
 	pass
