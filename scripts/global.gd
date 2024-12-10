@@ -8,6 +8,7 @@ var HighScore:int=0
 var starScore:int=0
 var paused:bool=false
 var Upgrades=[0,0,0,0,0,0,0,0,0,0]
+var noCD=false
 
 func _process(_delta: float) -> void:
 	maxScore=max(score,maxScore)

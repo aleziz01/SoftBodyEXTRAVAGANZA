@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://pb8ik6kvcejs"]
+
+[ext_resource type="Script" path="res://PowerUp.gd" id="1_4hrs5"]
+[ext_resource type="Script" path="res://power_up_component.gd" id="2_6lf66"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_cg518"]
+radius = 2.75
+
+[node name="PowerupNoCD" type="Area2D"]
+script = ExtResource("1_4hrs5")
+
+[node name="PowerUpComponent" type="Node2D" parent="."]
+script = ExtResource("2_6lf66")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(7, 7)
+shape = SubResource("CircleShape2D_cg518")
+
+[node name="Sprite" type="Node2D" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="Sprite"]
+polygon = PackedVector2Array(-9, -17, 9, -17, 1, 0, 0, 0, -1, 0)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Sprite"]
+scale = Vector2(1, -1)
+polygon = PackedVector2Array(-9, -17, 9, -17, 1, 0, 0, 0, -1, 0)
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
