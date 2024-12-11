@@ -15,3 +15,12 @@ func _on_body_entered(body: Node2D) -> void:
 		hide()
 		await get_tree().create_timer(26).timeout
 		queue_free()
+
+var mainSoftBody: Node2D
+func unload():
+	while(true):
+		await get_tree().create_timer(0.1).timeout
+		if(global.gameOver and global_position.y+500<mainSoftBody.realPos):
+			queue_free()
+		if(!global.gameOver and global_position.y-2000>mainSoftBody.realPos and mainSoftBody):
+			queue_free()

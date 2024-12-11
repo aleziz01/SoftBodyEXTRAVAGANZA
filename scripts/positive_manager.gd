@@ -30,12 +30,28 @@ func run() -> void:
 			score100Spawn()
 			score100Spawn()
 			score400Spawn()
+			#powerUpSpawns
+			noCdPowerupSpawn()
 
 var scoreStar1=preload("res://scenes/1ScoreStar.tscn")
 var scoreStar5=preload("res://scenes/5ScoreStar.tscn")
 var scoreStar25=preload("res://scenes/25ScoreStar.tscn")
+var scoreStar50=preload("res://scenes/50ScoreStar.tscn")
+var scoreStar100=preload("res://scenes/100ScoreStar.tscn")
+var scoreStar400=preload("res://scenes/400ScoreStar.tscn")
+
+var noCdPowerup=preload("res://scenes/NoCDPowerup.tscn")
+
 @onready var scoreStarsHolder: Node2D = $ScoreStars
 @onready var mainSoftBody: Node2D = $"../mainSoftBody"
+
+func noCdPowerupSpawn(): #0.02% chance to spawn every 10th of a second max
+	var DecisiveNumber=rng.randi_range(0,1000000/(global.Upgrades[5]+1))
+	if DecisiveNumber<=clamp((global.score)/2,0,2000):
+		var noCdPowerupInstance=noCdPowerup.instantiate()
+		noCdPowerupInstance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
+		noCdPowerupInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		scoreStarsHolder.add_child(noCdPowerupInstance)
 
 func score1Spawn():
 	var DecisiveNumber=rng.randi_range(0,3000)
@@ -64,7 +80,7 @@ func score25Spawn():
 func score50Spawn():
 	var DecisiveNumber=rng.randi_range(0,3000)
 	if DecisiveNumber<clamp((global.score-10000)/10,0,2000):
-		var scoreStar50Instance=scoreStar25.instantiate()
+		var scoreStar50Instance=scoreStar50.instantiate()
 		scoreStar50Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
 		scoreStar50Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(scoreStar50Instance)
@@ -72,7 +88,7 @@ func score50Spawn():
 func score100Spawn():
 	var DecisiveNumber=rng.randi_range(0,3000)
 	if DecisiveNumber<clamp((global.score-20000)/13,0,2000):
-		var scoreStar100Instance=scoreStar25.instantiate()
+		var scoreStar100Instance=scoreStar100.instantiate()
 		scoreStar100Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
 		scoreStar100Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(scoreStar100Instance)
@@ -80,7 +96,7 @@ func score100Spawn():
 func score400Spawn():
 	var DecisiveNumber=rng.randi_range(0,3000)
 	if DecisiveNumber<clamp((global.score-45000)/20,0,2000):
-		var scoreStar400Instance=scoreStar25.instantiate()
+		var scoreStar400Instance=scoreStar400.instantiate()
 		scoreStar400Instance.global_position=Vector2(0,mainSoftBody.realPos)-Vector2(randf_range(-560,560),randf_range(1000,3000))
 		scoreStar400Instance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(scoreStar400Instance)

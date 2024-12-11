@@ -1,10 +1,9 @@
-[gd_scene load_steps=181 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=180 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
 [ext_resource type="Script" path="res://scripts/positive_manager.gd" id="2_4g71p"]
 [ext_resource type="Script" path="res://scripts/negative_manager.gd" id="3_c72lr"]
-[ext_resource type="PackedScene" uid="uid://pb8ik6kvcejs" path="res://powerup.tscn" id="3_cx7u1"]
 [ext_resource type="Script" path="res://scripts/mainSoftBody.gd" id="4_hht1j"]
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
@@ -997,9 +996,6 @@ script = ExtResource("2_4g71p")
 [node name="ScoreStars" type="Node2D" parent="PositiveManager"]
 
 [node name="PowerUps" type="Node2D" parent="PositiveManager"]
-
-[node name="PowerupNoCD" parent="PositiveManager/PowerUps" instance=ExtResource("3_cx7u1")]
-position = Vector2(-64.935, -290.98)
 
 [node name="NegativeManager" type="Node2D" parent="."]
 script = ExtResource("3_c72lr")
