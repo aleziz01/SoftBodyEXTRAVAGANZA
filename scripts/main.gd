@@ -10,16 +10,18 @@ func _enter_tree() -> void:
 var cooldown=false
 func _input(_event: InputEvent) -> void:
 	if Input.is_action_just_pressed("explode") and (!cooldown or global.noCD) and !global.gameOver and global.gameStarted:
-		cooldown=true
-		cooldownBar.value=0
-		cooldownBar.show()
-		timer.start()
+		if(!global.noCD): #fixes bugs
+			cooldown=true
+			cooldownBar.value=0
+			cooldownBar.show()
+			timer.start()
 		var explosionInstance=explosion.instantiate()
 		explosionInstance.global_position=get_global_mouse_position()
 		add_child(explosionInstance)
-		await get_tree().create_timer(0.7).timeout
-		cooldown=false
-		timer.stop()
+		if(!global.noCD): #fixes bugs
+			await get_tree().create_timer(0.7).timeout
+			cooldown=false
+			timer.stop()
 
 @onready var softBody=$mainSoftBody
 @onready var camera: Camera2D = $Hud
