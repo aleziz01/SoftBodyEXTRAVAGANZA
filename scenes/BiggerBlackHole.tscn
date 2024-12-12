@@ -42,6 +42,7 @@ gravity_direction = Vector2(0, 0)
 gravity = 20000.0
 script = ExtResource("1_7llse")
 ScoreStar = NodePath("400Score")
+limit = Vector2(1.4, 1.8)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_nsfm2")

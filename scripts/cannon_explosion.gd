@@ -1,6 +1,7 @@
 extends Area2D
 
 func _ready() -> void:
+	print(global_position)
 	$GPUParticles2D.emitting=true
 
 func _on_disable_collision_timeout() -> void:

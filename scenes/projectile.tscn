@@ -1,6 +1,7 @@
-[gd_scene load_steps=9 format=3 uid="uid://cn3vihpxtp063"]
+[gd_scene load_steps=10 format=3 uid="uid://cn3vihpxtp063"]
 
 [ext_resource type="Texture2D" uid="uid://b41ppn37rhyr0" path="res://art/placeholder/block.png" id="1_6o67x"]
+[ext_resource type="Script" path="res://scenes/projectile.gd" id="1_sjshq"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_tfynr"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_pv1vk"]
@@ -46,6 +47,7 @@ size = Vector2(30.4, 30.4)
 
 [node name="Projectile" type="Node2D"]
 modulate = Color(1, 1, 1, 0.698039)
+script = ExtResource("1_sjshq")
 
 [node name="SoftBody2D" type="Polygon2D" parent="."]
 position = Vector2(-25.5, -25.5)
@@ -83,6 +85,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-1" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(17.2829, 38.6896)
 rotation = -0.785398
+scale = Vector2(1, 1)
 rest = Transform2D(0.707107, -0.707107, 0.707107, 0.707107, 17.2829, 38.6896)
 auto_calculate_length_and_angle = false
 length = 40.0
@@ -96,6 +99,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-2" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(38.6896, 17.2829)
 rotation = 2.35619
+scale = Vector2(1, 1)
 rest = Transform2D(-0.707107, 0.707107, -0.707107, -0.707107, 38.6896, 17.2829)
 auto_calculate_length_and_angle = false
 length = 40.0
@@ -109,6 +113,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-3" type="Bone2D" parent="SoftBody2D/Skeleton2D"]
 position = Vector2(36.3431, 36.3431)
 rotation = 3.0191
+scale = Vector2(1, 1)
 rest = Transform2D(-0.992508, 0.122184, -0.122184, -0.992508, 36.3431, 36.3431)
 auto_calculate_length_and_angle = false
 length = 40.0

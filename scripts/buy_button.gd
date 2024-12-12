@@ -9,6 +9,7 @@ extends TextureButton
 
 
 func _ready() -> void:
+	hide()
 	await get_tree().create_timer(0.01).timeout
 	connect("pressed",_on_button_pressed)
 	for i in global.Upgrades[upgradeIndex]:

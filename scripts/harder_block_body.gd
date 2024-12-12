@@ -31,7 +31,7 @@ var Block = preload("res://art/placeholder/block.png")
 func _on_timer_timeout() -> void:
 	var BlockInstance=regularBlock.instantiate()
 	BlockInstance.mainSoftBody=mainSoftBody
-	BlockInstance.global_position=Vector2(global_position.x,mainSoftBody.realPos-1000)
+	BlockInstance.global_position=Vector2(global_position.x+speed/300,mainSoftBody.realPos-1000)
 	BlockInstance.get_child(0).mass=1
 	BlockInstance.get_child(0).constant_force=Vector2(0,500)
 	BlockInstance.get_child(0).gravity_scale=4

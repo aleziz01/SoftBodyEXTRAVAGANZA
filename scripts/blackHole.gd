@@ -1,9 +1,10 @@
 extends Area2D
 
 @export var ScoreStar:Area2D
-
+@export var limit=Vector2(1,1)
 func _ready() -> void:
-	var scaler=randf_range(1.4,1.8)
+	print("spawned")
+	var scaler=clamp(randf_range(1.4,1.8),limit.x,limit.y)
 	scale=Vector2(scaler,scaler)
 	ScoreStar.mainSoftBody=mainSoftBody
 	unload()

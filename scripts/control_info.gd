@@ -24,6 +24,7 @@ func explode():
 	await get_tree().create_timer(0.4).timeout
 	var explosionInstance=explosion.instantiate()
 	explosionInstance.global_position=Vector2(61,-255)
+	explosionInstance.gravity=0
 	explosion_holder.add_child(explosionInstance)
 
 func _process(delta: float) -> void:
