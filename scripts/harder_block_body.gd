@@ -14,7 +14,7 @@ var degreeOfLerp=0
 var speed=0
 func UpdateSpeed() -> void:
 	while(true):
-		if(global_position.x<mainSoftBody.realPosx):
+		if(global_position.x<mainSoftBody.realPos.x):
 			speed+=15
 		else:
 			speed-=15
@@ -31,7 +31,7 @@ var Block = preload("res://art/placeholder/block.png")
 func _on_timer_timeout() -> void:
 	var BlockInstance=regularBlock.instantiate()
 	BlockInstance.mainSoftBody=mainSoftBody
-	BlockInstance.global_position=Vector2(global_position.x+speed/30,mainSoftBody.realPos-1000)
+	BlockInstance.global_position=Vector2(global_position.x+speed/30,mainSoftBody.realPos.y-1000)
 	BlockInstance.get_child(0).mass=1
 	BlockInstance.get_child(0).constant_force=Vector2(0,500)
 	BlockInstance.get_child(0).gravity_scale=4
@@ -46,7 +46,7 @@ func _on_timer_timeout() -> void:
 
 func fadeLightOut() -> void:
 	while(light.energy>0):
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.001).timeout
 		light.energy-=0.1
 
 

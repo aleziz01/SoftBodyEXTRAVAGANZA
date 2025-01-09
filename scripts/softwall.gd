@@ -9,7 +9,7 @@ var postSpawnedwall=false
 var rng=RandomNumberGenerator.new()
 var isMinimum=false
 func _physics_process(_delta: float) -> void:
-	if(mainSoftBody.realPos-700<global_position.y and !spawnedwall and !global.gameOver):
+	if(mainSoftBody.realPos.y-700<global_position.y and !spawnedwall and !global.gameOver):
 		spawnedwall=true
 		var wallInstance=wall.instantiate()
 		wallInstance.global_position=global_position-Vector2(0,600)
@@ -24,7 +24,7 @@ func _physics_process(_delta: float) -> void:
 		get_parent().add_child.call_deferred(wallInstance)
 	if global.gameOver:
 		AmI_Minimum()
-	if global.gameOver and !postSpawnedwall and mainSoftBody.realPos+700>global_position.y and isMinimum and global_position.y+400<0:
+	if global.gameOver and !postSpawnedwall and mainSoftBody.realPos.y+700>global_position.y and isMinimum and global_position.y+400<0:
 		postSpawnedwall=true
 		var wallInstance=wall.instantiate()
 		wallInstance.global_position=global_position+Vector2(0,600)
@@ -48,7 +48,7 @@ func AmI_Minimum():
 	
 var DEATH=false
 func _process(_delta: float) -> void:
-	if global_position.y-800>mainSoftBody.realPos and !global.gameOver:
+	if global_position.y-800>mainSoftBody.realPos.y and !global.gameOver:
 		queue_free()
-	elif global.gameOver and global_position.y+800<mainSoftBody.realPos:
+	elif global.gameOver and global_position.y+800<mainSoftBody.realPos.y:
 		queue_free()

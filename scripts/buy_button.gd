@@ -6,6 +6,7 @@ extends TextureButton
 
 @onready var priceLabel: RichTextLabel = $Price
 @onready var shop_tab: Node2D = $".."
+@onready var shop_shader: Sprite2D = $ShopShader
 
 
 func _ready() -> void:
@@ -31,4 +32,4 @@ func checkPrice():
 		disabled=true
 	else:
 		disabled=!(shop_tab.shopOpened==true) #sexy ass code
- 
+	shop_shader.visible=disabled

@@ -1,0 +1,15 @@
+[gd_scene load_steps=5 format=3 uid="uid://bm62bpyg2s2i2"]
+
+[ext_resource type="Shader" path="res://shaders/Shop.gdshader" id="1_ie8eq"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_tqvat"]
+shader = ExtResource("1_ie8eq")
+
+[sub_resource type="Gradient" id="Gradient_nwe82"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bqryj"]
+gradient = SubResource("Gradient_nwe82")
+
+[node name="ShopShader" type="Sprite2D"]
+material = SubResource("ShaderMaterial_tqvat")
+texture = SubResource("GradientTexture2D_bqryj")

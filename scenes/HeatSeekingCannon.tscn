@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://iiq7ihouvcab"]
+
+[ext_resource type="Script" path="res://scripts/cannon.gd" id="1_mw7gk"]
+[ext_resource type="PackedScene" uid="uid://cw2te1v74xneu" path="res://scenes/heat_seeking_component.tscn" id="2_4w5ie"]
+
+[node name="HeatSeekingCannon" type="Node2D"]
+position = Vector2(575, -300)
+script = ExtResource("1_mw7gk")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(-55, -33, 42, -33, 42, 33, -55, 33, 0, 0)
+
+[node name="HeatSeekingComponent" parent="." instance=ExtResource("2_4w5ie")]

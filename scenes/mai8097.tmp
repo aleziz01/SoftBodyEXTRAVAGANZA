@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=125 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/SquareSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -50,6 +50,8 @@
 [ext_resource type="Texture2D" uid="uid://bvu64nn0y0qv2" path="res://art/Buttons/nopress.png" id="38_rncog"]
 [ext_resource type="PackedScene" uid="uid://dygc6c25k8hn4" path="res://scenes/buy_button.tscn" id="45_3rlqg"]
 [ext_resource type="Texture2D" uid="uid://dl2d4vrwsiftw" path="res://art/Buttons/ShopSpritesheet.png" id="45_pai6o"]
+[ext_resource type="PackedScene" uid="uid://778786k37ajh" path="res://shaders/undo_button.tscn" id="51_4w3x5"]
+[ext_resource type="Script" path="res://shaders/undo_button.gd" id="52_3mqpq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -761,9 +763,6 @@ rotation = -0.000402473
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
 
-[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
-
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
 
@@ -912,6 +911,9 @@ rotation = -0.000402363
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1221,6 +1223,7 @@ texture_normal = ExtResource("6_dsoo8")
 position = Vector2(128.99, -15.19)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_v5wis")
+frame = 17
 speed_scale = 0.0
 
 [node name="BuyButton1" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
@@ -1282,6 +1285,7 @@ upgradeIndex = 5
 offset_bottom = 180.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton6" index="1"]
+position = Vector2(70, 50)
 scale = Vector2(2.1875, 1.71875)
 
 [node name="BuyButton7" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
@@ -1295,6 +1299,7 @@ upgradeIndex = 6
 offset_bottom = 180.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton7" index="1"]
+position = Vector2(70, 50)
 scale = Vector2(2.1875, 1.71875)
 
 [node name="BuyButton8" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
@@ -1308,6 +1313,7 @@ upgradeIndex = 7
 offset_bottom = 180.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton8" index="1"]
+position = Vector2(70, 50)
 scale = Vector2(2.1875, 1.71875)
 
 [node name="BuyButton9" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
@@ -1337,6 +1343,13 @@ offset_bottom = 180.0
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton10" index="1"]
 position = Vector2(70, 55)
 scale = Vector2(2.1875, 1.71875)
+
+[node name="UndoButton" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("51_4w3x5")]
+offset_left = 358.0
+offset_top = 254.0
+offset_right = 569.0
+offset_bottom = 335.0
+script = ExtResource("52_3mqpq")
 
 [node name="PointLight2D" type="PointLight2D" parent="MainMenu/CanvasLayer"]
 position = Vector2(-0.999969, -1)

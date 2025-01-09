@@ -13,11 +13,8 @@ func _process(_delta: float) -> void:
 
 
 func CalculatePos():
-	var tempPos=0
-	var tempPosx=0
+	var tempPos=Vector2(0,0)
 	for i in skeleton.get_children():
-		tempPos+=i.global_position.y
-		tempPosx+=i.global_position.x
-	realPos=tempPos/skeleton.get_child_count()
-	realPosx=tempPosx/skeleton.get_child_count()
-	global.score=-1*(realPos)/20+13
+		tempPos+=Vector2(i.global_position.x,i.global_position.y)
+	realPos=Vector2(tempPos.x/skeleton.get_child_count(),tempPos.y/skeleton.get_child_count())
+	global.score=-1*(realPos.y)/20+13

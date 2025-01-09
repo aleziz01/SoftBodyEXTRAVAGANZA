@@ -5,7 +5,7 @@ var spawnedBG=false
 var rng=RandomNumberGenerator.new()
 
 func _physics_process(_delta: float) -> void:
-	if(mainSoftBody.realPos-700<global_position.y and !spawnedBG):
+	if(mainSoftBody.realPos.y-700<global_position.y and !spawnedBG):
 		spawnedBG=true
 		var bgInstance=bg.instantiate()
 		bgInstance.global_position=global_position-Vector2(0,600)

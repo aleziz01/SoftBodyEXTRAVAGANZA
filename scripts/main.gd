@@ -29,7 +29,7 @@ func _input(_event: InputEvent) -> void:
 @onready var scoreShower: Label = $Hud/ScoreShower
 
 func _process(_delta: float) -> void:
-	if camera and camera.global_position.y-softBody.realPos<-450 and !global.gameOver:
+	if camera and camera.global_position.y-softBody.realPos.y<-450 and !global.gameOver:
 		global.gameOver=true
 		gameover()
 	meters_traveled.text="METERS:"+str(global.score+1)
