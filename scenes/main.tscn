@@ -4,10 +4,10 @@
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
 [ext_resource type="Script" path="res://scripts/positive_manager.gd" id="2_4g71p"]
 [ext_resource type="Script" path="res://scripts/negative_manager.gd" id="3_c72lr"]
-[ext_resource type="Script" path="res://scripts/mainSoftBody.gd" id="4_hht1j"]
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
+[ext_resource type="PackedScene" uid="uid://c42jo216jtsx3" path="res://scenes/harder_block_body.tscn" id="6_yn7fk"]
 [ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
 [ext_resource type="Texture2D" uid="uid://d15j8tnx5ti6v" path="res://art/redbar.png" id="8_qtoxl"]
 [ext_resource type="PackedScene" uid="uid://3p746m5gx6b4" path="res://scenes/BG.tscn" id="8_srnyt"]
@@ -590,7 +590,6 @@ script = ExtResource("3_c72lr")
 [node name="ProjectileHolder" type="Node2D" parent="NegativeManager/CannonHolder"]
 
 [node name="mainSoftBody" parent="." instance=ExtResource("1_6q4na")]
-script = ExtResource("4_hht1j")
 
 [node name="Hud" type="Camera2D" parent="."]
 modulate = Color(1, 1, 1, 0)
@@ -599,6 +598,8 @@ texture_filter = 1
 script = ExtResource("5_vp50i")
 
 [node name="HarderBlockHolder" type="Node2D" parent="Hud"]
+
+[node name="HarderBlockBody" parent="Hud/HarderBlockHolder" instance=ExtResource("6_yn7fk")]
 
 [node name="WhatSong" type="RichTextLabel" parent="Hud"]
 offset_left = -850.0
@@ -739,7 +740,7 @@ scale = Vector2(0.999831, 0.999831)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999988, 0.999988)
+scale = Vector2(0.999987, 0.999987)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
@@ -760,9 +761,6 @@ rotation = -0.000402473
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
-
-[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -891,7 +889,7 @@ scale = Vector2(0.999893, 0.999893)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999988, 0.999988)
+scale = Vector2(0.999987, 0.999987)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
@@ -912,6 +910,9 @@ rotation = -0.000402363
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)

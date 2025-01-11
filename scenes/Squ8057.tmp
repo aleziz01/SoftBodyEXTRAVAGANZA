@@ -1707,6 +1707,5 @@ node_b = NodePath("../../Bone-20")
 softness = 60.0
 
 [node name="Shield" parent="." instance=ExtResource("3_etpy1")]
-scale = Vector2(7.955, 7.955)
-gravity_space_override = 0
+scale = Vector2(21.385, 21.385)
 gravity = -1e+06

@@ -1,12 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://dlfilxus23yds"]
+[gd_scene load_steps=3 format=3 uid="uid://dlfilxus23yds"]
 
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="1_8lauv"]
-[ext_resource type="PackedScene" uid="uid://bm62bpyg2s2i2" path="res://shaders/shop_shader.tscn" id="2_s1b8v"]
-
-[sub_resource type="Gradient" id="Gradient_wcleq"]
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_7lemf"]
-gradient = SubResource("Gradient_wcleq")
+[ext_resource type="PackedScene" uid="uid://cqrpgcmovhw4l" path="res://shaders/shieldShader.tscn" id="3_jyxyg"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -15,7 +10,6 @@ position = Vector2(0.499969, 0.500015)
 scale = Vector2(11.0078, 7.27344)
 texture = ExtResource("1_8lauv")
 
-[node name="ShopShader" parent="." instance=ExtResource("2_s1b8v")]
-position = Vector2(902, 155)
-scale = Vector2(4.37891, 3.69922)
-texture = SubResource("GradientTexture2D_7lemf")
+[node name="ShieldShader" parent="." instance=ExtResource("3_jyxyg")]
+position = Vector2(-185, -68)
+scale = Vector2(11.0151, 7.25147)

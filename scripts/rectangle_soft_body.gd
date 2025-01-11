@@ -1,6 +1,5 @@
 extends Node2D
 
-
 func _enter_tree() -> void:
 	unload()
 	rotation=randf_range(0,360)
