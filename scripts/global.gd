@@ -8,6 +8,8 @@ var HighScore:int=0
 var starScore:int=0
 var paused:bool=false
 var Upgrades=[0,0,0,0,0,0,0,0,0,0]
+var StarUpgradesPlus=[1,3,7,15,0,15,0,50]
+var StarUpgradesTimes=[1,1,1,1,2,2,4,4]
 var noCD=false
 
 func _process(_delta: float) -> void:

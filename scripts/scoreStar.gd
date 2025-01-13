@@ -2,6 +2,7 @@ extends Area2D
 
 @export var scoreValue:int=1
 var isDead=false
+
 func _on_body_entered(body: Node2D) -> void:
 	var object=body.get_parent().get_parent()
 	if object.name=="mainSoftBody" and !isDead and !global.gameOver:
@@ -11,6 +12,8 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _ready() -> void:
 	unload()
+	scoreValue*=global.StarUpgradesTimes[global.Upgrades[4]-1]
+	scoreValue+=global.StarUpgradesPlus[global.Upgrades[4]-1]
 
 var mainSoftBody: Node2D
 

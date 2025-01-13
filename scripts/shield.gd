@@ -4,6 +4,10 @@ extends Area2D
 @onready var mainSoftBody=get_parent()
 var shieldHP=global.Upgrades[2]
 
+func _ready() -> void:
+	if(global.Upgrades[2]==0):
+		queue_free()
+
 func _process(delta: float) -> void:
 	global_position=mainSoftBody.realPos
 

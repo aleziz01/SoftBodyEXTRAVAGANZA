@@ -4,7 +4,11 @@ extends Node2D
 @onready var softBody=get_child(0)
 var realPos:Vector2=Vector2(0,0)
 
+func applyUpgrades():
+	softBody.gravity_scale=1.0-global.Upgrades[9]/20.0
+
 func _ready() -> void:
+	applyUpgrades()
 	CalculatePos()
 
 func _process(_delta: float) -> void:

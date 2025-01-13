@@ -7,6 +7,12 @@ var Cannon=preload("res://scenes/cannon.tscn")
 var HarderBlock=preload("res://scenes/harder_block_body.tscn")
 var BiggerBlackHole=preload("res://scenes/BiggerBlackHole.tscn")
 
+@onready var BlackHoleContainer: Node2D = $BlackHoles
+@onready var BlockHolder: Node2D = $BlockHolder
+@onready var CannonHolder: Node2D = $CannonHolder
+@onready var HarderBlockHolder: Node2D = $"../Hud/HarderBlockHolder"
+@onready var BiggerBlackHoleContainer: Node2D = $BiggerBlackHoles
+
 func _ready() -> void:
 	run()
 
@@ -17,64 +23,27 @@ func run() -> void:
 		#have separate spawn functions for all negative objects.
 		if(global.paused==false and !global.gameOver and global.gameStarted):
 			if global.score<20000:
-				BlockSpawn()
+				EnemySpawn(Block,(global.score)/100,rng.randi_range(0,2000),BlockHolder) #FALLING BLOCK SPAWNER
 			if global.score<30000:
-				BlackHoleSpawn()
-				CannonSpawn()
+				EnemySpawn(BlackHole,(global.score-5000)/100,rng.randi_range(0,3000),BlackHoleContainer)
+				CannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
 			if global.score>20000:
-				HarderBlockSpawn()
-				HarderBlockSpawn()
+				EnemySpawn(HarderBlock,(global.score)/500,rng.randi_range(0,5000),HarderBlockHolder)
+				EnemySpawn(HarderBlock,(global.score)/500,rng.randi_range(0,5000),HarderBlockHolder)
 			if global.score>30000:
-				BiggerBlackHoleSpawn()
-				BiggerBlackHoleSpawn()
-				HarderCannonSpawn()
-				HarderCannonSpawn()
+				EnemySpawn(BiggerBlackHole,(global.score-10000)/600,rng.randi_range(0,5000),BiggerBlackHoleContainer)
+				HarderCannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
+				HarderCannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
 
-
-@onready var BlackHoleContainer: Node2D = $BlackHoles
-@onready var BlockHolder: Node2D = $BlockHolder
-@onready var CannonHolder: Node2D = $CannonHolder
-@onready var HarderBlockHolder: Node2D = $"../Hud/HarderBlockHolder"
-@onready var BiggerBlackHoleContainer: Node2D = $BiggerBlackHoles
-
-func HarderBlockSpawn():
-	#Falling Block Spawning
-	var DecisiveNumber=rng.randi_range(0,5000)
-	if DecisiveNumber<=clamp((global.score)/500,0,2000):
-		var HarderBlockInstance=HarderBlock.instantiate()
-		HarderBlockInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-540,540),randf_range(1500,3000))
-		HarderBlockInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
-		HarderBlockHolder.add_child(HarderBlockInstance)
-
-func BiggerBlackHoleSpawn():
-	#Black Hole Spawning
-	var DecisiveNumber=rng.randi_range(0,5000)
-	if DecisiveNumber<clamp((global.score-10000)/600,0,2000):
-		var BiggerBlackHoleInstance=BiggerBlackHole.instantiate()
-		BiggerBlackHoleInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-540,540),randf_range(2000,4000))
-		BiggerBlackHoleInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
-		BiggerBlackHoleContainer.add_child(BiggerBlackHoleInstance)
+func EnemySpawn(thingToSpawn,condition,DecisiveNumber,Holder):
+	if DecisiveNumber<clamp(condition,0,2000):
+		var thingInstance=thingToSpawn.instantiate()
+		thingInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-540,540),randf_range(1500,4000))
+		thingInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		Holder.add_child(thingInstance)
 
 func HarderCannonSpawn():
 	pass
-
-func BlackHoleSpawn():
-	#Black Hole Spawning
-	var DecisiveNumber=rng.randi_range(0,3000)
-	if DecisiveNumber<clamp((global.score-5000)/100,0,2000):
-		var BlackHoleInstance=BlackHole.instantiate()
-		BlackHoleInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-540,540),randf_range(2000,4000))
-		BlackHoleInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
-		BlackHoleContainer.add_child(BlackHoleInstance)
-
-func BlockSpawn():
-	#Falling Block Spawning
-	var DecisiveNumber=rng.randi_range(0,2000)
-	if DecisiveNumber<=clamp((global.score)/100,0,2000):
-		var BlockInstance=Block.instantiate()
-		BlockInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-540,540),randf_range(1500,3000))
-		BlockInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
-		BlockHolder.add_child(BlockInstance)
 
 func CannonSpawn():
 	var DecisiveNumber=rng.randi_range(0,4000)
