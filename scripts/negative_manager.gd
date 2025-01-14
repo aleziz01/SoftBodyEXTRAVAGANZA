@@ -23,15 +23,15 @@ func run() -> void:
 		#have separate spawn functions for all negative objects.
 		if(global.paused==false and !global.gameOver and global.gameStarted):
 			if global.score<20000:
-				EnemySpawn(Block,(global.score)/100,rng.randi_range(0,2000),BlockHolder) #FALLING BLOCK SPAWNER
+				EnemySpawn(Block,(global.score)/(100+global.Upgrades[6]*25),rng.randi_range(0,2000+global.Upgrades[6]*500),BlockHolder) #FALLING BLOCK SPAWNER
 			if global.score<30000:
-				EnemySpawn(BlackHole,(global.score-5000)/100,rng.randi_range(0,3000),BlackHoleContainer)
+				EnemySpawn(BlackHole,(global.score-5000)/(100+global.Upgrades[6]*25),rng.randi_range(0,3000+global.Upgrades[6]*500),BlackHoleContainer)
 				CannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
 			if global.score>20000:
-				EnemySpawn(HarderBlock,(global.score)/500,rng.randi_range(0,5000),HarderBlockHolder)
-				EnemySpawn(HarderBlock,(global.score)/500,rng.randi_range(0,5000),HarderBlockHolder)
+				EnemySpawn(HarderBlock,(global.score)/(500+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6])*500,HarderBlockHolder)
+				EnemySpawn(HarderBlock,(global.score)/(500+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6])*500,HarderBlockHolder)
 			if global.score>30000:
-				EnemySpawn(BiggerBlackHole,(global.score-10000)/600,rng.randi_range(0,5000),BiggerBlackHoleContainer)
+				EnemySpawn(BiggerBlackHole,(global.score-10000)/(600+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6]*500),BiggerBlackHoleContainer)
 				HarderCannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
 				HarderCannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
 
@@ -46,8 +46,8 @@ func HarderCannonSpawn():
 	pass
 
 func CannonSpawn():
-	var DecisiveNumber=rng.randi_range(0,4000)
-	if DecisiveNumber<clamp((global.score-3000)/100,0,2000):
+	var DecisiveNumber=rng.randi_range(0,4000+global.Upgrades[6]*500)
+	if DecisiveNumber<clamp((global.score-3000)/(100+25*global.Upgrades[6]),0,2000):
 		var CannonInstance=Cannon.instantiate()
 		var sign=sign(randi_range(-101,100))
 		CannonInstance.scale.x=sign
