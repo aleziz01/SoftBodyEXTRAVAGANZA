@@ -1,32 +1,32 @@
-[gd_scene load_steps=8 format=3 uid="uid://doisiumnq0wqa"]
+[gd_scene load_steps=8 format=3 uid="uid://c2m07hdoyvrl6"]
 
-[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_8n3ms"]
+[ext_resource type="Script" path="res://scripts/self_destruct_explosion.gd" id="1_roe2k"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f7qed"]
+[sub_resource type="CircleShape2D" id="CircleShape2D_rcgv7"]
 radius = 61.0
 
-[sub_resource type="Curve" id="Curve_e4kod"]
+[sub_resource type="Curve" id="Curve_iff6a"]
 min_value = -360.0
 max_value = 360.0
 _data = [Vector2(0, -360), 0.0, 0.0, 0, 0, Vector2(0.993333, 360), 0.0, 0.0, 0, 0]
 point_count = 2
 
-[sub_resource type="CurveTexture" id="CurveTexture_y1hsu"]
-curve = SubResource("Curve_e4kod")
+[sub_resource type="CurveTexture" id="CurveTexture_j4mrw"]
+curve = SubResource("Curve_iff6a")
 
-[sub_resource type="Gradient" id="Gradient_v3mu1"]
+[sub_resource type="Gradient" id="Gradient_krjjd"]
 offsets = PackedFloat32Array(0.00819672, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_u8unh"]
-gradient = SubResource("Gradient_v3mu1")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_5scrb"]
+gradient = SubResource("Gradient_krjjd")
 width = 512
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u1ym7"]
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_10xlk"]
 particle_flag_disable_z = true
 angle_min = 1.07288e-05
 angle_max = 360.0
-angle_curve = SubResource("CurveTexture_y1hsu")
+angle_curve = SubResource("CurveTexture_j4mrw")
 direction = Vector3(0, 0, 0)
 spread = 180.0
 initial_velocity_min = 150.0
@@ -35,34 +35,32 @@ gravity = Vector3(0, 98, 0)
 scale_min = 2.0
 scale_max = 8.0
 color = Color(1, 0, 0, 1)
-color_ramp = SubResource("GradientTexture1D_u8unh")
+color_ramp = SubResource("GradientTexture1D_5scrb")
 hue_variation_min = -2.23517e-08
 hue_variation_max = 0.13
 collision_mode = 1
 collision_friction = 0.0
 collision_bounce = 0.0
 
-[node name="Layer1" type="Area2D"]
-gravity_space_override = 1
-gravity_point = true
+[node name="SelfDestructExplosion" type="Area2D"]
+scale = Vector2(4, 4)
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
-gravity = -20500.0
-script = ExtResource("1_8n3ms")
+script = ExtResource("1_roe2k")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_f7qed")
+shape = SubResource("CircleShape2D_rcgv7")
 
 [node name="disableCollision" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 0.5
 one_shot = true
 autostart = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 128
+amount = 1028
 sub_emitter = NodePath(".")
-process_material = SubResource("ParticleProcessMaterial_u1ym7")
+process_material = SubResource("ParticleProcessMaterial_10xlk")
 lifetime = 2.0
 one_shot = true
 speed_scale = 1.5
@@ -72,6 +70,5 @@ randomness = 1.0
 [node name="KILLTIMER" type="Timer" parent="."]
 autostart = true
 
-[connection signal="body_entered" from="." to="." method="_on_layer1_entered"]
 [connection signal="timeout" from="disableCollision" to="." method="_on_disable_collision_timeout"]
 [connection signal="timeout" from="KILLTIMER" to="." method="_on_killtimer_timeout"]

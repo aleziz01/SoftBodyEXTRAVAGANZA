@@ -12,6 +12,13 @@ var StarUpgradesPlus=[1,3,7,15,0,15,0,50]
 var StarUpgradesTimes=[1,1,1,1,2,2,4,4]
 var noCD=false
 
+var selfDestructHP=0
+
+func _ready() -> void:
+	selfDestructHP=Upgrades[2]/3+1
+	if(Upgrades[2]==0):
+		selfDestructHP=0
+
 func _process(_delta: float) -> void:
 	maxScore=max(score,maxScore)
 
