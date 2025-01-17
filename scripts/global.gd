@@ -11,6 +11,8 @@ var Upgrades=[0,0,0,0,0,0,0,0,0,0]
 var StarUpgradesPlus=[1,3,7,15,0,15,0,50]
 var StarUpgradesTimes=[1,1,1,1,2,2,4,4]
 var noCD=false
+var Explosion1Done=false
+var gameActuallyStarted=false
 
 var selfDestructHP=0
 

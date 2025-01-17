@@ -40,13 +40,14 @@ func _on_yes_button_pressed() -> void:
 	global.HighScore=0
 	global.maxScore=0
 	global.Upgrades=[0,0,0,0,0,0,0,0,0,0]
-	global.gameStarted=true
 	global.fadeOut(main_menu)
 	global.fadeOut(control_info)
 	global.fadeOut(self)
 	await get_tree().create_timer(1).timeout
+	global.gameStarted=true
 	global.fadeIn($"../Hud")
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(4).timeout
+	global.gameActuallyStarted=true
 	queue_free()
 
 
@@ -57,12 +58,12 @@ func _on_continue_button_pressed() -> void:
 	shop_button.disabled=true
 	continue_button.disabled=true
 	$CanvasLayer/PointLight2D.queue_free()
-	global.gameStarted=true
 	global.fadeOut(main_menu)
 	global.fadeOut(control_info)
 	global.fadeOut(self)
 	await get_tree().create_timer(1).timeout
 	global.fadeIn($"../Hud")
+	global.gameStarted=true
 	await get_tree().create_timer(4).timeout
 	queue_free()
 

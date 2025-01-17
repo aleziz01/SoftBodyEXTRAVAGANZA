@@ -38,7 +38,7 @@ func run() -> void:
 func EnemySpawn(thingToSpawn,condition,DecisiveNumber,Holder):
 	if DecisiveNumber<clamp(condition,0,2000):
 		var thingInstance=thingToSpawn.instantiate()
-		thingInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-540,540),randf_range(1500,4000))
+		thingInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-520,520),randf_range(1500,4000))
 		thingInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		Holder.add_child(thingInstance)
 
