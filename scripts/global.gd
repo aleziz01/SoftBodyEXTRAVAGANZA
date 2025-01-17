@@ -15,9 +15,7 @@ var noCD=false
 var selfDestructHP=0
 
 func _ready() -> void:
-	selfDestructHP=Upgrades[2]/3+1
-	if(Upgrades[2]==0):
-		selfDestructHP=0
+	selfDestructHP=Upgrades[3]
 
 func _process(_delta: float) -> void:
 	maxScore=max(score,maxScore)

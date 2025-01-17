@@ -20,3 +20,10 @@ func CalculatePos():
 		tempPos+=Vector2(i.global_position.x,i.global_position.y)
 	realPos=Vector2(tempPos.x/skeleton.get_child_count(),tempPos.y/skeleton.get_child_count())
 	global.score=-1*(realPos.y)/20+13
+
+var SDE = preload("res://scenes/SelfDestructExplosion.tscn") #SelfDestructExplosion
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("selfDestruct") and global.selfDestructHP>0 and global.gameStarted:
+		var SDEInstance=SDE.instantiate()
+		SDEInstance.global_position=realPos
+		add_child(SDEInstance)

@@ -3,7 +3,7 @@ extends Node2D
 @onready var mainSoftBody: Node2D = $"../../../mainSoftBody"
 @onready var BlockHolder: Node2D = $"../../../NegativeManager/BlockHolder"
 
-var regularBlock=preload("res://scenes/rectangleSoftBody.tscn")
+var regularBlock=preload("res://scenes/TreeSoftBody.tscn")
 
 var pos:Vector2
 

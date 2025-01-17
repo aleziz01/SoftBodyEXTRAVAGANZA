@@ -9,7 +9,7 @@ func run() -> void:
 	while(true):
 		await get_tree().create_timer(0.1).timeout
 		#have separate spawn functions for all positive objects.
-		if(get_tree().paused==false and !global.gameOver and global.gameStarted):
+		if(get_tree().paused==false and !global.gameOver and global.gameStarted and !global.paused):
 			if global.score<4500:
 				scoreSpawner(scoreStar1,global.score)
 				scoreSpawner(scoreStar1,global.score)
@@ -46,15 +46,15 @@ var noCdPowerup=preload("res://scenes/NoCDPowerup.tscn")
 @onready var mainSoftBody: Node2D = $"../mainSoftBody"
 
 func noCdPowerupSpawn(): #0.02% chance to spawn every 10th of a second max
-	var DecisiveNumber=rng.randi_range(0,1000000/(global.Upgrades[5]+1))
-	if DecisiveNumber<=clamp((global.score)/2,0,2000):
+	var DecisiveNumber=rng.randi_range(0,1000000/clamp(global.Upgrades[5]+1,1,12))
+	if DecisiveNumber<clamp((global.score)/2,0,2000):
 		var noCdPowerupInstance=noCdPowerup.instantiate()
 		noCdPowerupInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-560,560),randf_range(1000,3000))
 		noCdPowerupInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		scoreStarsHolder.add_child(noCdPowerupInstance)
 
 func scoreSpawner(spawnedStar,condition):
-	var DecisiveNumber=rng.randi_range(0,8000/global.Upgrades[5]+1)
+	var DecisiveNumber=rng.randi_range(0,8000/clamp(global.Upgrades[5]+1,1,12))
 	if (DecisiveNumber<clamp(condition,0,2000)):
 		var scoreStarInstance=spawnedStar.instantiate()
 		scoreStarInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-560,560),randf_range(1000,3000))

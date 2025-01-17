@@ -2,7 +2,7 @@ extends Node2D
 
 @onready var mainSoftBody: Node2D = $"../mainSoftBody"
 var BlackHole=preload("res://scenes/BlackHoleCool.tscn")
-var Block=preload("res://scenes/rectangleSoftBody.tscn")
+var Block=preload("res://scenes/TreeSoftBody.tscn")
 var Cannon=preload("res://scenes/cannon.tscn")
 var HarderBlock=preload("res://scenes/harder_block_body.tscn")
 var BiggerBlackHole=preload("res://scenes/BiggerBlackHole.tscn")

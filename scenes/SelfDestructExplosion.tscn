@@ -43,7 +43,7 @@ collision_friction = 0.0
 collision_bounce = 0.0
 
 [node name="SelfDestructExplosion" type="Area2D"]
-scale = Vector2(4, 4)
+scale = Vector2(5, 5)
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 script = ExtResource("1_roe2k")
@@ -70,5 +70,6 @@ randomness = 1.0
 [node name="KILLTIMER" type="Timer" parent="."]
 autostart = true
 
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="disableCollision" to="." method="_on_disable_collision_timeout"]
 [connection signal="timeout" from="KILLTIMER" to="." method="_on_killtimer_timeout"]

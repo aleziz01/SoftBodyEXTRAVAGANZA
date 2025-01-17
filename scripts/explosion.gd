@@ -1,4 +1,4 @@
-extends Area2D 
+extends Area2D
 
 #apply all upgrades to the explosion
 func _ready() -> void:

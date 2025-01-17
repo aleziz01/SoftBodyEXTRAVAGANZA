@@ -12,8 +12,9 @@ func _on_body_entered(body: Node2D) -> void:
 
 func _ready() -> void:
 	unload()
-	scoreValue*=global.StarUpgradesTimes[global.Upgrades[4]-1]
-	scoreValue+=global.StarUpgradesPlus[global.Upgrades[4]-1]
+	if(global.Upgrades[4]>0):
+		scoreValue*=global.StarUpgradesTimes[global.Upgrades[4]-1]
+		scoreValue+=global.StarUpgradesPlus[global.Upgrades[4]-1]
 
 var mainSoftBody: Node2D
 
