@@ -13,7 +13,7 @@ build_mode = 1
 polygon = PackedVector2Array(-8, -15, 8, -15, 13, -8, 13, 6, 8, 12, -8, 12, -13, 6, -13, -8)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 60.0
+wait_time = 90.0
 one_shot = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

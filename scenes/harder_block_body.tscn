@@ -2,22 +2,16 @@
 
 [ext_resource type="Script" path="res://scripts/harder_block_body.gd" id="1_1gkut"]
 
-[sub_resource type="Gradient" id="Gradient_trhlh"]
-colors = PackedColorArray(1, 0, 0.0166664, 1, 0, 0, 0, 1)
+[sub_resource type="Gradient" id="Gradient_sdhwo"]
+colors = PackedColorArray(1, 0, 0, 1, 1, 1, 1, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_f05yc"]
-gradient = SubResource("Gradient_trhlh")
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_8xftw"]
+gradient = SubResource("Gradient_sdhwo")
 
 [node name="HarderBlockBody" type="Node2D"]
+z_index = 1
 position = Vector2(0, -1000.06)
 script = ExtResource("1_1gkut")
-
-[node name="PointLight2D" type="PointLight2D" parent="."]
-position = Vector2(-1.51289e-05, 622.109)
-rotation = 1.5708
-scale = Vector2(4.85862, 68.2553)
-energy = 16.0
-texture = SubResource("GradientTexture1D_f05yc")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 4.0
@@ -28,6 +22,12 @@ autostart = true
 wait_time = 10.0
 one_shot = true
 autostart = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(2.95639e-05, 771.78)
+rotation = 1.5708
+scale = Vector2(6, 4.13458)
+texture = SubResource("GradientTexture1D_8xftw")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

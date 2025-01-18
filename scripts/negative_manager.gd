@@ -28,8 +28,8 @@ func run() -> void:
 				EnemySpawn(BlackHole,(global.score-5000)/(100+global.Upgrades[6]*25),rng.randi_range(0,3000+global.Upgrades[6]*500),BlackHoleContainer)
 				CannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
 			if global.score>20000:
-				EnemySpawn(HarderBlock,(global.score)/(500+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6])*500,HarderBlockHolder)
-				EnemySpawn(HarderBlock,(global.score)/(500+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6])*500,HarderBlockHolder)
+				EnemySpawn(HarderBlock,(global.score-5000)/(300+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6])*500,HarderBlockHolder)
+				EnemySpawn(HarderBlock,(global.score-5000)/(300+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6])*500,HarderBlockHolder)
 			if global.score>30000:
 				EnemySpawn(BiggerBlackHole,(global.score-10000)/(600+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6]*500),BiggerBlackHoleContainer)
 				HarderCannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN

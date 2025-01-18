@@ -740,7 +740,7 @@ scale = Vector2(0.999831, 0.999831)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999984, 0.999984)
+scale = Vector2(0.999983, 0.999983)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
@@ -885,7 +885,6 @@ position = Vector2(18.2712, 251.546)
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
-scale = Vector2(1, 1)
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
@@ -893,7 +892,7 @@ scale = Vector2(0.999893, 0.999893)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999984, 0.999984)
+scale = Vector2(0.999983, 0.999983)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)

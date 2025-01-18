@@ -9,7 +9,7 @@ func _enter_tree() -> void:
 
 var cooldown=false
 func _input(_event: InputEvent) -> void:
-	if Input.is_action_just_pressed("explode") or (Input.is_action_pressed("explode") and global.noCD) and (!cooldown or global.noCD) and !global.gameOver and global.gameStarted:
+	if (Input.is_action_just_pressed("explode") or (Input.is_action_pressed("explode") and global.noCD)) and (!cooldown or global.noCD) and !global.gameOver and global.gameStarted:
 		if(!global.noCD): #fixes bugs
 			cooldown=true
 			cooldownBar.value=0
@@ -41,7 +41,7 @@ func _process(_delta: float) -> void:
 		softBody.add_child(savingExplosionInstance)
 		secondLifeCooldown=true
 		second_life_cooldown_timer.start()
-	if camera and camera.global_position.y-softBody.realPos.y<-800 and !global.gameOver and global.secondLives==0:
+	if camera and camera.global_position.y-softBody.realPos.y<-1000 and !global.gameOver and global.secondLives==0:
 		global.gameOver=true
 		gameover()
 	meters_traveled.text="METERS:"+str(global.score+1)
