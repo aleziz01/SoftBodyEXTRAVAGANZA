@@ -14,15 +14,15 @@ func run() -> void:
 				scoreSpawner(scoreStar1,global.score)
 				scoreSpawner(scoreStar1,global.score)
 				scoreSpawner(scoreStar1,global.score)
-			if global.score<12500:
-				scoreSpawner(scoreStar5,(global.score-2000)/3)
-				scoreSpawner(scoreStar5,(global.score-2000)/3)
-				scoreSpawner(scoreStar5,(global.score-2000)/3)
 			if global.score<25000:
-				scoreSpawner(scoreStar25,(global.score-5000)/7)
-				scoreSpawner(scoreStar25,(global.score-5000)/7)
-				scoreSpawner(scoreStar25,(global.score-5000)/7)
+				scoreSpawner(scoreStar5,(global.score-2000)/3)
+				scoreSpawner(scoreStar5,(global.score-2000)/3)
+				scoreSpawner(scoreStar5,(global.score-2000)/3)
 			if global.score<50000:
+				scoreSpawner(scoreStar25,(global.score-5000)/7)
+				scoreSpawner(scoreStar25,(global.score-5000)/7)
+				scoreSpawner(scoreStar25,(global.score-5000)/7)
+			if global.score<100000:
 				scoreSpawner(scoreStar50,(global.score-10000)/10)
 				scoreSpawner(scoreStar50,(global.score-10000)/10)
 				scoreSpawner(scoreStar50,(global.score-10000)/10)

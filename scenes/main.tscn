@@ -568,6 +568,9 @@ gradient = SubResource("Gradient_ccwbb")
 [node name="Main&Hudcontroller" type="Node2D"]
 script = ExtResource("1_ypgr0")
 
+[node name="secondLifeCooldown" type="Timer" parent="."]
+one_shot = true
+
 [node name="PositiveManager" type="Node2D" parent="."]
 script = ExtResource("2_4g71p")
 
@@ -737,7 +740,7 @@ scale = Vector2(0.999831, 0.999831)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999985, 0.999985)
+scale = Vector2(0.999984, 0.999984)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
@@ -758,6 +761,9 @@ rotation = -0.000402473
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -879,6 +885,7 @@ position = Vector2(18.2712, 251.546)
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
+scale = Vector2(1, 1)
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
@@ -886,7 +893,7 @@ scale = Vector2(0.999893, 0.999893)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999985, 0.999985)
+scale = Vector2(0.999984, 0.999984)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
@@ -907,9 +914,6 @@ rotation = -0.000402363
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
-
-[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1307,7 +1311,10 @@ offset_left = 89.0
 offset_top = 30.0
 offset_right = 229.0
 offset_bottom = 130.0
+price = 160
 upgradeIndex = 7
+exponentiationNumber = 20
+cap = 3
 
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton8" index="0"]
 offset_bottom = 180.0
@@ -1352,6 +1359,7 @@ texture = SubResource("GradientTexture1D_546j0")
 [node name="Camera2D" type="Camera2D" parent="MainMenu"]
 
 [connection signal="GameOver" from="." to="Hud/GAMEOVER" method="gameover"]
+[connection signal="timeout" from="secondLifeCooldown" to="." method="_on_second_life_cooldown_timeout"]
 [connection signal="timeout" from="Hud/CooldownBar/Timer" to="Hud/CooldownBar" method="_on_timer_timeout"]
 [connection signal="pressed" from="Hud/GAMEOVER/VBoxContainer/Quit" to="Hud/GAMEOVER" method="_on_quit_pressed"]
 [connection signal="pressed" from="Hud/GAMEOVER/VBoxContainer/Retry" to="Hud/GAMEOVER" method="_on_retry_pressed"]

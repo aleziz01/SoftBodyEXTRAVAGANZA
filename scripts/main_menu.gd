@@ -40,6 +40,8 @@ func _on_yes_button_pressed() -> void:
 	global.HighScore=0
 	global.maxScore=0
 	global.Upgrades=[0,0,0,0,0,0,0,0,0,0]
+	global.selfDestructHP=0
+	global.secondLives=0
 	global.fadeOut(main_menu)
 	global.fadeOut(control_info)
 	global.fadeOut(self)
@@ -47,7 +49,6 @@ func _on_yes_button_pressed() -> void:
 	global.gameStarted=true
 	global.fadeIn($"../Hud")
 	await get_tree().create_timer(4).timeout
-	global.gameActuallyStarted=true
 	queue_free()
 
 

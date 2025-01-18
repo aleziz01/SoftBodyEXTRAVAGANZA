@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://doisiumnq0wqa"]
+[gd_scene load_steps=8 format=3 uid="uid://bh0ix56m2b8qn"]
 
-[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_8n3ms"]
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="1_2j5xj"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_f7qed"]
-radius = 71.0634
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5kruc"]
+radius = 2483.0
+height = 4966.0
 
 [sub_resource type="Curve" id="Curve_e4kod"]
 min_value = -360.0
@@ -48,19 +49,22 @@ gravity_point = true
 gravity_point_center = Vector2(0, 0)
 gravity_direction = Vector2(0, 0)
 gravity = -20500.0
-script = ExtResource("1_8n3ms")
+script = ExtResource("1_2j5xj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_f7qed")
+position = Vector2(0, 2000)
+shape = SubResource("CapsuleShape2D_5kruc")
 
 [node name="disableCollision" type="Timer" parent="."]
-wait_time = 0.1
+wait_time = 4.0
 one_shot = true
 autostart = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, -143.765)
+scale = Vector2(5, 5)
 emitting = false
-amount = 128
+amount = 512
 sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_u1ym7")
 lifetime = 2.0
@@ -70,6 +74,8 @@ explosiveness = 1.0
 randomness = 1.0
 
 [node name="KILLTIMER" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
 autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_layer1_entered"]

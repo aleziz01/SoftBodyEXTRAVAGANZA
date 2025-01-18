@@ -14,3 +14,11 @@ func resetStats():
 	global.starScore=0
 	global.paused=false
 	global.Upgrades=[0,0,0,0,0,0,0,0,0,0]
+	global.StarUpgradesPlus=[1,3,7,15,0,15,0,50]
+	global.StarUpgradesTimes=[1,1,1,1,2,2,4,4]
+	global.noCD=false
+	global.Explosion1Done=false
+	global.selfDestructHP=0
+	global.secondLives=0
+	global.loadGame()
+	global._ready()
