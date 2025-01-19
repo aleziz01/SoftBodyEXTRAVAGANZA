@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="1_2j5xj"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5kruc"]
-radius = 43154.0
-height = 86308.0
+radius = 4035.0
+height = 8070.0
 
 [sub_resource type="Curve" id="Curve_e4kod"]
 min_value = -360.0
@@ -46,13 +46,13 @@ collision_bounce = 0.0
 [node name="Layer1" type="Area2D"]
 gravity_space_override = 3
 gravity_point = true
-gravity_point_center = Vector2(0, 42500)
-gravity_direction = Vector2(0, 42500)
-gravity = -20500.0
+gravity_point_center = Vector2(0, 4000)
+gravity_direction = Vector2(0, 4000)
+gravity = -50000.0
 script = ExtResource("1_2j5xj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(102, 42500)
+position = Vector2(0, 4000)
 shape = SubResource("CapsuleShape2D_5kruc")
 
 [node name="disableCollision" type="Timer" parent="."]

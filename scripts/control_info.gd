@@ -13,22 +13,36 @@ func Float():
 		while(cursor_sprite.position.y>=-100):#accelerate up
 			speed-=0.6
 			await get_tree().create_timer(0.01).timeout
-		explode()
+		explodeCursor()
+		showSelfDestruct()
 		while(cursor_sprite.position.y<-100):#accelerate down
 			speed+=0.6
 			await get_tree().create_timer(0.01).timeout
 
 @onready var explosion_holder: Node2D = $ExplosionHolder
 
-func explode():
+func explodeCursor():
 	await get_tree().create_timer(0.4).timeout
 	var explosionInstance=explosion.instantiate()
 	explosionInstance.global_position=Vector2(61,-255)
 	explosionInstance.gravity=0
 	explosion_holder.add_child(explosionInstance)
 
+var selfDestructExplosion=preload("res://scenes/SelfDestructExplosion.tscn")
+func showSelfDestruct():
+	await get_tree().create_timer(0.3).timeout
+	var selfDestructExplosionInstance=selfDestructExplosion.instantiate()
+	selfDestructExplosionInstance.global_position=Vector2(-450,-40)
+	selfDestructExplosionInstance.gravity=0
+	selfDestructExplosionInstance.scale=Vector2(0.6,0.6)
+	selfDestructExplosionInstance.ok=false
+	explosion_holder.add_child(selfDestructExplosionInstance)
+
+@onready var coin: Sprite2D = $Coin
+
 func _process(delta: float) -> void:
 	cursor_sprite.position.y+=delta*speed
+	coin.position.y+=delta*speed
 
 @onready var main_menu: Node2D = $"../MainMenu"
 

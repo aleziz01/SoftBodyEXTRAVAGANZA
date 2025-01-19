@@ -8,7 +8,7 @@ func _ready() -> void:
 	shieldHP=global.Upgrades[2]
 	verifyHP()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	global_position=mainSoftBody.realPos
 	if(global.HighScore<5):
 		queue_free()

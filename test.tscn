@@ -1,9 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dlfilxus23yds"]
+[gd_scene load_steps=9 format=3 uid="uid://dlfilxus23yds"]
 
+[ext_resource type="Script" path="res://test.gd" id="1_0ye61"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="1_8lauv"]
+[ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="3_exbkj"]
 [ext_resource type="PackedScene" uid="uid://cqrpgcmovhw4l" path="res://shaders/shieldShader.tscn" id="3_jyxyg"]
+[ext_resource type="PackedScene" uid="uid://cerybj7coydvo" path="res://scenes/cannon.tscn" id="4_x0uhk"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uf0pg"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vgbhu"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dfga5"]
 
 [node name="Node2D" type="Node2D"]
+script = ExtResource("1_0ye61")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0.499969, 0.500015)
@@ -13,3 +23,50 @@ texture = ExtResource("1_8lauv")
 [node name="ShieldShader" parent="." instance=ExtResource("3_jyxyg")]
 position = Vector2(-185, -68)
 scale = Vector2(11.0151, 7.25147)
+
+[node name="MainSoftBody" parent="." instance=ExtResource("3_exbkj")]
+
+[node name="Camera2D" type="Camera2D" parent="MainSoftBody"]
+zoom = Vector2(0.545, 0.545)
+
+[node name="Borders" type="Node2D" parent="."]
+
+[node name="Polygon2D2" type="Polygon2D" parent="Borders"]
+position = Vector2(-27, 13)
+scale = Vector2(1.05238, -1)
+color = Color(0, 0.1805, 0.57, 1)
+polygon = PackedVector2Array(-658.507, -673, 677.512, -677, 680.17, -360, 679.22, -300, -651.098, -300)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Borders/Polygon2D2"]
+position = Vector2(0, -300)
+scale = Vector2(1, -1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Polygon2D2/StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_uf0pg")
+
+[node name="RightBorder" type="StaticBody2D" parent="Borders"]
+position = Vector2(650, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/RightBorder"]
+rotation = -1.5708
+shape = SubResource("WorldBoundaryShape2D_vgbhu")
+
+[node name="LeftBorder" type="StaticBody2D" parent="Borders"]
+position = Vector2(-650, 0)
+rotation = 1.5708
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/LeftBorder"]
+shape = SubResource("WorldBoundaryShape2D_dfga5")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Node2D2" type="Node2D" parent="Node2D"]
+
+[node name="Cannon" parent="Node2D/Node2D2" instance=ExtResource("4_x0uhk")]
+position = Vector2(542.865, -330.78)
+MultiTimesToFire = 3
+timeBetweenShots = 0.01
+timeBeforeNextBurst = 0.2
+ProjCount = 20
+
+[node name="ProjectileHolder" type="Node2D" parent="Node2D/Node2D2"]

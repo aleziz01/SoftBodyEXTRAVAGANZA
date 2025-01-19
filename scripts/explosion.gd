@@ -3,7 +3,7 @@ extends Area2D
 #apply all upgrades to the explosion
 func _ready() -> void:
 	if(global.Upgrades[8] and global.Explosion1Done==false and global.gameStarted):
-		gravity-=global.Upgrades[8]*25000
+		gravity-=global.Upgrades[8]*100000
 		scale=Vector2(2,2)
 		global.Explosion1Done=true
 		print("1st")

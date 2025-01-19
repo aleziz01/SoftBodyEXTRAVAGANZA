@@ -48,12 +48,10 @@ func _process(_delta: float) -> void:
 	scoreShower.text="STARS EARNED:"+str(global.starScore)
 
 @onready var gameOverSprite: Sprite2D = $Hud/GAMEOVER
-@onready var highest_score: RichTextLabel = $Hud/GAMEOVER/HighestScore
 
 signal GameOver
 func gameover():
 	emit_signal("GameOver")
-	highest_score.text="Meters traveled: " + str(global.maxScore)
 	global.fadeIn(gameOverSprite)
 
 

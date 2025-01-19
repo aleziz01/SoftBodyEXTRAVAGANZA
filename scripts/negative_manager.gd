@@ -43,7 +43,35 @@ func EnemySpawn(thingToSpawn,condition,DecisiveNumber,Holder):
 		Holder.add_child(thingInstance)
 
 func HarderCannonSpawn():
-	pass
+	var CannonType=rng.randi_range(0,3)
+	var DecisiveNumber=rng.randi_range(0,5000+global.Upgrades[6]*500)
+	if DecisiveNumber<clamp((global.score-5000)/(100+25*global.Upgrades[6]),0,2000):
+		var CannonInstance=Cannon.instantiate()
+		var sign=sign(randi_range(-101,100))
+		CannonInstance.scale.x=sign
+		CannonInstance.global_position=Vector2(575*sign,mainSoftBody.realPos.y)-Vector2(0,randf_range(2000,4000))
+		CannonInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
+		CannonInstance.isHeat=1
+		if(CannonType==0): #upgraded normal cannon
+			CannonInstance.MultiTimesToFire=2
+			CannonInstance.ProjCount=16
+			CannonInstance.timeBeforeNextBurst=0.01
+		elif(CannonType==1): #full auto shotgun cannon
+			CannonInstance.MultiTimesToFire=5
+			CannonInstance.timeBetweenShots=0.01
+			CannonInstance.timeBeforeNextBurst=0.1
+			CannonInstance.ProjCount=16
+		elif(CannonType==2): #full auto rifle cannon
+			CannonInstance.MultiTimesToFire=5
+			CannonInstance.timeBetweenShots=0.05
+			CannonInstance.timeBeforeNextBurst=0.05
+			CannonInstance.ProjCount=16
+		elif(CannonType==3): #railgun turret
+			CannonInstance.MultiTimesToFire=1
+			CannonInstance.timeBetweenShots=0.01
+			CannonInstance.timeBeforeNextBurst=0.1
+			CannonInstance.ProjCount=80
+		CannonHolder.add_child(CannonInstance)
 
 func CannonSpawn():
 	var DecisiveNumber=rng.randi_range(0,4000+global.Upgrades[6]*500)

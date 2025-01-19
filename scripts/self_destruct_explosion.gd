@@ -1,13 +1,14 @@
 extends Area2D
-
+var ok=true
 func _ready() -> void:
-	global.selfDestructHP-=1
+	if ok:
+		global.selfDestructHP-=1
 
 func _enter_tree() -> void:
 	$GPUParticles2D.emitting=true
 
 func _on_disable_collision_timeout() -> void:
-	gravity=(int(global.Upgrades[3])%3)*50000
+	gravity=int(global.Upgrades[3])*50000
 	set_collision_mask_value(1,false)
 	set_collision_layer_value(1,false)
 

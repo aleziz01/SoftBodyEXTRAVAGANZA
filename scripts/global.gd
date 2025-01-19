@@ -16,9 +16,24 @@ var Explosion1Done=false
 var selfDestructHP=0
 var secondLives=0
 
+var time = [0,0,0] #1st is hours, 2nd is minutes, 3rd is seconds
+
 func _ready() -> void:
 	selfDestructHP=Upgrades[3]
 	secondLives=Upgrades[7]
+	countSeconds()
+
+func countSeconds():
+	while(!gameOver):
+		if(gameStarted):
+			time[2]+=1
+			if(time[2]==60):
+				time[2]=0
+				time[1]+=1
+			if(time[1]==60):
+				time[1]=0
+				time[0]+=1
+		await get_tree().create_timer(1).timeout
 
 func _process(_delta: float) -> void:
 	maxScore=max(score,maxScore)
