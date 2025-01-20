@@ -6,10 +6,13 @@ func _ready() -> void:
 func checkForPause():
 	while(true):
 		await get_tree().create_timer(0.001).timeout
-		if Input.is_action_just_pressed("pause"):
+		if Input.is_action_just_pressed("pause") and global.gameStarted:
 			global.paused=!global.paused
 			get_tree().paused=global.paused
 			updateBG()
+			await get_tree().create_timer(1).timeout
+			for i in $VBoxContainer.get_children():
+				i.disabled=!global.paused
 
 var fading=false
 
@@ -30,3 +33,15 @@ func updateBG():
 			await get_tree().create_timer(0.001).timeout
 		fading=false
 		self.modulate.a=0.0
+
+func _on_quit_pressed() -> void:
+	global.saveGame()
+	await get_tree().create_timer(0.005).timeout
+	get_tree().quit()
+
+func _on_retry_pressed() -> void:
+	get_tree().paused=false
+	global.paused=false
+	global.saveGame()
+	await get_tree().create_timer(0.005).timeout
+	get_tree().change_scene_to_file("res://scenes/load_screen.tscn")

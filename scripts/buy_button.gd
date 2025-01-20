@@ -17,15 +17,14 @@ func _ready() -> void:
 		price*=exponentiationNumber
 	priceLabel.text=str(price)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	checkPrice()
 
 func _on_button_pressed():
 	global.starScore-=price
-	global.saveGame()
 	global.Upgrades[upgradeIndex]+=1
 	price*=exponentiationNumber
-	priceLabel.text=str(price)
+	global.saveGame()
 
 func checkPrice():
 	if(global.Upgrades[upgradeIndex]>cap):
@@ -38,3 +37,4 @@ func checkPrice():
 	else:
 		disabled=!(shop_tab.shopOpened==true) #sexy ass code
 	shop_shader.visible=disabled
+	priceLabel.text=str(price)

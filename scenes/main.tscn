@@ -1,4 +1,4 @@
-[gd_scene load_steps=123 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=126 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -50,6 +50,9 @@
 [ext_resource type="PackedScene" uid="uid://dygc6c25k8hn4" path="res://scenes/buy_button.tscn" id="45_3rlqg"]
 [ext_resource type="Texture2D" uid="uid://dl2d4vrwsiftw" path="res://art/Buttons/ShopSpritesheet.png" id="45_pai6o"]
 [ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="46_coq73"]
+[ext_resource type="Script" path="res://scripts/buy_button.gd" id="51_ourhy"]
+[ext_resource type="PackedScene" uid="uid://bm62bpyg2s2i2" path="res://shaders/shop_shader.tscn" id="52_44g0p"]
+[ext_resource type="Script" path="res://scenes/refund_node.gd" id="52_uo8xr"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
 
@@ -695,6 +698,28 @@ script = ExtResource("17_j4ad6")
 [node name="bg" type="Polygon2D" parent="Hud/PauseMenu"]
 color = Color(0, 0, 0, 0.670588)
 polygon = PackedVector2Array(-710, -413, 718, -410, 712, 387, -756, 375)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Hud/PauseMenu"]
+process_mode = 3
+offset_left = -630.85
+offset_top = 164.315
+offset_right = -590.85
+offset_bottom = 210.315
+scale = Vector2(4, 4)
+
+[node name="Quit" type="TextureButton" parent="Hud/PauseMenu/VBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("12_tms64")
+texture_pressed = ExtResource("13_3ssb8")
+texture_hover = ExtResource("14_mr7is")
+
+[node name="Retry" type="TextureButton" parent="Hud/PauseMenu/VBoxContainer"]
+layout_mode = 2
+disabled = true
+texture_normal = ExtResource("15_tjfag")
+texture_pressed = ExtResource("16_635je")
+texture_hover = ExtResource("17_oe0hs")
 
 [node name="Borders" type="Node2D" parent="."]
 
@@ -1378,6 +1403,39 @@ offset_bottom = 180.0
 position = Vector2(70, 55)
 scale = Vector2(2.1875, 1.71875)
 
+[node name="RefundButton" type="TextureButton" parent="MainMenu/CanvasLayer/ShopTab"]
+offset_left = 359.0
+offset_top = 255.0
+offset_right = 569.0
+offset_bottom = 335.0
+script = ExtResource("51_ourhy")
+price = 1000
+exponentiationNumber = 1
+cap = 100
+
+[node name="RefundNode" type="Node2D" parent="MainMenu/CanvasLayer/ShopTab/RefundButton" node_paths=PackedStringArray("parent")]
+script = ExtResource("52_uo8xr")
+parent = NodePath("..")
+
+[node name="Price" type="RichTextLabel" parent="MainMenu/CanvasLayer/ShopTab/RefundButton"]
+layout_mode = 0
+offset_left = -130.54
+offset_top = 8.34
+offset_right = -10.54
+offset_bottom = 77.34
+
+[node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/RefundButton" instance=ExtResource("52_44g0p")]
+position = Vector2(105, 39.8975)
+scale = Vector2(3.28125, 1.2532)
+
+[node name="StarCounter" type="RichTextLabel" parent="MainMenu/CanvasLayer/ShopTab"]
+offset_left = -276.38
+offset_top = 257.845
+offset_right = -74.38
+offset_bottom = 297.845
+scale = Vector2(2, 2)
+text = "Stars:"
+
 [node name="PointLight2D" type="PointLight2D" parent="MainMenu/CanvasLayer"]
 position = Vector2(-0.999969, -1)
 scale = Vector2(5, 720)
@@ -1391,6 +1449,8 @@ texture = SubResource("GradientTexture1D_546j0")
 [connection signal="timeout" from="Hud/CooldownBar/Timer" to="Hud/CooldownBar" method="_on_timer_timeout"]
 [connection signal="pressed" from="Hud/GAMEOVER/VBoxContainer/Quit" to="Hud/GAMEOVER" method="_on_quit_pressed"]
 [connection signal="pressed" from="Hud/GAMEOVER/VBoxContainer/Retry" to="Hud/GAMEOVER" method="_on_retry_pressed"]
+[connection signal="pressed" from="Hud/PauseMenu/VBoxContainer/Quit" to="Hud/PauseMenu" method="_on_quit_pressed"]
+[connection signal="pressed" from="Hud/PauseMenu/VBoxContainer/Retry" to="Hud/PauseMenu" method="_on_retry_pressed"]
 [connection signal="finished" from="musicManager" to="musicManager" method="_on_finished"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/PlayButton" to="MainMenu" method="_on_new_game_button_pressed"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/VBoxContainer/ContinueButton" to="musicManager" method="_on_play_button_pressed"]
@@ -1403,6 +1463,7 @@ texture = SubResource("GradientTexture1D_546j0")
 [connection signal="pressed" from="MainMenu/CanvasLayer/MainMenu/Container/YesButton" to="MainMenu" method="_on_yes_button_pressed"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/ControlInfo/BackButton" to="MainMenu/CanvasLayer/ControlInfo" method="_on_back_button_pressed"]
 [connection signal="pressed" from="MainMenu/CanvasLayer/ShopTab/BackButton" to="MainMenu/CanvasLayer/ShopTab" method="_on_back_button_pressed"]
+[connection signal="pressed" from="MainMenu/CanvasLayer/ShopTab/RefundButton" to="MainMenu/CanvasLayer/ShopTab/RefundButton/RefundNode" method="_on_button_pressed"]
 
 [editable path="ProceduralWalls/Softwall"]
 [editable path="ProceduralWalls/Softwall2"]

@@ -4,7 +4,7 @@ extends Area2D
 
 var isDead=false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	rotation+=0.05
 
 func _on_body_entered(body: Node2D) -> void:

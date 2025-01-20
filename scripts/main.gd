@@ -26,7 +26,7 @@ func _input(_event: InputEvent) -> void:
 @onready var softBody=$mainSoftBody
 @onready var camera: Camera2D = $Hud
 @onready var meters_traveled: RichTextLabel = $Hud/MetersTraveled
-@onready var scoreShower: Label = $Hud/ScoreShower
+@onready var starScoreShower: Label = $Hud/ScoreShower
 @onready var second_life_cooldown_timer: Timer = $secondLifeCooldown
 
 var secondLifeCooldown=false
@@ -45,7 +45,7 @@ func _process(_delta: float) -> void:
 		global.gameOver=true
 		gameover()
 	meters_traveled.text="METERS:"+str(global.score+1)
-	scoreShower.text="STARS EARNED:"+str(global.starScore)
+	starScoreShower.text="STARS EARNED:"+str(global.starScore)
 
 @onready var gameOverSprite: Sprite2D = $Hud/GAMEOVER
 
@@ -53,7 +53,6 @@ signal GameOver
 func gameover():
 	emit_signal("GameOver")
 	global.fadeIn(gameOverSprite)
-
 
 func _on_second_life_cooldown_timeout() -> void:
 	secondLifeCooldown=false

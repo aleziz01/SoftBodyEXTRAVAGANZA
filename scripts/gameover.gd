@@ -1,6 +1,8 @@
 extends Sprite2D
 
 func _on_quit_pressed() -> void:
+	global.saveGame()
+	await get_tree().create_timer(0.005).timeout
 	get_tree().quit()
 
 func _on_retry_pressed() -> void:
@@ -15,6 +17,7 @@ func gameover():
 	for i in $VBoxContainer.get_children():
 		if i is TextureButton:
 			i.disabled=false
+			print(i)
 
 @onready var run_score: RichTextLabel = $VBoxContainer2/RunScore
 @onready var high_score: RichTextLabel = $VBoxContainer2/HighScore
