@@ -28,9 +28,12 @@ func _input(_event: InputEvent) -> void:
 @onready var meters_traveled: RichTextLabel = $Hud/MetersTraveled
 @onready var starScoreShower: Label = $Hud/ScoreShower
 @onready var second_life_cooldown_timer: Timer = $secondLifeCooldown
+@onready var mainSoftBody: Node2D = $mainSoftBody
+
 
 var secondLifeCooldown=false
 var savingExplosion=preload("res://scenes/savingExplosion.tscn")
+var winningChamber=preload("res://scenes/winningChamber.tscn")
 
 func _process(_delta: float) -> void:
 	if camera and camera.global_position.y-softBody.realPos.y<-550 and !global.gameOver and global.secondLives and !secondLifeCooldown:
@@ -44,6 +47,11 @@ func _process(_delta: float) -> void:
 	if camera and camera.global_position.y-softBody.realPos.y<-1000 and !global.gameOver and global.secondLives==0:
 		global.gameOver=true
 		gameover()
+	if !global.gameWon and global.score>50:
+		global.gameWon=true
+		var winningChamberInstance=winningChamber.instantiate()
+		winningChamberInstance.global_position=Vector2(0,mainSoftBody.realPos.y)
+		add_child(winningChamberInstance)
 	meters_traveled.text="METERS:"+str(global.score+1)
 	starScoreShower.text="STARS EARNED:"+str(global.starScore)
 

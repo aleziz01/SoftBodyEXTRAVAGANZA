@@ -54,7 +54,8 @@
 [ext_resource type="PackedScene" uid="uid://bm62bpyg2s2i2" path="res://shaders/shop_shader.tscn" id="52_44g0p"]
 [ext_resource type="Script" path="res://scenes/refund_node.gd" id="52_uo8xr"]
 
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ulffr"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b8644"]
+size = Vector2(1402.54, 177.915)
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0pi42"]
 
@@ -701,6 +702,7 @@ polygon = PackedVector2Array(-710, -413, 718, -410, 712, 387, -756, 375)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Hud/PauseMenu"]
 process_mode = 3
+process_priority = -1
 offset_left = -630.85
 offset_top = 164.315
 offset_right = -590.85
@@ -730,11 +732,12 @@ color = Color(0, 0.1805, 0.57, 1)
 polygon = PackedVector2Array(-658.507, -673, 677.512, -677, 680.17, -360, 679.22, -300, -651.098, -300)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="Borders/Polygon2D2"]
-position = Vector2(0, -300)
+position = Vector2(25.5, -300)
 scale = Vector2(1, -1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Borders/Polygon2D2/StaticBody2D"]
-shape = SubResource("WorldBoundaryShape2D_ulffr")
+position = Vector2(-9.34614, 89.0425)
+shape = SubResource("RectangleShape2D_b8644")
 
 [node name="RightBorder" type="StaticBody2D" parent="Borders"]
 position = Vector2(650, 0)
@@ -782,7 +785,7 @@ scale = Vector2(0.999831, 0.999831)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999982, 0.999982)
+scale = Vector2(0.999981, 0.999981)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
@@ -934,7 +937,7 @@ scale = Vector2(0.999893, 0.999893)
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999982, 0.999982)
+scale = Vector2(0.999981, 0.999981)
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
@@ -1138,7 +1141,7 @@ script = ExtResource("16_6rno6")
 
 [node name="bg" type="Polygon2D" parent="MainMenu"]
 color = Color(0, 0, 0, 0.670588)
-polygon = PackedVector2Array(-720, -413, 712, -413, 712, 387, -720, 387)
+polygon = PackedVector2Array(-720, -420, 720, -420, 720, 420, -720, 420)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="MainMenu"]
 follow_viewport_enabled = true

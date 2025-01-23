@@ -1,7 +1,8 @@
 extends Node
 
 var gameStarted:bool=false
-var gameOver=false
+var gameOver:bool=false
+var gameWon:bool=false
 var score:int=0
 var maxScore:int=0
 var HighScore:int=0
@@ -15,6 +16,8 @@ var Explosion1Done=false
 
 var selfDestructHP=0
 var secondLives=0
+
+var winningDistance=50
 
 var time = [0,0,0] #1st is hours, 2nd is minutes, 3rd is seconds
 

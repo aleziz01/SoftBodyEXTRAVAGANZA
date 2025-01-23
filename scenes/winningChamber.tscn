@@ -1,0 +1,35 @@
+[gd_scene load_steps=4 format=3 uid="uid://baavt1lajqqcj"]
+
+[ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="1_ftb0m"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_hncr3"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_00u5s"]
+
+[node name="WinningChamber" type="Node2D"]
+
+[node name="StaticBodies" type="Node2D" parent="."]
+
+[node name="Floor" type="StaticBody2D" parent="StaticBodies"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/Floor"]
+position = Vector2(0, 330)
+shape = SubResource("WorldBoundaryShape2D_hncr3")
+one_way_collision = true
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBodies/Floor"]
+position = Vector2(0, 390.5)
+scale = Vector2(10.5, 0.960938)
+texture = ExtResource("1_ftb0m")
+
+[node name="Ceiling" type="StaticBody2D" parent="StaticBodies"]
+position = Vector2(0, -330)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBodies/Ceiling"]
+rotation = 3.14159
+shape = SubResource("WorldBoundaryShape2D_00u5s")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBodies/Ceiling"]
+position = Vector2(0, -60)
+scale = Vector2(10.5, 0.953125)
+texture = ExtResource("1_ftb0m")

@@ -8,6 +8,7 @@ var spawnedwall=false
 var postSpawnedwall=false
 var rng=RandomNumberGenerator.new()
 var isMinimum=false
+
 func _physics_process(_delta: float) -> void:
 	if(mainSoftBody.realPos.y-700<global_position.y and !spawnedwall and !global.gameOver):
 		spawnedwall=true
