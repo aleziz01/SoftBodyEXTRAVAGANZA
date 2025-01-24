@@ -47,7 +47,7 @@ func _process(_delta: float) -> void:
 	if camera and camera.global_position.y-softBody.realPos.y<-1000 and !global.gameOver and global.secondLives==0:
 		global.gameOver=true
 		gameover()
-	if !global.gameWon and global.score>50:
+	if !global.gameWon and global.score>global.winningDistance:
 		global.gameWon=true
 		var winningChamberInstance=winningChamber.instantiate()
 		winningChamberInstance.global_position=Vector2(0,mainSoftBody.realPos.y)

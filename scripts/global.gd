@@ -27,6 +27,10 @@ func _ready() -> void:
 	selfDestructHP=Upgrades[3]
 	secondLives=Upgrades[7]
 	countSeconds()
+	if wins==1:
+		winningDistance*=5
+	if wins>=2:
+		winningDistance*=20
 
 func countSeconds():
 	while(!gameOver):
