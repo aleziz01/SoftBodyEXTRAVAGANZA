@@ -8,6 +8,7 @@ func _ready() -> void:
 func resetStats():
 	global.gameStarted=false
 	global.gameOver=false
+	global.gameWon=false
 	global.score=0
 	global.maxScore=0
 	global.HighScore=0

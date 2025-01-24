@@ -62,7 +62,8 @@ func save():
 		#global variables that save across playtimes
 		"HighScore":max(maxScore,HighScore),
 		"starScore":starScore,
-		"Upgrades":Upgrades
+		"Upgrades":Upgrades,
+		"wins":wins
 	}
 	return save_dict
 
