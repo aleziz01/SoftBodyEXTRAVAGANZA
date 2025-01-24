@@ -13,6 +13,8 @@ var StarUpgradesPlus=[1,3,7,15,0,15,0,50]
 var StarUpgradesTimes=[1,1,1,1,2,2,4,4]
 var noCD=false
 var Explosion1Done=false
+var initialStarScore=0
+var wins=0
 
 var selfDestructHP=0
 var secondLives=0
@@ -86,6 +88,7 @@ func loadGame():
 			global.set(i, nodeData[i])
 	print(HighScore, " <-HighScore " ,maxScore, " <-MaxScore " , starScore, " <-StarScore ", Upgrades[0]," <-ExplosionSizeUpgrade ",
 	Upgrades[1]," <-ExplosionPowerUpgrade ")
+	initialStarScore=starScore
 
 func _notification(what):
 	if what == NOTIFICATION_WM_CLOSE_REQUEST:

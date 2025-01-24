@@ -53,3 +53,5 @@ func _process(_delta: float) -> void:
 		queue_free()
 	elif global.gameOver and global_position.y+800<mainSoftBody.realPos.y:
 		queue_free()
+	if global.gameWon:
+		queue_free()

@@ -52,7 +52,7 @@
 [ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="46_coq73"]
 [ext_resource type="Script" path="res://scripts/buy_button.gd" id="51_ourhy"]
 [ext_resource type="PackedScene" uid="uid://bm62bpyg2s2i2" path="res://shaders/shop_shader.tscn" id="52_44g0p"]
-[ext_resource type="Script" path="res://scenes/refund_node.gd" id="52_uo8xr"]
+[ext_resource type="Script" path="res://scripts/refund_node.gd" id="52_uo8xr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8644"]
 size = Vector2(1402.54, 177.915)
@@ -584,6 +584,7 @@ script = ExtResource("2_4g71p")
 [node name="PowerUps" type="Node2D" parent="PositiveManager"]
 
 [node name="NegativeManager" type="Node2D" parent="."]
+visible = false
 script = ExtResource("3_c72lr")
 
 [node name="BiggerBlackHoles" type="Node2D" parent="NegativeManager"]
@@ -807,9 +808,6 @@ rotation = -0.000402473
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.000230862
 
-[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
-
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
 
@@ -958,6 +956,9 @@ rotation = -0.000402363
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 rotation = -0.00023094
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)

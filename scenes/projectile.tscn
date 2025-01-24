@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://cn3vihpxtp063"]
 
 [ext_resource type="Texture2D" uid="uid://b41ppn37rhyr0" path="res://art/placeholder/block.png" id="1_6o67x"]
-[ext_resource type="Script" path="res://scenes/projectile.gd" id="1_sjshq"]
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_sjshq"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_tfynr"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_pv1vk"]

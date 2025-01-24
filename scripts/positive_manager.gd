@@ -2,11 +2,12 @@ extends Node2D
 
 
 func _ready() -> void:
+	await get_tree().create_timer(1).timeout
 	run()
 
 var rng=RandomNumberGenerator.new()
 func run() -> void:
-	while(true):
+	while(!global.gameWon):
 		await get_tree().create_timer(0.1).timeout
 		#have separate spawn functions for all positive objects.
 		if(get_tree().paused==false and !global.gameOver and global.gameStarted and !global.paused):

@@ -1,9 +1,17 @@
-[gd_scene load_steps=29 format=3 uid="uid://djsf0hc7nic0e"]
+[gd_scene load_steps=33 format=3 uid="uid://djsf0hc7nic0e"]
 
 [ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="1_8rc4t"]
 [ext_resource type="Script" path="res://scripts/MainSoftBody.gd" id="1_p81le"]
+[ext_resource type="Shader" path="res://shaders/red_Shader.gdshader" id="1_vbbir"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_o74m3"]
 [ext_resource type="PackedScene" uid="uid://dsgaa3s1bgvd7" path="res://scenes/shield.tscn" id="3_etpy1"]
+[ext_resource type="Texture2D" uid="uid://c0wvc14q8qmwi" path="res://shaders/RedNoiseImg.tres" id="3_xwsf6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_36bax"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wxrqn"]
+shader = ExtResource("1_vbbir")
+shader_parameter/noise_img = ExtResource("3_xwsf6")
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_kxr1l"]
 resource_local_to_scene = true
@@ -190,9 +198,11 @@ modifications/21 = SubResource("SkeletonModification2DLookAt_qd4ep")
 resource_local_to_scene = true
 
 [node name="MainSoftBody" type="Node2D"]
+material = SubResource("ShaderMaterial_36bax")
 script = ExtResource("1_p81le")
 
 [node name="softBody" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_wxrqn")
 position = Vector2(-80.1, -75.015)
 texture = ExtResource("1_8rc4t")
 skeleton = NodePath("Skeleton2D")
