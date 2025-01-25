@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://bfvuvwmc4up3m"]
+
+[ext_resource type="Texture2D" uid="uid://mqwh3yymgard" path="res://art/crown.png" id="1_bxf0m"]
+[ext_resource type="Shader" path="res://shaders/royal.gdshader" id="1_vmbb6"]
+[ext_resource type="Script" path="res://crown.gd" id="2_oklqa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bwtgn"]
+shader = ExtResource("1_vmbb6")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_prrgd"]
+particle_flag_rotate_y = true
+particle_flag_disable_z = true
+angle_min = 1.07288e-05
+angle_max = 202.8
+spread = 65.225
+initial_velocity_min = -50.0
+initial_velocity_max = 50.0
+gravity = Vector3(0, 98, 0)
+collision_mode = 1
+collision_friction = 0.0
+collision_bounce = 0.0
+
+[node name="crown" type="Sprite2D"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_bwtgn")
+position = Vector2(0, -99)
+texture = ExtResource("1_bxf0m")
+script = ExtResource("2_oklqa")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(0, 40.895)
+amount = 32
+process_material = SubResource("ParticleProcessMaterial_prrgd")
+randomness = 1.0

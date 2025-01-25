@@ -1,9 +1,11 @@
-[gd_scene load_steps=29 format=3 uid="uid://djsf0hc7nic0e"]
+[gd_scene load_steps=30 format=3 uid="uid://djsf0hc7nic0e"]
 
 [ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="1_8rc4t"]
 [ext_resource type="Script" path="res://scripts/MainSoftBody.gd" id="1_p81le"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="2_o74m3"]
 [ext_resource type="PackedScene" uid="uid://dsgaa3s1bgvd7" path="res://scenes/shield.tscn" id="3_etpy1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y7swv"]
 
 [sub_resource type="SkeletonModification2DLookAt" id="SkeletonModification2DLookAt_kxr1l"]
 resource_local_to_scene = true
@@ -193,6 +195,7 @@ resource_local_to_scene = true
 script = ExtResource("1_p81le")
 
 [node name="softBody" type="Polygon2D" parent="."]
+material = SubResource("ShaderMaterial_y7swv")
 position = Vector2(-80.1, -75.015)
 texture = ExtResource("1_8rc4t")
 skeleton = NodePath("Skeleton2D")
