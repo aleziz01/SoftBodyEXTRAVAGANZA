@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dlfilxus23yds"]
+[gd_scene load_steps=40 format=3 uid="uid://dlfilxus23yds"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_0ye61"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="1_8lauv"]
@@ -9,6 +9,8 @@
 [ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="6_klg61"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="7_hpnqx"]
 [ext_resource type="PackedScene" uid="uid://dsgaa3s1bgvd7" path="res://scenes/shield.tscn" id="8_ybnpi"]
+[ext_resource type="Script" path="res://skinSelector.gd" id="10_lgaj3"]
+[ext_resource type="Texture2D" uid="uid://mqwh3yymgard" path="res://art/coinwithcrown.png" id="11_7k1pq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5wv7x"]
 shader = ExtResource("5_l627o")
@@ -1783,3 +1785,51 @@ timeBeforeNextBurst = 0.2
 ProjCount = 20
 
 [node name="ProjectileHolder" type="Node2D" parent="Node2D/Node2D2"]
+
+[node name="skinSelector" type="TextureButton" parent="." node_paths=PackedStringArray("mainSoftBody")]
+z_index = 3
+offset_left = -448.955
+offset_top = -33.0
+offset_right = -320.955
+offset_bottom = 95.0
+texture_normal = ExtResource("1_8lauv")
+script = ExtResource("10_lgaj3")
+mainSoftBody = NodePath("../MainSoftBody")
+
+[node name="bg" type="Polygon2D" parent="skinSelector"]
+position = Vector2(24, -3)
+polygon = PackedVector2Array(-148, 132, 227, 132, 227, 226, -148, 226)
+
+[node name="skin1" type="TextureButton" parent="skinSelector/bg"]
+modulate = Color(0, 0, 0, 1)
+offset_left = -120.0
+offset_top = 140.0
+offset_right = 40.0
+offset_bottom = 300.0
+scale = Vector2(0.5, 0.5)
+disabled = true
+texture_normal = ExtResource("6_klg61")
+
+[node name="skin2" type="TextureButton" parent="skinSelector/bg"]
+modulate = Color(0, 0, 0, 1)
+offset_top = 140.0
+offset_right = 160.0
+offset_bottom = 300.0
+scale = Vector2(0.5, 0.5)
+disabled = true
+texture_normal = ExtResource("6_klg61")
+
+[node name="skin3" type="TextureButton" parent="skinSelector/bg"]
+modulate = Color(0, 0, 0, 1)
+offset_left = 120.0
+offset_top = 134.0
+offset_right = 280.0
+offset_bottom = 314.0
+scale = Vector2(0.5, 0.5)
+disabled = true
+texture_normal = ExtResource("11_7k1pq")
+
+[connection signal="pressed" from="skinSelector" to="skinSelector" method="_on_pressed"]
+[connection signal="pressed" from="skinSelector/bg/skin1" to="skinSelector" method="_on_skin_1_pressed"]
+[connection signal="pressed" from="skinSelector/bg/skin2" to="skinSelector" method="_on_skin_2_pressed"]
+[connection signal="pressed" from="skinSelector/bg/skin3" to="skinSelector" method="_on_skin_3_pressed"]
