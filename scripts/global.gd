@@ -22,6 +22,7 @@ var secondLives=0
 var winningDistance=50
 
 var time = [0,0,0] #1st is hours, 2nd is minutes, 3rd is seconds
+var BestTime = [0,0,0] #same here
 
 func _ready() -> void:
 	selfDestructHP=Upgrades[3]
@@ -33,7 +34,7 @@ func _ready() -> void:
 		winningDistance*=20
 
 func countSeconds():
-	while(!gameOver):
+	while(!gameOver and !gameWon):
 		if(gameStarted):
 			time[2]+=1
 			if(time[2]==60):
@@ -67,7 +68,8 @@ func save():
 		"HighScore":max(maxScore,HighScore),
 		"starScore":starScore,
 		"Upgrades":Upgrades,
-		"wins":wins
+		"wins":wins,
+		"BestTime":BestTime
 	}
 	return save_dict
 

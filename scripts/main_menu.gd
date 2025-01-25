@@ -41,6 +41,7 @@ func _on_yes_button_pressed() -> void:
 	global.maxScore=0
 	global.winningDistance=50
 	global.initialStarScore=0
+	global.winningDistance=50
 	global.wins=0
 	global.Upgrades=[0,0,0,0,0,0,0,0,0,0]
 	global.selfDestructHP=0
