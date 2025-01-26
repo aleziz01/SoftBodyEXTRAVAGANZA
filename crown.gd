@@ -8,7 +8,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	speed=clamp(speed,-0.5,0.5)
-	global_position=mainSoftBody.realPos-Vector2(0,99)
+	global_position=mainSoftBody.realPos-Vector2(0,100)
 	rotation_degrees+=speed
 
 func changeRot():

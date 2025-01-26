@@ -59,6 +59,9 @@ func _on_skin_2_pressed() -> void:
 var crown=preload("res://scenes/crown.tscn")
 var crownInstance=null
 func _on_skin_3_pressed() -> void:
+	if crownInstance:
+		crownInstance.queue_free()
+		crownInstance=null
 	mainSoftBody.get_child(0).material.shader=RoyalShader
 	crownInstance=crown.instantiate()
 	crownInstance.mainSoftBody=mainSoftBody
