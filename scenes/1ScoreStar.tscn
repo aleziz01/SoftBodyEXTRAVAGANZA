@@ -13,23 +13,11 @@ script = ExtResource("1_okmnp")
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_cg518")
 
-[node name="Sprite" type="Node2D" parent="."]
-position = Vector2(0, 0.1)
-
-[node name="Polygon2D4" type="Polygon2D" parent="Sprite"]
-scale = Vector2(-1, 1)
-polygon = PackedVector2Array(3, 0, -2, 3, 0, 0)
-
-[node name="Polygon2D2" type="Polygon2D" parent="Sprite"]
-rotation = -1.5708
-polygon = PackedVector2Array(2, 8.74228e-08, -3, 2, 0, 0)
-
-[node name="Polygon2D3" type="Polygon2D" parent="Sprite"]
-rotation = -1.5708
-scale = Vector2(1, -1)
-polygon = PackedVector2Array(2, -8.74228e-08, -3, 2, 0, 0)
-
-[node name="Polygon2D" type="Polygon2D" parent="Sprite"]
-polygon = PackedVector2Array(3, 0, -2, 3, 0, 0)
+[node name="Polygon2D" type="Polygon2D" parent="."]
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(1, 1)
+color = Color(0.839216, 0.956863, 0.901961, 1)
+invert_border = 0.1
+polygon = PackedVector2Array(0, -1.85714, 0.857143, 0, 3, 0, 1.28571, 1.14286, 2, 3.14286, 0, 1.85714, -2, 3.14286, -1.28571, 1.14286, -3, 0, -0.857143, 0)
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
