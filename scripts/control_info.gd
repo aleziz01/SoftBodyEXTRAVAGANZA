@@ -39,10 +39,8 @@ func showSelfDestruct():
 	explosion_holder.add_child(selfDestructExplosionInstance)
 
 @onready var coin: Sprite2D = $Coin
-@onready var starScoreShowerShop: RichTextLabel = $"../ShopTab/StarCounter"
 
 func _process(delta: float) -> void:
-	starScoreShowerShop.text="Stars: "+str(global.starScore)
 	cursor_sprite.position.y+=delta*speed
 	coin.position.y+=delta*speed
 

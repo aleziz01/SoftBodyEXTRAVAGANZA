@@ -1,4 +1,4 @@
-[gd_scene load_steps=134 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=133 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Script" path="res://scripts/negative_manager.gd" id="3_c72lr"]
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
-[ext_resource type="PackedScene" uid="uid://c42jo216jtsx3" path="res://scenes/harder_block_body.tscn" id="6_8eod8"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
 [ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
 [ext_resource type="Texture2D" uid="uid://d15j8tnx5ti6v" path="res://art/redbar.png" id="8_qtoxl"]
@@ -623,8 +622,6 @@ script = ExtResource("5_vp50i")
 
 [node name="HarderBlockHolder" type="Node2D" parent="Hud"]
 
-[node name="HarderBlockBody" parent="Hud/HarderBlockHolder" instance=ExtResource("6_8eod8")]
-
 [node name="WhatSong" type="RichTextLabel" parent="Hud"]
 offset_left = -850.0
 offset_top = -349.0
@@ -648,17 +645,17 @@ script = ExtResource("9_g41kd")
 wait_time = 0.05
 
 [node name="MetersTraveled" type="RichTextLabel" parent="Hud"]
-offset_left = 458.0
-offset_top = -352.0
-offset_right = 600.0
-offset_bottom = -312.0
+offset_left = 456.0
+offset_top = -331.0
+offset_right = 598.0
+offset_bottom = -291.0
 text = "Meters:"
 
 [node name="ScoreShower" type="Label" parent="Hud"]
-offset_left = 458.0
-offset_top = -331.0
-offset_right = 617.0
-offset_bottom = -280.0
+offset_left = 456.0
+offset_top = -352.0
+offset_right = 615.0
+offset_bottom = -301.0
 text = "Score:"
 
 [node name="GAMEOVER" type="Sprite2D" parent="Hud"]
@@ -799,7 +796,6 @@ skew = 0.0
 
 [node name="Bone-4" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="4"]
 position = Vector2(18.2712, 251.546)
-scale = Vector2(1, 0.999982)
 skew = 0.0
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="5"]
@@ -827,7 +823,6 @@ skew = 0.0
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
-scale = Vector2(1, 0.999982)
 skew = 0.0
 
 [node name="Bone-12" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="12"]
@@ -861,7 +856,6 @@ skew = 0.0
 
 [node name="Bone-20" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="20"]
 position = Vector2(15.7145, 573.021)
-scale = Vector2(1, 1.00062)
 skew = 0.0
 
 [node name="Bone-21" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="21"]
@@ -970,7 +964,6 @@ skew = 0.0
 
 [node name="Bone-4" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="4"]
 position = Vector2(18.2712, 251.546)
-scale = Vector2(1, 0.999982)
 skew = 0.0
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
@@ -998,7 +991,6 @@ skew = 0.0
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
-scale = Vector2(1, 0.999982)
 skew = 0.0
 
 [node name="Bone-12" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="12"]
@@ -1300,7 +1292,7 @@ offset_top = 82.705
 offset_right = -79.0
 offset_bottom = 153.705
 scale = Vector2(3, 3)
-text = "Click to explode the coin and go up!"
+text = "CLICK TO EXPLODE THE COIN AND GO UP!"
 
 [node name="Instruction2" type="RichTextLabel" parent="MainMenu/CanvasLayer/ControlInfo"]
 modulate = Color(1, 0, 0, 1)
@@ -1309,7 +1301,7 @@ offset_top = 134.55
 offset_right = -441.685
 offset_bottom = 240.55
 scale = Vector2(2, 2)
-text = "press F to self-destruct once you have the upgrade!"
+text = "PRESS  F  TO SELF DESTRUCT PUSHING EVERYTHING TREES AWAY!"
 
 [node name="CursorSprite" type="Sprite2D" parent="MainMenu/CanvasLayer/ControlInfo"]
 position = Vector2(0, -85)
@@ -1503,12 +1495,12 @@ position = Vector2(105, 39.8975)
 scale = Vector2(3.28125, 1.2532)
 
 [node name="StarCounter" type="RichTextLabel" parent="MainMenu/CanvasLayer/ShopTab"]
-offset_left = -276.38
-offset_top = 257.845
-offset_right = -74.38
-offset_bottom = 297.845
+offset_left = -227.0
+offset_top = 279.0
+offset_right = -80.0
+offset_bottom = 319.0
 scale = Vector2(2, 2)
-text = "Stars:"
+text = "STARS:"
 
 [node name="skinSelector" type="TextureButton" parent="MainMenu/CanvasLayer/ShopTab" node_paths=PackedStringArray("mainSoftBody")]
 z_index = 3
@@ -1521,6 +1513,7 @@ script = ExtResource("54_o4xov")
 mainSoftBody = NodePath("../../../../mainSoftBody")
 
 [node name="bg" type="Polygon2D" parent="MainMenu/CanvasLayer/ShopTab/skinSelector"]
+visible = false
 position = Vector2(24, -3)
 color = Color(0.122313, 0.358631, 1, 1)
 polygon = PackedVector2Array(-148, 132, 227, 132, 227, 226, -148, 226)

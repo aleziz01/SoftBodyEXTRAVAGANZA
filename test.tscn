@@ -1,4 +1,4 @@
-[gd_scene load_steps=44 format=3 uid="uid://dlfilxus23yds"]
+[gd_scene load_steps=45 format=3 uid="uid://dlfilxus23yds"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_0ye61"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="1_8lauv"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://mqwh3yymgard" path="res://art/crown.png" id="11_7k1pq"]
 [ext_resource type="PackedScene" uid="uid://bfvuvwmc4up3m" path="res://scenes/crown.tscn" id="11_f3jwv"]
 [ext_resource type="Shader" path="res://test.gdshader" id="12_e5wxl"]
+[ext_resource type="FontFile" uid="uid://8qbh0ygrebiy" path="res://Mystery Font (7).ttf" id="13_jru1y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5wv7x"]
 shader = ExtResource("5_l627o")
@@ -1856,7 +1857,8 @@ offset_left = 769.0
 offset_top = -5.0
 offset_right = 1427.78
 offset_bottom = 310.43
-text = "FGSRJIPOSFGPJOISFEJPFSEOPJFSEJPOSEPFOJSE"
+theme_override_fonts/normal_font = ExtResource("13_jru1y")
+text = "FGSRJIPOSFGPJOISFEJPFSEOPJFSEJPOSEPFOJSE1231234325454:?!"
 
 [connection signal="pressed" from="skinSelector" to="skinSelector" method="_on_pressed"]
 [connection signal="pressed" from="skinSelector/bg/skin1" to="skinSelector" method="_on_skin_1_pressed"]

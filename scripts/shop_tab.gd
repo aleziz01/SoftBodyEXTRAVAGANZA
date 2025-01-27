@@ -48,3 +48,8 @@ func checkPrices():
 	for i in get_children():
 		if i!=get_child(0) and i!=get_child(get_child_count()-1)and i is TextureButton:
 			i.checkPrice()
+
+@onready var starScoreShowerShop: RichTextLabel = $StarCounter
+
+func _process(delta: float) -> void:
+	starScoreShowerShop.text="STARS: "+str(global.starScore)

@@ -27,4 +27,4 @@ func gameover():
 func updateLabels():
 	run_score.text="SCORE: " + str(global.maxScore)
 	high_score.text="HIGH SCORE: " + str(global.HighScore)
-	your_time.text="TIME: " + str(global.time[0]) + "h " + str(global.time[1]) + "m " + str(global.time[2]) + "s."
+	your_time.text="TIME: " + str(global.time[0]) + "H " + str(global.time[1]) + "M " + str(global.time[2]) + "S"

@@ -35,6 +35,5 @@ func verifyHP():
 
 func _on_timer_timeout() -> void:
 	shieldHP=global.Upgrades[2]
-	print("shown")
 	show()
 	set_collision_mask_value(1,true)

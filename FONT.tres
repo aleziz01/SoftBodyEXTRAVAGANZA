@@ -1,6 +1,6 @@
 [gd_resource type="FontVariation" load_steps=2 format=3 uid="uid://xfbc611wr2f6"]
 
-[ext_resource type="FontFile" uid="uid://cw7fi70rhmlb6" path="res://FONT WORK PLS (1).ttf" id="1_hxsiv"]
+[ext_resource type="FontFile" uid="uid://8qbh0ygrebiy" path="res://Mystery Font (7).ttf" id="1_2flyk"]
 
 [resource]
-base_font = ExtResource("1_hxsiv")
+base_font = ExtResource("1_2flyk")

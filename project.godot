@@ -30,6 +30,10 @@ window/stretch/aspect="ignore"
 
 enabled=PackedStringArray("res://addons/softbody2d/plugin.cfg")
 
+[gui]
+
+theme/custom_font="res://Mystery Font (7).ttf"
+
 [input]
 
 explode={

@@ -12,6 +12,7 @@
 shader = ExtResource("2_nttog")
 
 [node name="WinningChamber" type="Node2D"]
+texture_filter = 1
 script = ExtResource("1_38vi8")
 
 [node name="StaticBodies" type="Node2D" parent="."]
@@ -74,43 +75,43 @@ fit_content = true
 
 [node name="StarsEarnedFromWinning" type="RichTextLabel" parent="TextController/VBoxContainer"]
 layout_mode = 2
-text = "You got an extra 10000 stars"
+text = "YOU GOT AN EXTRA 10000 STARS"
 fit_content = true
 
 [node name="StarsEarnedFromRun" type="RichTextLabel" parent="TextController/VBoxContainer"]
 layout_mode = 2
-text = "Stars earned this run:"
+text = "STARS EARNED THIS RUN:"
 fit_content = true
 
 [node name="Time" type="RichTextLabel" parent="TextController/VBoxContainer"]
 visible = false
 layout_mode = 2
-text = "Your Time:"
+text = "YOUR TIME:"
 fit_content = true
 
 [node name="BestTime" type="RichTextLabel" parent="TextController/VBoxContainer"]
 visible = false
 layout_mode = 2
-text = "Best Time: 0h 0m 0s"
+text = "BEST TIME: 0H 0M 0S"
 fit_content = true
 
 [node name="NrWins" type="RichTextLabel" parent="TextController/VBoxContainer"]
 layout_mode = 2
-text = "Total Wins: "
+text = "TOTAL WINS:"
 fit_content = true
 
 [node name="Coin" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_ihru8")
-position = Vector2(343, -109)
+position = Vector2(376, -162)
 texture = ExtResource("3_f1eh5")
 
 [node name="Label" type="RichTextLabel" parent="Coin"]
-offset_left = -162.605
-offset_top = -158.0
-offset_right = -53.605
-offset_bottom = -118.0
+offset_left = -176.0
+offset_top = -132.0
+offset_right = -58.0
+offset_bottom = -92.0
 scale = Vector2(3, 3)
-text = "You unlocked:"
+text = "YOU UNLOCKED:"
 
 [node name="CoinType" type="RichTextLabel" parent="Coin"]
 offset_left = -212.0

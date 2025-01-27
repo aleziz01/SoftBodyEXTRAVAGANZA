@@ -6,7 +6,6 @@ func _ready() -> void:
 		gravity-=global.Upgrades[8]*100000
 		scale=Vector2(2,2)
 		global.Explosion1Done=true
-		print("1st")
 	else:
 		scale=Vector2(1.0+global.Upgrades[0]/20.0,1.0+global.Upgrades[0]/20.0) #apply the explosionSize Upgrade
 		gravity-=2000*pow(2,global.Upgrades[1]-1)*int(global.gameStarted)
