@@ -18,7 +18,13 @@ func _on_body_entered(body):
 	if parentOfBody.name=="Node2D":
 		parentOfBody.queue_free()
 		shieldHP-=1
+		goRed()
 		verifyHP()
+
+func goRed():
+	modulate=Color(255,0,0,255)
+	await get_tree().create_timer(0.1).timeout
+	modulate=Color(255,255,255,255)
 
 func verifyHP():
 	if(shieldHP<=0):

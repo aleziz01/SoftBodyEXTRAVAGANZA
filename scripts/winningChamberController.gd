@@ -26,9 +26,10 @@ func _ready() -> void:
 	elif global.wins==3:
 		setBestTime()
 	if global.wins>=3:
-		#coin.texture=royalCoin when arman gives me the royalCoin
 		calculateBestTime()
 		$TextController/VBoxContainer/BestTime.text="Best Time: " + str(global.BestTime[0]) + "h " + str(global.BestTime[1]) + "m " + str(global.BestTime[2]) + "s"
+		$TextController/VBoxContainer/BestTime.show()
+		$TextController/VBoxContainer/Time.show()
 
 func calculateBestTime():
 	if global.time[0]<global.BestTime[0]:

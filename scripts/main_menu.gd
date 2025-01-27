@@ -62,6 +62,7 @@ func _on_continue_button_pressed() -> void:
 	exit_button.disabled=true
 	shop_button.disabled=true
 	continue_button.disabled=true
+	global.initialStarScore=0
 	$CanvasLayer/PointLight2D.queue_free()
 	global.fadeOut(main_menu)
 	global.fadeOut(control_info)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=134 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://scripts/negative_manager.gd" id="3_c72lr"]
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
+[ext_resource type="PackedScene" uid="uid://c42jo216jtsx3" path="res://scenes/harder_block_body.tscn" id="6_8eod8"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
 [ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
 [ext_resource type="Texture2D" uid="uid://d15j8tnx5ti6v" path="res://art/redbar.png" id="8_qtoxl"]
@@ -50,6 +51,7 @@
 [ext_resource type="PackedScene" uid="uid://dygc6c25k8hn4" path="res://scenes/buy_button.tscn" id="45_3rlqg"]
 [ext_resource type="Texture2D" uid="uid://dl2d4vrwsiftw" path="res://art/Buttons/ShopSpritesheet.png" id="45_pai6o"]
 [ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="46_coq73"]
+[ext_resource type="Texture2D" uid="uid://cp6dc6bligmog" path="res://art/placeholder/explosion.tres" id="49_c4vvp"]
 [ext_resource type="Script" path="res://scripts/buy_button.gd" id="51_ourhy"]
 [ext_resource type="PackedScene" uid="uid://bm62bpyg2s2i2" path="res://shaders/shop_shader.tscn" id="52_44g0p"]
 [ext_resource type="Script" path="res://scripts/refund_node.gd" id="52_uo8xr"]
@@ -433,134 +435,141 @@ modifications/21 = SubResource("SkeletonModification2DLookAt_lgpbf")
 resource_local_to_scene = true
 radius = 28.5
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ahcnv"]
-atlas = ExtResource("45_pai6o")
-region = Rect2(0, 0, 43, 72)
+[sub_resource type="AtlasTexture" id="AtlasTexture_ap2hc"]
+atlas = ExtResource("49_c4vvp")
+region = Rect2(108, 0, 12, 12)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_sh8up"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_etg7r"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(0, 0, 102, 72)
+region = Rect2(0, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_12w5c"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6tfx"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(102, 0, 102, 72)
+region = Rect2(104, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dmwlj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_raxsn"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(204, 0, 102, 72)
+region = Rect2(208, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ni27v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lggue"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(306, 0, 102, 72)
+region = Rect2(312, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ga6xm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_48cij"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(408, 0, 102, 72)
+region = Rect2(416, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ycm8t"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ikn8"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(510, 0, 102, 72)
+region = Rect2(520, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2idlh"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_mcyc0"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(612, 0, 102, 72)
+region = Rect2(624, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_55ge7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_b6ijc"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(714, 0, 102, 72)
+region = Rect2(728, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2suye"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qoduy"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(816, 0, 102, 72)
+region = Rect2(832, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qfewr"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_er2to"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(918, 0, 102, 72)
+region = Rect2(936, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_t70es"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_exmle"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(1020, 0, 102, 72)
+region = Rect2(1040, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ttm8d"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qpf07"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(1122, 0, 102, 72)
+region = Rect2(1144, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_0ngjm"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_dssix"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(1224, 0, 102, 72)
+region = Rect2(1248, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6fp0v"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q45rc"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(1326, 0, 102, 72)
+region = Rect2(1352, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_5hdyb"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_sp110"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(1428, 0, 102, 72)
+region = Rect2(1456, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_cagbn"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_pib55"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(1530, 0, 102, 72)
+region = Rect2(1560, 0, 104, 72)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_b4ruy"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0tt0a"]
 atlas = ExtResource("45_pai6o")
-region = Rect2(1632, 0, 102, 72)
+region = Rect2(1664, 0, 104, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ew05"]
+atlas = ExtResource("45_pai6o")
+region = Rect2(1768, 0, 104, 72)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_v5wis"]
 animations = [{
 "frames": [{
-"duration": 0.1,
-"texture": SubResource("AtlasTexture_ahcnv")
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ap2hc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_sh8up")
+"texture": SubResource("AtlasTexture_etg7r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_12w5c")
+"texture": SubResource("AtlasTexture_y6tfx")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dmwlj")
+"texture": SubResource("AtlasTexture_raxsn")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ni27v")
+"texture": SubResource("AtlasTexture_lggue")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ga6xm")
+"texture": SubResource("AtlasTexture_48cij")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ycm8t")
+"texture": SubResource("AtlasTexture_4ikn8")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2idlh")
+"texture": SubResource("AtlasTexture_mcyc0")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_55ge7")
+"texture": SubResource("AtlasTexture_b6ijc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2suye")
+"texture": SubResource("AtlasTexture_qoduy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_qfewr")
+"texture": SubResource("AtlasTexture_er2to")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_t70es")
+"texture": SubResource("AtlasTexture_exmle")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ttm8d")
+"texture": SubResource("AtlasTexture_qpf07")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0ngjm")
+"texture": SubResource("AtlasTexture_dssix")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6fp0v")
+"texture": SubResource("AtlasTexture_q45rc")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_5hdyb")
+"texture": SubResource("AtlasTexture_sp110")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_cagbn")
+"texture": SubResource("AtlasTexture_pib55")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_b4ruy")
+"texture": SubResource("AtlasTexture_0tt0a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ew05")
 }],
 "loop": false,
 "name": &"default",
@@ -592,7 +601,6 @@ script = ExtResource("2_4g71p")
 [node name="PowerUps" type="Node2D" parent="PositiveManager"]
 
 [node name="NegativeManager" type="Node2D" parent="."]
-visible = false
 script = ExtResource("3_c72lr")
 
 [node name="BiggerBlackHoles" type="Node2D" parent="NegativeManager"]
@@ -614,6 +622,8 @@ texture_filter = 1
 script = ExtResource("5_vp50i")
 
 [node name="HarderBlockHolder" type="Node2D" parent="Hud"]
+
+[node name="HarderBlockBody" parent="Hud/HarderBlockHolder" instance=ExtResource("6_8eod8")]
 
 [node name="WhatSong" type="RichTextLabel" parent="Hud"]
 offset_left = -850.0
@@ -776,66 +786,88 @@ modification_stack = SubResource("SkeletonModificationStack2D_x3mq3")
 [node name="Bone-0" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="0"]
 position = Vector2(15.7145, 26.9787)
 
+[node name="Bone-1" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="1"]
+skew = 0.0
+
 [node name="Bone-2" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="2"]
 position = Vector2(16.1283, 131.947)
+skew = 0.0
 
 [node name="Bone-3" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="3"]
 position = Vector2(16.6832, 191.881)
+skew = 0.0
 
 [node name="Bone-4" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="4"]
 position = Vector2(18.2712, 251.546)
+scale = Vector2(1, 0.999982)
+skew = 0.0
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
+skew = 0.0
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
 scale = Vector2(0.999831, 0.999831)
+skew = 0.0
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
 scale = Vector2(0.99998, 0.99998)
+skew = 0.0
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
 scale = Vector2(1, 1)
+skew = 0.0
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.999948, 0.999948)
+scale = Vector2(0.999944, 0.999944)
+skew = 0.0
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
+scale = Vector2(1, 0.999982)
+skew = 0.0
 
 [node name="Bone-12" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="12"]
 position = Vector2(16.6832, 408.119)
+skew = 0.0
 
 [node name="Bone-13" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="13"]
 position = Vector2(16.1283, 468.053)
-rotation = -0.000402473
+skew = 0.0
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
-rotation = -0.000230862
+skew = 0.0
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
+skew = 0.0
 
 [node name="Bone-17" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="17"]
 position = Vector2(45.5116, 408.093)
 scale = Vector2(0.999984, 0.999984)
+skew = 0.0
 
 [node name="Bone-18" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="18"]
 position = Vector2(46.0035, 468.041)
 scale = Vector2(0.999861, 0.999861)
+skew = 0.0
 
 [node name="Bone-19" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="19"]
 position = Vector2(46.2515, 528.023)
+skew = 0.0
 
 [node name="Bone-20" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="20"]
 position = Vector2(15.7145, 573.021)
+scale = Vector2(1, 1.00062)
+skew = 0.0
 
 [node name="Bone-21" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="21"]
 position = Vector2(46.3693, 573.017)
 scale = Vector2(0.999831, 0.999831)
+skew = 0.0
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall/SoftBody2D/Bone-0" index="0"]
 shape = SubResource("CircleShape2D_6xr01")
@@ -925,70 +957,91 @@ modification_stack = SubResource("SkeletonModificationStack2D_hhaed")
 [node name="Bone-0" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="0"]
 position = Vector2(15.7145, 26.9787)
 
+[node name="Bone-1" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="1"]
+skew = 0.0
+
 [node name="Bone-2" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="2"]
 position = Vector2(16.1283, 131.947)
+skew = 0.0
 
 [node name="Bone-3" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="3"]
 position = Vector2(16.6832, 191.881)
+skew = 0.0
 
 [node name="Bone-4" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="4"]
 position = Vector2(18.2712, 251.546)
+scale = Vector2(1, 0.999982)
+skew = 0.0
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
+skew = 0.0
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
 position = Vector2(46.2515, 71.9766)
-scale = Vector2(0.999893, 0.999893)
+scale = Vector2(0.999853, 0.999853)
+skew = 0.0
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
 scale = Vector2(0.99998, 0.99998)
+skew = 0.0
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
 position = Vector2(45.5116, 191.907)
 scale = Vector2(0.999999, 0.999999)
+skew = 0.0
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.999953, 0.999953)
+scale = Vector2(0.999952, 0.999952)
+skew = 0.0
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="11"]
 position = Vector2(18.2712, 348.454)
+scale = Vector2(1, 0.999982)
+skew = 0.0
 
 [node name="Bone-12" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="12"]
 position = Vector2(16.6832, 408.119)
+skew = 0.0
 
 [node name="Bone-13" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="13"]
 position = Vector2(16.1283, 468.053)
-rotation = -0.000402363
+skew = 0.0
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
-rotation = -0.00023094
+skew = 0.0
 
 [node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
 rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
+skew = 0.0
 
 [node name="Bone-17" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="17"]
 position = Vector2(45.5116, 408.093)
 scale = Vector2(0.999984, 0.999984)
+skew = 0.0
 
 [node name="Bone-18" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="18"]
 position = Vector2(46.0035, 468.041)
 scale = Vector2(0.999861, 0.999861)
+skew = 0.0
 
 [node name="Bone-19" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="19"]
 position = Vector2(46.2515, 528.023)
+skew = 0.0
 
 [node name="Bone-20" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="20"]
 position = Vector2(15.7145, 573.021)
 scale = Vector2(1, 1)
+skew = 0.0
 
 [node name="Bone-21" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="21"]
 position = Vector2(46.3693, 573.017)
 scale = Vector2(0.999831, 0.999831)
+skew = 0.0
 
 [node name="Bone-0" parent="ProceduralWalls/Softwall2/SoftBody2D" index="1"]
 constant_force = Vector2(100, 0)
@@ -1288,20 +1341,19 @@ texture_normal = ExtResource("6_dsoo8")
 position = Vector2(128.99, -15.19)
 scale = Vector2(10, 10)
 sprite_frames = SubResource("SpriteFrames_v5wis")
-speed_scale = 0.0
 
 [node name="BuyButton1" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = -231.0
+offset_left = -241.0
 offset_top = -175.0
-offset_right = -91.0
+offset_right = -101.0
 offset_bottom = -75.0
 price = 40
 cap = 12
 
 [node name="BuyButton2" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = -71.0
+offset_left = -81.0
 offset_top = -175.0
-offset_right = 69.0
+offset_right = 59.0
 offset_bottom = -75.0
 upgradeIndex = 1
 cap = 12
@@ -1310,9 +1362,9 @@ cap = 12
 offset_bottom = 180.0
 
 [node name="BuyButton3" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = 89.0
+offset_left = 79.0
 offset_top = -175.0
-offset_right = 229.0
+offset_right = 219.0
 offset_bottom = -75.0
 price = 300
 upgradeIndex = 2
@@ -1323,9 +1375,9 @@ cap = 3
 offset_bottom = 180.0
 
 [node name="BuyButton4" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = 249.0
+offset_left = 239.0
 offset_top = -175.0
-offset_right = 389.0
+offset_right = 379.0
 offset_bottom = -75.0
 price = 100
 upgradeIndex = 3
@@ -1336,9 +1388,9 @@ cap = 3
 offset_bottom = 180.0
 
 [node name="BuyButton5" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = 409.0
+offset_left = 399.0
 offset_top = -175.0
-offset_right = 549.0
+offset_right = 539.0
 offset_bottom = -75.0
 upgradeIndex = 4
 exponentiationNumber = 5
@@ -1348,9 +1400,9 @@ cap = 8
 offset_bottom = 180.0
 
 [node name="BuyButton6" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = -231.0
+offset_left = -241.0
 offset_top = 30.0
-offset_right = -91.0
+offset_right = -101.0
 offset_bottom = 130.0
 price = 50
 upgradeIndex = 5
@@ -1364,9 +1416,9 @@ offset_bottom = 180.0
 scale = Vector2(2.1875, 1.71875)
 
 [node name="BuyButton7" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = -71.0
+offset_left = -81.0
 offset_top = 30.0
-offset_right = 69.0
+offset_right = 59.0
 offset_bottom = 130.0
 price = 25
 upgradeIndex = 6
@@ -1379,9 +1431,9 @@ offset_bottom = 180.0
 scale = Vector2(2.1875, 1.71875)
 
 [node name="BuyButton8" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = 89.0
+offset_left = 79.0
 offset_top = 30.0
-offset_right = 229.0
+offset_right = 219.0
 offset_bottom = 130.0
 price = 225
 upgradeIndex = 7
@@ -1395,9 +1447,9 @@ offset_bottom = 180.0
 scale = Vector2(2.1875, 1.71875)
 
 [node name="BuyButton9" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = 249.0
+offset_left = 239.0
 offset_top = 30.0
-offset_right = 389.0
+offset_right = 379.0
 offset_bottom = 130.0
 price = 500
 upgradeIndex = 8
@@ -1411,9 +1463,9 @@ position = Vector2(70, 49.75)
 scale = Vector2(2.1875, 1.71094)
 
 [node name="BuyButton10" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
-offset_left = 409.0
+offset_left = 399.0
 offset_top = 25.0
-offset_right = 549.0
+offset_right = 539.0
 offset_bottom = 135.0
 upgradeIndex = 9
 exponentiationNumber = 5
@@ -1426,9 +1478,9 @@ position = Vector2(70, 55)
 scale = Vector2(2.1875, 1.71875)
 
 [node name="RefundButton" type="TextureButton" parent="MainMenu/CanvasLayer/ShopTab"]
-offset_left = 359.0
+offset_left = 349.0
 offset_top = 255.0
-offset_right = 569.0
+offset_right = 559.0
 offset_bottom = 335.0
 script = ExtResource("51_ourhy")
 price = 1000
@@ -1441,9 +1493,9 @@ parent = NodePath("..")
 
 [node name="Price" type="RichTextLabel" parent="MainMenu/CanvasLayer/ShopTab/RefundButton"]
 layout_mode = 0
-offset_left = -130.54
+offset_left = 359.27
 offset_top = 8.34
-offset_right = -10.54
+offset_right = 479.27
 offset_bottom = 77.34
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/RefundButton" instance=ExtResource("52_44g0p")]

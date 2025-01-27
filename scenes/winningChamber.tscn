@@ -83,11 +83,13 @@ text = "Stars earned this run:"
 fit_content = true
 
 [node name="Time" type="RichTextLabel" parent="TextController/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Your Time:"
 fit_content = true
 
 [node name="BestTime" type="RichTextLabel" parent="TextController/VBoxContainer"]
+visible = false
 layout_mode = 2
 text = "Best Time: 0h 0m 0s"
 fit_content = true
