@@ -19,4 +19,12 @@ color = Color(0.839216, 0.956863, 0.901961, 1)
 invert_border = 0.1
 polygon = PackedVector2Array(0, -1.85714, 0.857143, 0, 3, 0, 1.28571, 1.14286, 2, 3.14286, 0, 1.85714, -2, 3.14286, -1.28571, 1.14286, -3, 0, -0.857143, 0)
 
+[node name="Polygon2D2" type="Polygon2D" parent="."]
+z_index = -1
+position = Vector2(2.38419e-07, 0)
+scale = Vector2(1.01, 1.02)
+color = Color(0, 0, 0, 1)
+invert_border = 0.1
+polygon = PackedVector2Array(0, -1.85714, 0.862, -0.02, 3, 0, 1.28571, 1.14286, 2, 3.14286, 0, 1.85714, -2, 3.14286, -1.28571, 1.14286, -3, 0, -0.862, -0.02)
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

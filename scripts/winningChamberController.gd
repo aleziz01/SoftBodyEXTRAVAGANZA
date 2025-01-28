@@ -32,8 +32,9 @@ func _ready() -> void:
 		$TextController/VBoxContainer/BestTime.text="BEST TIME: " + str(global.BestTime[0]) + "H " + str(global.BestTime[1]) + "M " + str(global.BestTime[2]) + "S"
 		$TextController/VBoxContainer/BestTime.show()
 		$TextController/VBoxContainer/Time.show()
-		$Coin/CoinType.text="NOTHING!"
-		$Coin/CoinType.global_position+=Vector2(100,20)
+		$Coin/CoinType.text=str(global.wins*global.winningDistance) + " STARS!"
+		$Coin/CoinType.global_position+=Vector2(60,20)
+		global.starScore+=global.winningDistance*global.wins
 
 func calculateBestTime():
 	if global.time[0]<global.BestTime[0]:
