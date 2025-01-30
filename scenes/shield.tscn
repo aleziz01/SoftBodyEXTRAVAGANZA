@@ -1,6 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://dsgaa3s1bgvd7"]
+[gd_scene load_steps=5 format=3 uid="uid://dsgaa3s1bgvd7"]
 
 [ext_resource type="Script" path="res://scripts/shield.gd" id="1_etxmt"]
+[ext_resource type="Texture2D" uid="uid://cw51pakicxaty" path="res://art/shaderTexture.png" id="3_6uqgl"]
+
+[sub_resource type="Gradient" id="Gradient_8y833"]
+colors = PackedColorArray(0, 0, 0, 1, 0.493545, 0.493546, 0.493546, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8bpj8"]
+gradient = SubResource("Gradient_8y833")
+fill = 2
+fill_from = Vector2(0.495413, 0.522936)
 
 [node name="Shield" type="Area2D"]
 z_index = 99
@@ -11,11 +20,20 @@ script = ExtResource("1_etxmt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1
-polygon = PackedVector2Array(-8, -15, 8, -15, 13, -8, 13, 6, 8, 12, -8, 12, -13, 6, -13, -8)
+polygon = PackedVector2Array(-8, -15, 8, -15, 13, -10, 13, 7, 8, 12, -8, 12, -13, 7, -13, -10)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 90.0
 one_shot = true
+
+[node name="ShieldShader" type="Sprite2D" parent="."]
+modulate = Color(0.278431, 1, 1, 1)
+texture_filter = 1
+scale = Vector2(0.325, 0.325)
+texture = ExtResource("3_6uqgl")
+
+[node name="PointLight2D" type="PointLight2D" parent="ShieldShader"]
+texture = SubResource("GradientTexture2D_8bpj8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

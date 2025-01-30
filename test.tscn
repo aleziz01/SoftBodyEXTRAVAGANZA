@@ -1,17 +1,17 @@
-[gd_scene load_steps=45 format=3 uid="uid://dlfilxus23yds"]
+[gd_scene load_steps=44 format=3 uid="uid://dlfilxus23yds"]
 
 [ext_resource type="Script" path="res://test.gd" id="1_0ye61"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="1_8lauv"]
 [ext_resource type="Script" path="res://scripts/MainSoftBody.gd" id="4_miooc"]
 [ext_resource type="Shader" path="res://shaders/royal.gdshader" id="5_l627o"]
 [ext_resource type="Texture2D" uid="uid://pbyssup25ian" path="res://art/coin.png" id="6_klg61"]
+[ext_resource type="Script" path="res://scripts/shield.gd" id="6_sbx8e"]
 [ext_resource type="Script" path="res://addons/softbody2d/softbody2d.gd" id="7_hpnqx"]
-[ext_resource type="PackedScene" uid="uid://dsgaa3s1bgvd7" path="res://scenes/shield.tscn" id="8_ybnpi"]
-[ext_resource type="Script" path="res://skinSelector.gd" id="10_lgaj3"]
+[ext_resource type="Script" path="res://scripts/skinSelector.gd" id="10_lgaj3"]
 [ext_resource type="Texture2D" uid="uid://mqwh3yymgard" path="res://art/crown.png" id="11_7k1pq"]
 [ext_resource type="PackedScene" uid="uid://bfvuvwmc4up3m" path="res://scenes/crown.tscn" id="11_f3jwv"]
-[ext_resource type="Shader" path="res://test.gdshader" id="12_e5wxl"]
-[ext_resource type="FontFile" uid="uid://8qbh0ygrebiy" path="res://Mystery Font (7).ttf" id="13_jru1y"]
+[ext_resource type="Shader" path="res://shaders/test.gdshader" id="12_e5wxl"]
+[ext_resource type="FontFile" uid="uid://8qbh0ygrebiy" path="res://auxiliary/Mystery Font (7).ttf" id="13_jru1y"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5wv7x"]
 shader = ExtResource("5_l627o")
@@ -200,14 +200,14 @@ modifications/21 = SubResource("SkeletonModification2DLookAt_lg5xk")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_va88f"]
 resource_local_to_scene = true
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_de624"]
+shader = ExtResource("12_e5wxl")
+
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uf0pg"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_vgbhu"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_dfga5"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_f8fug"]
-shader = ExtResource("12_e5wxl")
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gerj2"]
 shader = ExtResource("12_e5wxl")
@@ -215,9 +215,6 @@ shader = ExtResource("12_e5wxl")
 [sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_i6fbr"]
 particle_flag_disable_z = true
 gravity = Vector3(0, 98, 0)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_kj7nh"]
-shader = ExtResource("12_e5wxl")
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_0ye61")
@@ -258,7 +255,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-1" type="Bone2D" parent="MainSoftBody/softBody/Skeleton2D"]
 position = Vector2(39.3831, 85.0401)
-rotation = -0.0307555
+rotation = -0.0307556
 rest = Transform2D(0.999527, -0.030753, 0.030753, 0.999527, 39.3831, 85.0401)
 auto_calculate_length_and_angle = false
 length = 22.0
@@ -1740,14 +1737,25 @@ node_a = NodePath("..")
 node_b = NodePath("../../Bone-20")
 softness = 60.0
 
-[node name="Shield" parent="MainSoftBody" instance=ExtResource("8_ybnpi")]
+[node name="Shield" type="Area2D" parent="MainSoftBody"]
+z_index = 99
 scale = Vector2(7.955, 7.955)
-gravity_space_override = 0
 gravity = -1e+06
+script = ExtResource("6_sbx8e")
 
-[node name="Polygon2D2" type="Polygon2D" parent="MainSoftBody/Shield"]
-color = Color(0.470588, 0.470588, 0.470588, 0.454902)
-polygon = PackedVector2Array(8.17096, -15.0849, 7.91955, -14.8334, 12.8221, -7.91955, 12.8221, 6.03394, 7.91955, 11.8165, -7.91955, 11.8165, -12.8221, 5.90823, -12.8221, -7.91955, -7.91955, -14.8334, 7.79384, -14.8334, 8.17096, -15.2106, -8.29667, -15.2106, -13.1992, -8.04525, -13.1992, 6.28536, -8.17096, 12.1936, 8.29667, 12.1936, 13.325, 6.03394, 13.325, -7.91955)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MainSoftBody/Shield"]
+build_mode = 1
+polygon = PackedVector2Array(-8, -15, 8, -15, 13, -10, 13, 7, 8, 12, -8, 12, -13, 7, -13, -10)
+
+[node name="Timer" type="Timer" parent="MainSoftBody/Shield"]
+wait_time = 90.0
+one_shot = true
+
+[node name="ShieldShader" type="Sprite2D" parent="MainSoftBody/Shield"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_de624")
+scale = Vector2(0.52, 0.52)
+texture = ExtResource("1_8lauv")
 
 [node name="Camera2D" type="Camera2D" parent="MainSoftBody"]
 position = Vector2(255.805, -70)
@@ -1828,11 +1836,6 @@ texture_normal = ExtResource("11_7k1pq")
 [node name="crown" parent="." node_paths=PackedStringArray("mainSoftBody") instance=ExtResource("11_f3jwv")]
 mainSoftBody = NodePath("../MainSoftBody")
 
-[node name="Icon" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_f8fug")
-position = Vector2(912, -89)
-texture = ExtResource("1_8lauv")
-
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = SubResource("ShaderMaterial_gerj2")
 position = Vector2(464.635, 0)
@@ -1846,11 +1849,8 @@ offset_bottom = 310.43
 theme_override_fonts/normal_font = ExtResource("13_jru1y")
 text = "FGSRJIPOSFGPJOISFEJPFSEOPJFSEJPOSEPFOJSE1231234325454:?!"
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-material = SubResource("ShaderMaterial_kj7nh")
-position = Vector2(-352, -13)
-texture = ExtResource("1_8lauv")
-
+[connection signal="body_entered" from="MainSoftBody/Shield" to="MainSoftBody/Shield" method="_on_body_entered"]
+[connection signal="timeout" from="MainSoftBody/Shield/Timer" to="MainSoftBody/Shield" method="_on_timer_timeout"]
 [connection signal="pressed" from="skinSelector" to="skinSelector" method="_on_pressed"]
 [connection signal="pressed" from="skinSelector/bg/skin1" to="skinSelector" method="_on_skin_1_pressed"]
 [connection signal="pressed" from="skinSelector/bg/skin2" to="skinSelector" method="_on_skin_2_pressed"]

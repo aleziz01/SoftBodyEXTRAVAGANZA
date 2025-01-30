@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://8qbh0ygrebiy"
-path="res://.godot/imported/Mystery Font (7).ttf-bb9db15f84e4f5765c8fcbc250fe424d.fontdata"
+path="res://.godot/imported/Mystery Font (7).ttf-1051801a932f38fe30955c33e2e2de72.fontdata"
 
 [deps]
 
-source_file="res://Mystery Font (7).ttf"
-dest_files=["res://.godot/imported/Mystery Font (7).ttf-bb9db15f84e4f5765c8fcbc250fe424d.fontdata"]
+source_file="res://auxiliary/Mystery Font (7).ttf"
+dest_files=["res://.godot/imported/Mystery Font (7).ttf-1051801a932f38fe30955c33e2e2de72.fontdata"]
 
 [params]
 

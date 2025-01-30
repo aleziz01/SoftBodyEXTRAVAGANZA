@@ -269,6 +269,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-4" type="Bone2D" parent="softBody/Skeleton2D"]
 position = Vector2(55.723, 84.5374)
 rotation = 1.87008
+scale = Vector2(1, 1)
 rest = Transform2D(-0.29484, 0.955547, -0.955547, -0.29484, 55.723, 84.5374)
 auto_calculate_length_and_angle = false
 length = 22.0
@@ -282,6 +283,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-5" type="Bone2D" parent="softBody/Skeleton2D"]
 position = Vector2(49.3496, 105.193)
 rotation = -1.27151
+scale = Vector2(1, 1)
 rest = Transform2D(0.29484, -0.955547, 0.955547, 0.29484, 49.3496, 105.193)
 auto_calculate_length_and_angle = false
 length = 22.0
@@ -374,6 +376,7 @@ metadata/_local_pose_override_enabled_ = true
 [node name="Bone-12" type="Bone2D" parent="softBody/Skeleton2D"]
 position = Vector2(94.2549, 45.5993)
 rotation = 2.26767
+scale = Vector2(1, 1)
 rest = Transform2D(-0.641819, 0.766856, -0.766856, -0.641819, 94.2549, 45.5993)
 auto_calculate_length_and_angle = false
 length = 22.0
@@ -1713,8 +1716,3 @@ position = Vector2(0, 7.27)
 scale = Vector2(7.955, 7.955)
 gravity_space_override = 0
 gravity = -1e+06
-
-[node name="Polygon2D2" type="Polygon2D" parent="Shield"]
-z_index = -5
-color = Color(0.470588, 0.470588, 0.470588, 0.454902)
-polygon = PackedVector2Array(0.03, 12.1936, -12.9178, -7.95349, 13.044, -8.079, 8, -15, -8, -15, -13.0435, -8.0792, -13.1992, 6.28536, -8.17096, 12.1936, 8.29667, 12.1936, 13.325, 6.03394, 13.043, -8.044)

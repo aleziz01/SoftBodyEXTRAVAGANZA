@@ -32,7 +32,7 @@ enabled=PackedStringArray("res://addons/softbody2d/plugin.cfg")
 
 [gui]
 
-theme/custom_font="res://Mystery Font (7).ttf"
+theme/custom_font="res://auxiliary/Mystery Font (7).ttf"
 
 [input]
 

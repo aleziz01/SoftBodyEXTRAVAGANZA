@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://mqwh3yymgard" path="res://art/crown.png" id="1_bxf0m"]
 [ext_resource type="Shader" path="res://shaders/royal.gdshader" id="1_vmbb6"]
-[ext_resource type="Script" path="res://crown.gd" id="2_oklqa"]
+[ext_resource type="Script" path="res://scripts/crown.gd" id="2_oklqa"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bwtgn"]
 shader = ExtResource("1_vmbb6")

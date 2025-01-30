@@ -4,14 +4,22 @@ extends Area2D
 @onready var mainSoftBody=get_parent()
 var shieldHP
 
+var rotateSpeed=1
+
 func _ready() -> void:
 	shieldHP=global.Upgrades[2]
 	verifyHP()
+	Rotate()
 
 func _process(_delta: float) -> void:
 	global_position=mainSoftBody.realPos
 	if(global.HighScore<5):
 		queue_free()
+
+func Rotate():
+	while(true):
+		rotation_degrees+=1
+		await get_tree().create_timer(0.01/rotateSpeed).timeout
 
 func _on_body_entered(body):
 	var parentOfBody=body.get_parent().get_parent()
@@ -23,7 +31,9 @@ func _on_body_entered(body):
 
 func goRed():
 	modulate=Color(255,0,0,255)
+	rotateSpeed=4
 	await get_tree().create_timer(0.1).timeout
+	rotateSpeed=1
 	modulate=Color(255,255,255,255)
 
 func verifyHP():
