@@ -34,7 +34,7 @@ func goRed():
 	rotateSpeed=4
 	await get_tree().create_timer(0.1).timeout
 	rotateSpeed=1
-	modulate=Color(255,255,255,255)
+	modulate=Color(71,255,255,255)
 
 func verifyHP():
 	if(shieldHP<=0):

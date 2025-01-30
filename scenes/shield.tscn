@@ -12,6 +12,7 @@ fill = 2
 fill_from = Vector2(0.495413, 0.522936)
 
 [node name="Shield" type="Area2D"]
+modulate = Color(0.278431, 1, 1, 1)
 z_index = 99
 scale = Vector2(5, 5)
 gravity_space_override = 1
@@ -27,7 +28,6 @@ wait_time = 90.0
 one_shot = true
 
 [node name="ShieldShader" type="Sprite2D" parent="."]
-modulate = Color(0.278431, 1, 1, 1)
 texture_filter = 1
 scale = Vector2(0.325, 0.325)
 texture = ExtResource("3_6uqgl")
