@@ -727,13 +727,16 @@ layout_mode = 2
 [node name="HighScore" type="RichTextLabel" parent="Hud/GAMEOVER/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
-text = "hgteertgh"
 
 [node name="YourTime" type="RichTextLabel" parent="Hud/GAMEOVER/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
 [node name="BestTime" type="RichTextLabel" parent="Hud/GAMEOVER/VBoxContainer2"]
+custom_minimum_size = Vector2(0, 30)
+layout_mode = 2
+
+[node name="BonusStars" type="RichTextLabel" parent="Hud/GAMEOVER/VBoxContainer2"]
 custom_minimum_size = Vector2(0, 30)
 layout_mode = 2
 
