@@ -1040,7 +1040,7 @@ scale = Vector2(0.999999, 0.999999)
 skew = 0.0
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.999951, 0.999951)
+scale = Vector2(0.99995, 0.99995)
 skew = 0.0
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="11"]
@@ -1576,6 +1576,7 @@ texture_normal = ExtResource("46_coq73")
 visible = false
 modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_2trhx")
+layout_mode = 0
 offset_left = -476.0
 offset_top = -365.365
 offset_right = -316.0
@@ -1588,6 +1589,7 @@ texture_normal = ExtResource("55_eawis")
 visible = false
 modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_jcjii")
+layout_mode = 0
 offset_left = -476.0
 offset_top = -166.965
 offset_right = -316.0
@@ -1600,6 +1602,7 @@ texture_normal = ExtResource("46_coq73")
 visible = false
 modulate = Color(0, 0, 0, 1)
 material = SubResource("ShaderMaterial_1hvmd")
+layout_mode = 0
 offset_left = -476.0
 offset_top = -256.19
 offset_right = -316.0

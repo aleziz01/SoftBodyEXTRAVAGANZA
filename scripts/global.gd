@@ -19,7 +19,7 @@ var wins=0
 var selfDestructHP=0
 var secondLives=0
 
-var winningDistance=50
+var winningDistance=5000
 
 var time = [0,0,0] #1st is hours, 2nd is minutes, 3rd is seconds
 var BestTime = [0,0,0] #same here

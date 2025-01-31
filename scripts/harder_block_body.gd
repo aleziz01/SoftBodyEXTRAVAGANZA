@@ -28,6 +28,7 @@ func UpdateSpeed() -> void:
 
 func _process(delta: float) -> void:
 	global_position.x=clamp(global_position.x+delta*speed,-550,550)
+	global_position.y=mainSoftBody.realPos.y-1000
 	if(global_position.x>545 or global_position.x<-545):
 		speed=0
 

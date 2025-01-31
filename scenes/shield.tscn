@@ -12,7 +12,7 @@ fill = 2
 fill_from = Vector2(0.495413, 0.522936)
 
 [node name="Shield" type="Area2D"]
-modulate = Color(0.278431, 1, 1, 1)
+modulate = Color(0.270588, 1, 1, 1)
 z_index = 99
 scale = Vector2(5, 5)
 gravity_space_override = 1
@@ -21,18 +21,18 @@ script = ExtResource("1_etxmt")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 build_mode = 1
-polygon = PackedVector2Array(-8, -15, 8, -15, 13, -10, 13, 7, 8, 12, -8, 12, -13, 7, -13, -10)
+polygon = PackedVector2Array(-7.2, -18.4, 7.2, -18.4, 13, -10, 13, 7, 8, 12, -8, 12, -13, 7, -13, -10)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 90.0
+wait_time = 10.0
 one_shot = true
 
-[node name="ShieldShader" type="Sprite2D" parent="."]
+[node name="ShieldSprite" type="Sprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.325, 0.325)
 texture = ExtResource("3_6uqgl")
 
-[node name="PointLight2D" type="PointLight2D" parent="ShieldShader"]
+[node name="PointLight2D" type="PointLight2D" parent="ShieldSprite"]
 texture = SubResource("GradientTexture2D_8bpj8")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

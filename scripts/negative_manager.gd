@@ -34,7 +34,6 @@ func run() -> void:
 			if global.score>30000:
 				EnemySpawn(BiggerBlackHole,(global.score-10000)/(600+global.Upgrades[6]*25),rng.randi_range(0,5000+global.Upgrades[6]*500),BiggerBlackHoleContainer)
 				HarderCannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
-				HarderCannonSpawn() #THIS NEEDS A VERY SPECIFIC SPAWN
 
 func EnemySpawn(thingToSpawn,condition,DecisiveNumber,Holder):
 	if DecisiveNumber<clamp(condition,0,2000):
@@ -45,8 +44,8 @@ func EnemySpawn(thingToSpawn,condition,DecisiveNumber,Holder):
 
 func HarderCannonSpawn():
 	var CannonType=rng.randi_range(0,3)
-	var DecisiveNumber=rng.randi_range(0,5000+global.Upgrades[6]*500)
-	if DecisiveNumber<clamp((global.score-5000)/(100+25*global.Upgrades[6]),0,2000):
+	var DecisiveNumber=rng.randi_range(0,8000+global.Upgrades[6]*500)
+	if DecisiveNumber<clamp((global.score-10000)/(100+25*global.Upgrades[6]),0,2000):
 		var CannonInstance=Cannon.instantiate()
 		var sign=sign(randi_range(-101,100))
 		CannonInstance.scale.x=sign
@@ -54,24 +53,24 @@ func HarderCannonSpawn():
 		CannonInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		CannonInstance.isHeat=1
 		if(CannonType==0): #upgraded normal cannon
-			CannonInstance.MultiTimesToFire=2
+			CannonInstance.MultiTimesToFire=1
 			CannonInstance.ProjCount=16
 			CannonInstance.timeBeforeNextBurst=0.01
-		elif(CannonType==1): #full auto shotgun cannon
-			CannonInstance.MultiTimesToFire=5
+		elif(CannonType==1): #pump action shotgun cannon
+			CannonInstance.MultiTimesToFire=2
 			CannonInstance.timeBetweenShots=0.01
 			CannonInstance.timeBeforeNextBurst=0.1
 			CannonInstance.ProjCount=16
-		elif(CannonType==2): #full auto rifle cannon
-			CannonInstance.MultiTimesToFire=5
+		elif(CannonType==2): #semi auto rifle cannon
+			CannonInstance.MultiTimesToFire=3
 			CannonInstance.timeBetweenShots=0.05
-			CannonInstance.timeBeforeNextBurst=0.05
+			CannonInstance.timeBeforeNextBurst=0.10
 			CannonInstance.ProjCount=16
 		elif(CannonType==3): #railgun turret
 			CannonInstance.MultiTimesToFire=1
 			CannonInstance.timeBetweenShots=0.01
 			CannonInstance.timeBeforeNextBurst=0.1
-			CannonInstance.ProjCount=80
+			CannonInstance.ProjCount=25
 		CannonHolder.add_child(CannonInstance)
 
 func CannonSpawn():

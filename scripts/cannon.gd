@@ -26,10 +26,10 @@ func FIRE():
 		add_child(cannonExplosionInstance)
 		for j in ProjCount:
 			var projectileInstance=projectile.instantiate()
-			projectileInstance.mainSoftBody=mainSoftBody
 			projectileHolder.add_child(projectileInstance)
 			projectileInstance.global_position=global_position+Vector2(-1*randf_range(22,30),randf_range(-0.5,0.5)*isHeat+randf_range(-3,3)*int(!bool(isHeat)))
 			projectileInstance.rotation=rotation
+			projectileInstance.mainSoftBody=mainSoftBody
 			await get_tree().create_timer(timeBetweenShots).timeout
 		await get_tree().create_timer(timeBeforeNextBurst).timeout
 

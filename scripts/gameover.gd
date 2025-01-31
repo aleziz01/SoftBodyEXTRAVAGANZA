@@ -17,7 +17,6 @@ func gameover():
 	for i in $VBoxContainer.get_children():
 		if i is TextureButton:
 			i.disabled=false
-			print(i)
 
 @onready var run_score: RichTextLabel = $VBoxContainer2/RunScore
 @onready var high_score: RichTextLabel = $VBoxContainer2/HighScore

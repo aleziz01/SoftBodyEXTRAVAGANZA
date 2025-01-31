@@ -2,6 +2,9 @@ extends Node2D
 
 var mainSoftBody: Node2D
 
+func _ready() -> void:
+	unload()
+
 func unload():
 	while(true):
 		await get_tree().create_timer(0.1).timeout
