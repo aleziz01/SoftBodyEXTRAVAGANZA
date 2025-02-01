@@ -13,9 +13,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	global_position=mainSoftBody.realPos
-	if modulate!=Color(0.2706,1,1,1):
-		print(modulate)
-	if(global.HighScore<5):
+	if(global.Upgrades[2]==0):
 		queue_free()
 
 func Rotate():

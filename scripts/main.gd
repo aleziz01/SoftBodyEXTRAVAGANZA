@@ -6,8 +6,14 @@ var explosion=preload("res://scenes/explosion.tscn")
 
 func _enter_tree() -> void:
 	global.loadGame()
+	changeCursor()
+	Input.set_custom_mouse_cursor(normalCursor,Input.CURSOR_ARROW,Vector2(16,16))
+
+var explosionCursor=preload("res://art/explosionCursorTexture.png")
+var normalCursor = preload("res://art/cursorTexture.png")
 
 var cooldown=false
+var switchingTex=false
 func _input(_event: InputEvent) -> void:
 	if (Input.is_action_just_pressed("explode") or (Input.is_action_pressed("explode") and global.noCD)) and (!cooldown or global.noCD) and !global.gameOver and global.gameStarted:
 		if(!global.noCD): #fixes bugs
@@ -23,13 +29,22 @@ func _input(_event: InputEvent) -> void:
 			cooldown=false
 			timer.stop()
 
+func changeCursor():
+	while(true):
+		if Input.is_action_just_pressed("explode") and !switchingTex:
+			Input.set_custom_mouse_cursor(explosionCursor,Input.CURSOR_ARROW,Vector2(16,16))
+			switchingTex=true
+			await get_tree().create_timer(0.05).timeout
+			Input.set_custom_mouse_cursor(normalCursor,Input.CURSOR_ARROW,Vector2(16,16))
+			switchingTex=false
+		await get_tree().create_timer(0.001).timeout
+
 @onready var softBody=$mainSoftBody
 @onready var camera: Camera2D = $Hud
 @onready var meters_traveled: RichTextLabel = $Hud/MetersTraveled
 @onready var starScoreShower: Label = $Hud/ScoreShower
 @onready var second_life_cooldown_timer: Timer = $secondLifeCooldown
 @onready var mainSoftBody: Node2D = $mainSoftBody
-
 
 var secondLifeCooldown=false
 var savingExplosion=preload("res://scenes/savingExplosion.tscn")

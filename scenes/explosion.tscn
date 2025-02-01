@@ -16,7 +16,7 @@ curve = SubResource("Curve_e4kod")
 
 [sub_resource type="Gradient" id="Gradient_v3mu1"]
 offsets = PackedFloat32Array(0.00819672, 1)
-colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 0)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 
 [sub_resource type="GradientTexture1D" id="GradientTexture1D_u8unh"]
 gradient = SubResource("Gradient_v3mu1")
@@ -29,8 +29,8 @@ angle_max = 360.0
 angle_curve = SubResource("CurveTexture_y1hsu")
 direction = Vector3(0, 0, 0)
 spread = 180.0
-initial_velocity_min = 150.0
-initial_velocity_max = 300.0
+initial_velocity_min = 250.0
+initial_velocity_max = 450.0
 gravity = Vector3(0, 98, 0)
 scale_min = 2.0
 scale_max = 8.0
@@ -60,10 +60,9 @@ autostart = true
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 emitting = false
-amount = 128
+amount = 196
 sub_emitter = NodePath(".")
 process_material = SubResource("ParticleProcessMaterial_u1ym7")
-lifetime = 2.0
 one_shot = true
 speed_scale = 2.0
 explosiveness = 1.0

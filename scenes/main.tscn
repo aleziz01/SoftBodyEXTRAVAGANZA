@@ -651,8 +651,7 @@ script = ExtResource("2_4g71p")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PositiveManager/ScoreStars"]
 stream = ExtResource("3_bt5e8")
-volume_db = -15.0
-mix_target = 2
+volume_db = -10.0
 
 [node name="PowerUps" type="Node2D" parent="PositiveManager"]
 
@@ -869,7 +868,7 @@ skew = 0.0
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.99998, 0.99998)
+scale = Vector2(0.999979, 0.999979)
 skew = 0.0
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
@@ -878,7 +877,7 @@ scale = Vector2(1, 1)
 skew = 0.0
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="9"]
-scale = Vector2(0.999897, 0.999897)
+scale = Vector2(0.999895, 0.999895)
 skew = 0.0
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="11"]
@@ -1037,7 +1036,7 @@ skew = 0.0
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.99998, 0.99998)
+scale = Vector2(0.999979, 0.999979)
 skew = 0.0
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
@@ -1244,7 +1243,7 @@ color = Color(0, 0.180392, 0.568627, 1)
 polygon = PackedVector2Array(-670, 283, -579, 283, -572, 326, -671, 328)
 
 [node name="musicManager" type="AudioStreamPlayer" parent="."]
-volume_db = -80.0
+volume_db = -10.0
 autoplay = true
 script = ExtResource("15_l1ccf")
 

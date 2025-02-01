@@ -8,7 +8,12 @@ func _on_body_entered(body: Node2D) -> void:
 	if object.name=="mainSoftBody" and !isDead and !global.gameOver:
 		isDead=true
 		global.starScore+=scoreValue
-		get_parent().get_child(0).play()
+		if get_parent().get_child(0) is AudioStreamPlayer:
+			get_parent().get_child(0).pitch_scale=randf_range(0.95,1.05)
+			get_parent().get_child(0).play()
+		else:
+			get_parent().get_parent().get_parent().get_parent().get_child(1).get_child(0).get_child(0).pitch_scale=randf_range(0.95,1.05)
+			get_parent().get_parent().get_parent().get_parent().get_child(1).get_child(0).get_child(0).play()
 		queue_free()
 
 func _ready() -> void:
