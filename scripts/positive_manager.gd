@@ -46,7 +46,7 @@ var noCdPowerup=preload("res://scenes/NoCDPowerup.tscn")
 @onready var scoreStarsHolder: Node2D = $ScoreStars
 @onready var mainSoftBody: Node2D = $"../mainSoftBody"
 
-func noCdPowerupSpawn(): #0.02% chance to spawn every 10th of a second max
+func noCdPowerupSpawn():
 	var DecisiveNumber=rng.randi_range(0,1000000/clamp(global.Upgrades[5]+1,1,12))
 	if DecisiveNumber<clamp((global.score)/2,0,2000):
 		var noCdPowerupInstance=noCdPowerup.instantiate()

@@ -20,7 +20,7 @@ func _process(_delta: float) -> void:
 
 func Rotate():
 	while(true):
-		rotation_degrees+=1*int(!global.paused)
+		rotation_degrees+=1*int(!global.paused)*rotateSpeed
 		await get_tree().create_timer(0.01/rotateSpeed).timeout
 
 var hpDec=false
@@ -37,7 +37,7 @@ func _on_body_entered(body):
 
 func goRed():
 	modulate=Color(1,0,0,1)
-	rotateSpeed=10
+	rotateSpeed=5
 	await get_tree().create_timer(0.3).timeout
 	rotateSpeed=1
 	modulate=Color(0.2706,1,1,1)

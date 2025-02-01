@@ -1,8 +1,9 @@
-[gd_scene load_steps=141 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=142 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
 [ext_resource type="Script" path="res://scripts/positive_manager.gd" id="2_4g71p"]
+[ext_resource type="AudioStream" uid="uid://dkdoe18ljk1k6" path="res://sounds/starNoise.mp3" id="3_bt5e8"]
 [ext_resource type="Script" path="res://scripts/negative_manager.gd" id="3_c72lr"]
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
@@ -648,6 +649,11 @@ script = ExtResource("2_4g71p")
 
 [node name="ScoreStars" type="Node2D" parent="PositiveManager"]
 
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="PositiveManager/ScoreStars"]
+stream = ExtResource("3_bt5e8")
+volume_db = -15.0
+mix_target = 2
+
 [node name="PowerUps" type="Node2D" parent="PositiveManager"]
 
 [node name="NegativeManager" type="Node2D" parent="."]
@@ -890,9 +896,6 @@ skew = 0.0
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 skew = 0.0
 
-[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
-
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
 skew = 0.0
@@ -1060,6 +1063,9 @@ skew = 0.0
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 skew = 0.0
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)

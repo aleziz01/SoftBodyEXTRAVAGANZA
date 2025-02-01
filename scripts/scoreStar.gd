@@ -8,6 +8,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if object.name=="mainSoftBody" and !isDead and !global.gameOver:
 		isDead=true
 		global.starScore+=scoreValue
+		get_parent().get_child(0).play()
 		queue_free()
 
 func _ready() -> void:
