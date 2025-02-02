@@ -10,6 +10,7 @@ func _enter_tree() -> void:
 		_on_continue_button_pressed()
 
 func _on_exit_button_pressed() -> void:
+	buttonPress.play()
 	get_tree().quit()
 
 @onready var container: Sprite2D = $CanvasLayer/MainMenu/Container
@@ -17,6 +18,7 @@ func _on_exit_button_pressed() -> void:
 @onready var no_button: TextureButton = $CanvasLayer/MainMenu/Container/NoButton
 
 func _on_new_game_button_pressed() -> void:
+	buttonPress.play()
 	container.show()
 	no_button.disabled=false
 	yes_button.disabled=false
@@ -26,10 +28,14 @@ func hideContainer():
 	yes_button.disabled=true
 	container.hide()
 
+@onready var buttonPress: AudioStreamPlayer = $"../AudioStreamPlayer"
+
 func _on_no_button_pressed() -> void:
+	buttonPress.play()
 	hideContainer()
 
 func _on_yes_button_pressed() -> void:
+	buttonPress.play()
 	hideContainer()
 	for i in get_children():
 		if i is TextureButton:
@@ -56,6 +62,7 @@ func _on_yes_button_pressed() -> void:
 
 
 func _on_continue_button_pressed() -> void:
+	buttonPress.play()
 	control_info_button.disabled=true
 	play_button.disabled=true
 	exit_button.disabled=true
@@ -90,6 +97,7 @@ func _on_continue_button_pressed() -> void:
 
 
 func _on_control_info_button_pressed() -> void:
+	buttonPress.play()
 	global.switchFades(control_info,main_menu)
 	control_info_button.disabled=true
 	play_button.disabled=true
@@ -100,6 +108,7 @@ func _on_control_info_button_pressed() -> void:
 	control_back_button.disabled=false
 
 func _on_shop_button_pressed() -> void:
+	buttonPress.play()
 	global.switchFades(shop_tab,main_menu)
 	control_info_button.disabled=true
 	play_button.disabled=true

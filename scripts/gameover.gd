@@ -1,11 +1,15 @@
 extends Sprite2D
 
+@onready var buttonPress: AudioStreamPlayer = $"../../AudioStreamPlayer"
+
 func _on_quit_pressed() -> void:
+	buttonPress.play()
 	global.saveGame()
 	await get_tree().create_timer(0.005).timeout
 	get_tree().quit()
 
 func _on_retry_pressed() -> void:
+	buttonPress.play()
 	global.saveGame()
 	await get_tree().create_timer(0.005).timeout
 	get_tree().change_scene_to_file("res://scenes/load_screen.tscn")

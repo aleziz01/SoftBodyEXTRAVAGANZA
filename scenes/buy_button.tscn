@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://dygc6c25k8hn4"]
+[gd_scene load_steps=4 format=3 uid="uid://dygc6c25k8hn4"]
 
 [ext_resource type="Script" path="res://scripts/buy_button.gd" id="1_l1ibr"]
 [ext_resource type="PackedScene" uid="uid://bm62bpyg2s2i2" path="res://shaders/shop_shader.tscn" id="2_y7m2u"]
+[ext_resource type="AudioStream" uid="uid://bdk68i02p3thg" path="res://sounds/75235__creek23__cha-ching.wav" id="3_lnkh5"]
 
 [node name="BuyButton" type="TextureButton"]
 offset_right = 140.0
@@ -18,3 +19,7 @@ offset_bottom = 179.0
 [node name="ShopShader" parent="." instance=ExtResource("2_y7m2u")]
 position = Vector2(70, 50)
 scale = Vector2(2.1875, 1.5625)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_lnkh5")
+volume_db = -8.0

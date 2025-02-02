@@ -12,8 +12,11 @@ func _on_body_entered(body: Node2D) -> void:
 	if object.name=="mainSoftBody" and !isDead and !global.gameOver:
 		isDead=true
 		powerUpComponent.applyPowerUp(object)
+		get_parent().get_child(0).play()
 		hide()
-		await get_tree().create_timer(26).timeout
+		await get_tree().create_timer(0.1).timeout
+		get_parent().get_child(0).play()
+		await get_tree().create_timer(25.5).timeout
 		queue_free()
 
 var mainSoftBody: Node2D

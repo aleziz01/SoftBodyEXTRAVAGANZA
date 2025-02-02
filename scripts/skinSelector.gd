@@ -15,6 +15,8 @@ var RoyalShader=preload("res://shaders/royal.gdshader")
 
 var RegularTexture=preload("res://art/coin.png")
 
+@onready var buttonPress: AudioStreamPlayer = $"../../../../AudioStreamPlayer"
+
 func _ready() -> void:
 	if global.wins>=1:
 		skin_1.modulate=Color(255,255,255,255)
@@ -32,6 +34,7 @@ func _ready() -> void:
 		skin_3.disabled=false
 
 func _on_pressed() -> void:
+	buttonPress.play()
 	if bg.frame==5:
 		bg.play_backwards("default")
 		await get_tree().create_timer(0.01).timeout
@@ -46,6 +49,7 @@ func _on_pressed() -> void:
 				i.visible=true
 
 func _on_skin_1_pressed() -> void:
+	buttonPress.play()
 	mainSoftBody.get_child(0).material.shader=burntShader
 	mainSoftBody.get_child(0).material.set_shader_parameter("noise_img",burntNoise)
 	if crownInstance:
@@ -53,6 +57,7 @@ func _on_skin_1_pressed() -> void:
 		crownInstance=null
 
 func _on_skin_2_pressed() -> void:
+	buttonPress.play()
 	mainSoftBody.get_child(0).material.shader=deepSeaShader
 	mainSoftBody.get_child(0).material.set_shader_parameter("noise_img",deepSeaNoise)
 	if crownInstance:
@@ -62,6 +67,7 @@ func _on_skin_2_pressed() -> void:
 var crown=preload("res://scenes/crown.tscn")
 var crownInstance=null
 func _on_skin_3_pressed() -> void:
+	buttonPress.play()
 	if crownInstance:
 		crownInstance.queue_free()
 		crownInstance=null
@@ -71,6 +77,7 @@ func _on_skin_3_pressed() -> void:
 	mainSoftBody.add_child(crownInstance)
 
 func _on_skin_4_pressed() -> void:
+	buttonPress.play()
 	mainSoftBody.get_child(0).material.shader=null
 	if crownInstance:
 		crownInstance.queue_free()

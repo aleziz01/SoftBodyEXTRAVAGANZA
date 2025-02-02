@@ -43,7 +43,9 @@ var scoreStar400=preload("res://scenes/400ScoreStar.tscn")
 
 var noCdPowerup=preload("res://scenes/NoCDPowerup.tscn")
 
+@onready var powerupHolder: Node2D = $PowerUps
 @onready var scoreStarsHolder: Node2D = $ScoreStars
+
 @onready var mainSoftBody: Node2D = $"../mainSoftBody"
 
 func noCdPowerupSpawn():
@@ -52,7 +54,7 @@ func noCdPowerupSpawn():
 		var noCdPowerupInstance=noCdPowerup.instantiate()
 		noCdPowerupInstance.global_position=Vector2(0,mainSoftBody.realPos.y)-Vector2(randf_range(-560,560),randf_range(1000,3000))
 		noCdPowerupInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
-		scoreStarsHolder.add_child(noCdPowerupInstance)
+		powerupHolder.add_child(noCdPowerupInstance)
 
 func scoreSpawner(spawnedStar,condition):
 	var DecisiveNumber=rng.randi_range(0,8000/clamp(global.Upgrades[5]+1,1,12))

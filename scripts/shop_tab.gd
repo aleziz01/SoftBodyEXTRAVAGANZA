@@ -14,7 +14,12 @@ extends Node2D
 @onready var back_button: TextureButton = $BackButton
 
 var shopOpened=false
+
+@onready var buttonPress: AudioStreamPlayer = $"../../../AudioStreamPlayer"
+
+
 func _on_back_button_pressed() -> void:
+	buttonPress.play()
 	global.switchFades(main_menu,self)
 	playShopAnimationBack()
 	for i in get_children():

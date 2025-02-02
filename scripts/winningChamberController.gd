@@ -48,3 +48,15 @@ func setBestTime():
 	global.BestTime[0]=global.time[0]
 	global.BestTime[1]=global.time[1]
 	global.BestTime[2]=global.time[2]
+
+func _on_quit_button_pressed() -> void:
+	global.saveGame()
+	await get_tree().create_timer(0.005).timeout
+	get_tree().quit()
+
+func _on_retry_button_pressed() -> void:
+	get_tree().paused=false
+	global.paused=false
+	global.saveGame()
+	await get_tree().create_timer(0.005).timeout
+	get_tree().change_scene_to_file("res://scenes/load_screen.tscn")

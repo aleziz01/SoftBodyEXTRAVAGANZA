@@ -5,8 +5,11 @@ extends Node2D
 func _ready() -> void:
 	await get_tree().create_timer(0.5).timeout
 	parent.disconnect("pressed",parent._on_button_pressed)
+	
+@onready var audio_stream_player: AudioStreamPlayer = $"../AudioStreamPlayer"
 
 func _on_button_pressed():
+	audio_stream_player.play()
 	global.starScore-=parent.price
 	for i in 10:
 		var buyButtonAccessed=parent.get_parent().get_node("BuyButton" + str(i+1))

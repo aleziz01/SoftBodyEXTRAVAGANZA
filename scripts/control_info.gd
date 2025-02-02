@@ -30,11 +30,10 @@ func explodeCursor():
 
 var selfDestructExplosion=preload("res://scenes/SelfDestructExplosion.tscn")
 func showSelfDestruct():
-	await get_tree().create_timer(0.3).timeout
+	await get_tree().create_timer(0.4).timeout
 	var selfDestructExplosionInstance=selfDestructExplosion.instantiate()
 	selfDestructExplosionInstance.global_position=Vector2(-450,-40)
 	selfDestructExplosionInstance.gravity=0
-	selfDestructExplosionInstance.scale=Vector2(0.6,0.6)
 	selfDestructExplosionInstance.ok=false
 	explosion_holder.add_child(selfDestructExplosionInstance)
 
@@ -56,7 +55,10 @@ func _process(delta: float) -> void:
 #buttons to hide and disable
 @onready var back_button: TextureButton = $BackButton
 
+@onready var buttonPress: AudioStreamPlayer = $"../../../AudioStreamPlayer"
+
 func _on_back_button_pressed() -> void:
+	buttonPress.play()
 	global.switchFades(main_menu,self)
 	for i in get_children():
 		if i is TextureButton:

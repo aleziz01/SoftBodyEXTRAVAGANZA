@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=147 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -62,7 +62,6 @@
 [ext_resource type="Script" path="res://scripts/skinSelector.gd" id="54_o4xov"]
 [ext_resource type="Texture2D" uid="uid://c68m8d7etploj" path="res://art/coinwithcrown.png" id="55_eawis"]
 [ext_resource type="Texture2D" uid="uid://ccyrlsd1h6nxy" path="res://art/Buttons/skinbar.png" id="57_stkhk"]
-[ext_resource type="AudioStream" uid="uid://bdk68i02p3thg" path="res://sounds/75235__creek23__cha-ching.wav" id="60_q4mw7"]
 [ext_resource type="AudioStream" uid="uid://cfguemuy34kho" path="res://sounds/566194__scholzi982__press_button_03.wav" id="63_gnice"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b8644"]
@@ -1366,12 +1365,12 @@ text = "CLICK TO EXPLODE THE COIN AND GO UP!"
 
 [node name="Instruction2" type="RichTextLabel" parent="MainMenu/CanvasLayer/ControlInfo"]
 modulate = Color(1, 0, 0, 1)
-offset_left = -607.06
-offset_top = 106.035
-offset_right = -421.06
-offset_bottom = 212.035
+offset_left = -627.685
+offset_top = 134.55
+offset_right = -441.685
+offset_bottom = 240.55
 scale = Vector2(2, 2)
-text = "PRESS  F  TO SELF DESTRUCT PUSHING TREES AWAY!"
+text = "PRESS  F  TO SELF DESTRUCT PUSHING EVERYTHING TREES AWAY!"
 
 [node name="CursorSprite" type="Sprite2D" parent="MainMenu/CanvasLayer/ControlInfo"]
 position = Vector2(0, -85)
@@ -1570,10 +1569,6 @@ offset_bottom = 77.34
 position = Vector2(105, 39.8975)
 scale = Vector2(3.28125, 1.2532)
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="MainMenu/CanvasLayer/ShopTab/RefundButton"]
-stream = ExtResource("60_q4mw7")
-volume_db = -8.0
-
 [node name="StarCounter" type="RichTextLabel" parent="MainMenu/CanvasLayer/ShopTab"]
 offset_left = -227.0
 offset_top = 279.0
@@ -1656,7 +1651,6 @@ texture = SubResource("GradientTexture1D_546j0")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("63_gnice")
-pitch_scale = 0.95
 
 [connection signal="GameOver" from="." to="Hud/GAMEOVER" method="gameover"]
 [connection signal="timeout" from="secondLifeCooldown" to="." method="_on_second_life_cooldown_timeout"]

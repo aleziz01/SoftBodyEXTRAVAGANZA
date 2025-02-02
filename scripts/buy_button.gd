@@ -20,7 +20,10 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	checkPrice()
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+
 func _on_button_pressed():
+	audio_stream_player.play()
 	global.starScore-=price
 	global.Upgrades[upgradeIndex]+=1
 	price*=exponentiationNumber
