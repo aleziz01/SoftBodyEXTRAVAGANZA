@@ -232,6 +232,7 @@ softness = 100.0
 radius = 12
 shape_type = "Circle"
 margin_offset_edge = 3.0
+mass = 0.3
 constant_force = Vector2(0, -50)
 
 [node name="Skeleton2D" type="Skeleton2D" parent="SoftBody2D"]
@@ -573,7 +574,7 @@ metadata/_local_pose_override_enabled_ = true
 
 [node name="Bone-0" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(18.9998, 74.9694)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 0
 metadata/bone_name = &"Bone-0"
@@ -613,7 +614,7 @@ softness = 100.0
 
 [node name="Bone-1" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(29.7521, 43.4819)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 1
 metadata/bone_name = &"Bone-1"
@@ -653,7 +654,7 @@ softness = 100.0
 
 [node name="Bone-2" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(27.7485, 58.2025)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 2
 metadata/bone_name = &"Bone-2"
@@ -717,7 +718,7 @@ softness = 100.0
 
 [node name="Bone-3" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(31.9997, 74.9583)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 3
 metadata/bone_name = &"Bone-3"
@@ -781,7 +782,7 @@ softness = 100.0
 
 [node name="Bone-4" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(26.8889, 103.449)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 4
 metadata/bone_name = &"Bone-4"
@@ -837,7 +838,7 @@ softness = 100.0
 
 [node name="Bone-5" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(48.2572, 38.2239)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 5
 metadata/bone_name = &"Bone-5"
@@ -901,7 +902,7 @@ softness = 100.0
 
 [node name="Bone-6" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(49.151, 59.0912)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 6
 metadata/bone_name = &"Bone-6"
@@ -981,7 +982,7 @@ softness = 100.0
 
 [node name="Bone-7" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(49.9988, 74.9167)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 7
 metadata/bone_name = &"Bone-7"
@@ -1061,7 +1062,7 @@ softness = 100.0
 
 [node name="Bone-8" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(49.1886, 89.3232)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 8
 metadata/bone_name = &"Bone-8"
@@ -1117,7 +1118,7 @@ softness = 100.0
 
 [node name="Bone-9" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(65, 28.5)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 9
 metadata/bone_name = &"Bone-9"
@@ -1156,7 +1157,7 @@ softness = 100.0
 
 [node name="Bone-10" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(65, 42)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 10
 metadata/bone_name = &"Bone-10"
@@ -1219,7 +1220,7 @@ softness = 100.0
 
 [node name="Bone-11" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(65, 60)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 11
 metadata/bone_name = &"Bone-11"
@@ -1298,7 +1299,7 @@ softness = 100.0
 
 [node name="Bone-12" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(65, 74.5)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 12
 metadata/bone_name = &"Bone-12"
@@ -1377,7 +1378,7 @@ softness = 100.0
 
 [node name="Bone-13" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(65, 90)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 13
 metadata/bone_name = &"Bone-13"
@@ -1441,7 +1442,7 @@ softness = 100.0
 
 [node name="Bone-14" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(81.756, 37.7299)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 14
 metadata/bone_name = &"Bone-14"
@@ -1505,7 +1506,7 @@ softness = 100.0
 
 [node name="Bone-15" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(80.849, 59.0912)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 15
 metadata/bone_name = &"Bone-15"
@@ -1585,7 +1586,7 @@ softness = 100.0
 
 [node name="Bone-16" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(80.0012, 74.9167)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 16
 metadata/bone_name = &"Bone-16"
@@ -1665,7 +1666,7 @@ softness = 100.0
 
 [node name="Bone-17" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(80.849, 89.9088)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 17
 metadata/bone_name = &"Bone-17"
@@ -1721,7 +1722,7 @@ softness = 100.0
 
 [node name="Bone-18" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(80.3586, 111.83)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 18
 metadata/bone_name = &"Bone-18"
@@ -1753,7 +1754,7 @@ softness = 100.0
 
 [node name="Bone-19" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(56.5367, 121.048)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 19
 metadata/bone_name = &"Bone-19"
@@ -1785,7 +1786,7 @@ softness = 100.0
 
 [node name="Bone-20" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(97.8635, 42.106)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 20
 metadata/bone_name = &"Bone-20"
@@ -1825,7 +1826,7 @@ softness = 100.0
 
 [node name="Bone-21" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(99.288, 58.2827)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 21
 metadata/bone_name = &"Bone-21"
@@ -1881,7 +1882,7 @@ softness = 100.0
 
 [node name="Bone-22" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(98.0003, 74.9583)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 22
 metadata/bone_name = &"Bone-22"
@@ -1945,7 +1946,7 @@ softness = 100.0
 
 [node name="Bone-23" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(95.7851, 88.9736)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 23
 metadata/bone_name = &"Bone-23"
@@ -1985,7 +1986,7 @@ softness = 100.0
 
 [node name="Bone-24" type="RigidBody2D" parent="SoftBody2D"]
 position = Vector2(111.504, 76.8487)
-mass = 0.1
+mass = 0.3
 constant_force = Vector2(0, -50)
 metadata/idx = 24
 metadata/bone_name = &"Bone-24"

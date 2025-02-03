@@ -1,4 +1,4 @@
-[gd_scene load_steps=148 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=149 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
 [ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
 [ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
+[ext_resource type="Script" path="res://scripts/projectile_holder.gd" id="7_uarxb"]
 [ext_resource type="Texture2D" uid="uid://d15j8tnx5ti6v" path="res://art/redbar.png" id="8_qtoxl"]
 [ext_resource type="PackedScene" uid="uid://3p746m5gx6b4" path="res://scenes/BG.tscn" id="8_srnyt"]
 [ext_resource type="Script" path="res://scripts/cooldown_bar.gd" id="9_g41kd"]
@@ -678,6 +679,7 @@ script = ExtResource("3_c72lr")
 [node name="CannonHolder" type="Node2D" parent="NegativeManager"]
 
 [node name="ProjectileHolder" type="Node2D" parent="NegativeManager/CannonHolder"]
+script = ExtResource("7_uarxb")
 
 [node name="mainSoftBody" parent="." instance=ExtResource("1_6q4na")]
 
@@ -879,7 +881,7 @@ skew = 0.0
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999978, 0.999978)
+scale = Vector2(0.999977, 0.999977)
 skew = 0.0
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="8"]
@@ -1016,7 +1018,7 @@ polygon = PackedVector2Array(649, -647, 650, -301, 650, -267, 650, -243.39, 570,
 
 [node name="SoftBody2D" parent="ProceduralWalls/Softwall2" index="2"]
 position = Vector2(-30.255, -360)
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="Skeleton2D" parent="ProceduralWalls/Softwall2/SoftBody2D" index="0"]
 modification_stack = SubResource("SkeletonModificationStack2D_hhaed")
@@ -1041,6 +1043,7 @@ skew = 0.0
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
+scale = Vector2(1, 1.00062)
 skew = 0.0
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
@@ -1050,7 +1053,7 @@ skew = 0.0
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="7"]
 position = Vector2(46.0035, 131.959)
-scale = Vector2(0.999978, 0.999978)
+scale = Vector2(0.999977, 0.999977)
 skew = 0.0
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="8"]
@@ -1106,133 +1109,133 @@ scale = Vector2(0.999831, 0.999831)
 skew = 0.0
 
 [node name="Bone-0" parent="ProceduralWalls/Softwall2/SoftBody2D" index="1"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-0" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-1" parent="ProceduralWalls/Softwall2/SoftBody2D" index="2"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-1" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-2" parent="ProceduralWalls/Softwall2/SoftBody2D" index="3"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-2" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-3" parent="ProceduralWalls/Softwall2/SoftBody2D" index="4"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-3" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-4" parent="ProceduralWalls/Softwall2/SoftBody2D" index="5"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-4" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D" index="6"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-5" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D" index="7"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-6" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-7" parent="ProceduralWalls/Softwall2/SoftBody2D" index="8"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-7" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-8" parent="ProceduralWalls/Softwall2/SoftBody2D" index="9"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-8" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-9" parent="ProceduralWalls/Softwall2/SoftBody2D" index="10"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-9" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-10" parent="ProceduralWalls/Softwall2/SoftBody2D" index="11"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-10" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-11" parent="ProceduralWalls/Softwall2/SoftBody2D" index="12"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-11" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-12" parent="ProceduralWalls/Softwall2/SoftBody2D" index="13"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-12" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-13" parent="ProceduralWalls/Softwall2/SoftBody2D" index="14"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-13" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D" index="15"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-14" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D" index="16"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-15" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D" index="17"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-16" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-17" parent="ProceduralWalls/Softwall2/SoftBody2D" index="18"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-17" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-18" parent="ProceduralWalls/Softwall2/SoftBody2D" index="19"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-18" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-19" parent="ProceduralWalls/Softwall2/SoftBody2D" index="20"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-19" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-20" parent="ProceduralWalls/Softwall2/SoftBody2D" index="21"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-20" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
 
 [node name="Bone-21" parent="ProceduralWalls/Softwall2/SoftBody2D" index="22"]
-constant_force = Vector2(100, 0)
+constant_force = Vector2(200, 0)
 
 [node name="CircleShape2D" parent="ProceduralWalls/Softwall2/SoftBody2D/Bone-21" index="0"]
 shape = SubResource("CircleShape2D_s4wj4")
@@ -1418,6 +1421,9 @@ offset_bottom = -75.0
 price = 40
 cap = 12
 
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton1" index="3"]
+text = "BIGGER"
+
 [node name="BuyButton2" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = -81.0
 offset_top = -175.0
@@ -1428,6 +1434,9 @@ cap = 12
 
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton2" index="0"]
 offset_bottom = 180.0
+
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton2" index="3"]
+text = "MORE POWER"
 
 [node name="BuyButton3" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = 79.0
@@ -1442,6 +1451,9 @@ cap = 3
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton3" index="0"]
 offset_bottom = 180.0
 
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton3" index="3"]
+text = "SHIELD"
+
 [node name="BuyButton4" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = 239.0
 offset_top = -175.0
@@ -1455,6 +1467,9 @@ cap = 3
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton4" index="0"]
 offset_bottom = 180.0
 
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton4" index="3"]
+text = "SELF DESTRUCT"
+
 [node name="BuyButton5" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = 399.0
 offset_top = -175.0
@@ -1467,6 +1482,9 @@ cap = 8
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton5" index="0"]
 offset_bottom = 180.0
 
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton5" index="3"]
+text = "BETTER STARS"
+
 [node name="BuyButton6" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = -241.0
 offset_top = 30.0
@@ -1478,10 +1496,14 @@ exponentiationNumber = 8
 cap = 4
 
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton6" index="0"]
-offset_bottom = 180.0
+offset_top = 115.0
+offset_bottom = 185.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton6" index="1"]
 scale = Vector2(2.1875, 1.71875)
+
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton6" index="3"]
+text = "MORE POWERUPS"
 
 [node name="BuyButton7" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = -81.0
@@ -1493,10 +1515,14 @@ upgradeIndex = 6
 cap = 8
 
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton7" index="0"]
-offset_bottom = 180.0
+offset_top = 115.0
+offset_bottom = 185.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton7" index="1"]
 scale = Vector2(2.1875, 1.71875)
+
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton7" index="3"]
+text = "LESS OBSTACLES"
 
 [node name="BuyButton8" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = 79.0
@@ -1509,10 +1535,14 @@ exponentiationNumber = 24
 cap = 3
 
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton8" index="0"]
-offset_bottom = 180.0
+offset_top = 115.0
+offset_bottom = 185.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton8" index="1"]
 scale = Vector2(2.1875, 1.71875)
+
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton8" index="3"]
+text = "EXTRA LIFE"
 
 [node name="BuyButton9" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = 239.0
@@ -1524,26 +1554,33 @@ upgradeIndex = 8
 exponentiationNumber = 3
 
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton9" index="0"]
-offset_bottom = 180.0
+offset_top = 115.0
+offset_bottom = 185.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton9" index="1"]
 position = Vector2(70, 49.75)
 scale = Vector2(2.1875, 1.71094)
 
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton9" index="3"]
+text = "FIRST EXPLOSION UP"
+
 [node name="BuyButton10" parent="MainMenu/CanvasLayer/ShopTab" instance=ExtResource("45_3rlqg")]
 offset_left = 399.0
-offset_top = 25.0
+offset_top = 30.0
 offset_right = 539.0
-offset_bottom = 135.0
+offset_bottom = 140.0
 upgradeIndex = 9
 exponentiationNumber = 5
 
 [node name="Price" parent="MainMenu/CanvasLayer/ShopTab/BuyButton10" index="0"]
-offset_bottom = 180.0
+offset_top = 115.0
+offset_bottom = 185.0
 
 [node name="ShopShader" parent="MainMenu/CanvasLayer/ShopTab/BuyButton10" index="1"]
-position = Vector2(70, 55)
 scale = Vector2(2.1875, 1.71875)
+
+[node name="Desc" parent="MainMenu/CanvasLayer/ShopTab/BuyButton10" index="3"]
+text = "LESS GRAVITY"
 
 [node name="RefundButton" type="TextureButton" parent="MainMenu/CanvasLayer/ShopTab"]
 offset_left = 349.0
@@ -1581,6 +1618,14 @@ offset_right = -80.0
 offset_bottom = 319.0
 scale = Vector2(2, 2)
 text = "STARS:"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="MainMenu/CanvasLayer/ShopTab/StarCounter"]
+layout_mode = 0
+offset_top = 16.915
+offset_right = 242.975
+offset_bottom = 130.925
+scale = Vector2(0.5, 0.5)
+text = "SELFDESTRUCT AND SHIELD WILL BE UPDATED AFTER ROUND"
 
 [node name="skinSelector" type="TextureButton" parent="MainMenu/CanvasLayer/ShopTab" node_paths=PackedStringArray("mainSoftBody")]
 z_index = 3

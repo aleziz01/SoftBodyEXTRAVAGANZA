@@ -9,6 +9,7 @@ func _ready() -> void:
 	else:
 		scale=Vector2(1.0+global.Upgrades[0]/20.0,1.0+global.Upgrades[0]/20.0) #apply the explosionSize Upgrade
 		gravity-=2000*pow(2,global.Upgrades[1]-1)*int(global.gameStarted)
+		gravity+=(1/(1.0-global.Upgrades[9]/20.0))*gravity
 
 func _enter_tree() -> void:
 	$GPUParticles2D.emitting=true

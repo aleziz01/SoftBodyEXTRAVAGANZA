@@ -32,6 +32,13 @@ func _ready() -> void:
 		skin_3.modulate=Color(255,255,255,255)
 		skin_3.material.shader=RoyalShader
 		skin_3.disabled=false
+	verifyConsistency()
+
+func verifyConsistency():
+	while(!global.gameStarted):
+		if disabled==true and get_parent().get_child(0).disabled==false:
+			disabled=false
+		await get_tree().create_timer(0.1).timeout
 
 func _on_pressed() -> void:
 	buttonPress.play()

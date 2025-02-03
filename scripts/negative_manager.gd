@@ -49,28 +49,32 @@ func HarderCannonSpawn():
 		var CannonInstance=Cannon.instantiate()
 		var sign=sign(randi_range(-101,100))
 		CannonInstance.scale.x=sign
-		CannonInstance.global_position=Vector2(575*sign,mainSoftBody.realPos.y)-Vector2(0,randf_range(2000,4000))
+		CannonInstance.global_position=Vector2(550*sign,mainSoftBody.realPos.y)-Vector2(0,randf_range(2000,4000))
 		CannonInstance.mainSoftBody=mainSoftBody #VERY IMPORTANT
 		CannonInstance.isHeat=1
 		if(CannonType==0): #upgraded normal cannon
 			CannonInstance.MultiTimesToFire=1
 			CannonInstance.ProjCount=16
 			CannonInstance.timeBeforeNextBurst=0.01
+			CannonInstance.modulate=Color(0,255,0,255)
 		elif(CannonType==1): #pump action shotgun cannon
 			CannonInstance.MultiTimesToFire=2
 			CannonInstance.timeBetweenShots=0.01
 			CannonInstance.timeBeforeNextBurst=0.1
 			CannonInstance.ProjCount=16
+			CannonInstance.modulate=Color(255,0,0,255)
 		elif(CannonType==2): #semi auto rifle cannon
 			CannonInstance.MultiTimesToFire=3
 			CannonInstance.timeBetweenShots=0.05
 			CannonInstance.timeBeforeNextBurst=0.10
 			CannonInstance.ProjCount=16
+			CannonInstance.modulate=Color(0,0,255,255)
 		elif(CannonType==3): #railgun turret
 			CannonInstance.MultiTimesToFire=1
 			CannonInstance.timeBetweenShots=0.01
 			CannonInstance.timeBeforeNextBurst=0.1
 			CannonInstance.ProjCount=25
+			CannonInstance.modulate=Color(255,255,0,255)
 		CannonHolder.add_child(CannonInstance)
 
 func CannonSpawn():
