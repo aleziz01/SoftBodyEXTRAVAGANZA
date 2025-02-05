@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://bh0ix56m2b8qn"]
+[gd_scene load_steps=9 format=3 uid="uid://bh0ix56m2b8qn"]
 
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="1_2j5xj"]
+[ext_resource type="AudioStream" uid="uid://b82y7gl4ysnt7" path="res://sounds/651326__iliyabylich04__firecracker-single-2.wav" id="2_fb13d"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5kruc"]
 radius = 4035.0
@@ -77,6 +78,10 @@ randomness = 1.0
 wait_time = 3.0
 one_shot = true
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_fb13d")
+pitch_scale = 0.25
 
 [connection signal="body_entered" from="." to="." method="_on_layer1_entered"]
 [connection signal="timeout" from="disableCollision" to="." method="_on_disable_collision_timeout"]

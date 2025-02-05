@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://kbrko0njxype" path="res://scenes/softwall.tscn" id="4_lps0u"]
 [ext_resource type="AudioStream" uid="uid://c836by3buunme" path="res://sounds/257225__javierzumer__8bit-powerup.wav" id="4_p0c3r"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
-[ext_resource type="Texture2D" uid="uid://t2p4rwlonm8r" path="res://icon.svg" id="6_dsoo8"]
 [ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
+[ext_resource type="PackedScene" uid="uid://cerybj7coydvo" path="res://scenes/cannon.tscn" id="7_pgg0g"]
 [ext_resource type="Script" path="res://scripts/projectile_holder.gd" id="7_uarxb"]
 [ext_resource type="Texture2D" uid="uid://d15j8tnx5ti6v" path="res://art/redbar.png" id="8_qtoxl"]
 [ext_resource type="PackedScene" uid="uid://3p746m5gx6b4" path="res://scenes/BG.tscn" id="8_srnyt"]
@@ -681,6 +681,8 @@ script = ExtResource("3_c72lr")
 [node name="ProjectileHolder" type="Node2D" parent="NegativeManager/CannonHolder"]
 script = ExtResource("7_uarxb")
 
+[node name="Cannon" parent="NegativeManager/CannonHolder" instance=ExtResource("7_pgg0g")]
+
 [node name="mainSoftBody" parent="." instance=ExtResource("1_6q4na")]
 
 [node name="Hud" type="Camera2D" parent="."]
@@ -729,7 +731,7 @@ text = "Score:"
 
 [node name="GAMEOVER" type="Sprite2D" parent="Hud"]
 modulate = Color(1, 1, 1, 0)
-texture = ExtResource("6_dsoo8")
+z_index = 99
 script = ExtResource("11_13u7c")
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="Hud/GAMEOVER"]
@@ -778,6 +780,17 @@ disabled = true
 texture_normal = ExtResource("15_tjfag")
 texture_pressed = ExtResource("16_635je")
 texture_hover = ExtResource("17_oe0hs")
+
+[node name="bg" type="Polygon2D" parent="Hud/GAMEOVER"]
+z_index = -1
+position = Vector2(48.0358, 0)
+scale = Vector2(1.06304, 1)
+color = Color(0, 0, 0, 0.670588)
+polygon = PackedVector2Array(-725, -431, 727, -431, 745, 446, -762, 444)
+
+[node name="gameOverSprite" type="Sprite2D" parent="Hud/GAMEOVER"]
+z_index = 5
+position = Vector2(120.135, -190.035)
 
 [node name="PauseMenu" type="Node2D" parent="Hud"]
 modulate = Color(1, 1, 1, 0)
@@ -907,9 +920,6 @@ skew = 0.0
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 skew = 0.0
-
-[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1043,7 +1053,6 @@ skew = 0.0
 
 [node name="Bone-5" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="5"]
 position = Vector2(46.3693, 26.9834)
-scale = Vector2(1, 1.00062)
 skew = 0.0
 
 [node name="Bone-6" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="6"]
@@ -1079,6 +1088,9 @@ skew = 0.0
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 skew = 0.0
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)

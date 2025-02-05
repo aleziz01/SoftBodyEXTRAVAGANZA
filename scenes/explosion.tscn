@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://doisiumnq0wqa"]
+[gd_scene load_steps=9 format=3 uid="uid://doisiumnq0wqa"]
 
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="1_8n3ms"]
+[ext_resource type="AudioStream" uid="uid://b82y7gl4ysnt7" path="res://sounds/651326__iliyabylich04__firecracker-single-2.wav" id="2_retih"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_f7qed"]
 radius = 71.0634
@@ -70,6 +71,9 @@ randomness = 1.0
 
 [node name="KILLTIMER" type="Timer" parent="."]
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_retih")
 
 [connection signal="body_entered" from="." to="." method="_on_layer1_entered"]
 [connection signal="timeout" from="disableCollision" to="." method="_on_disable_collision_timeout"]

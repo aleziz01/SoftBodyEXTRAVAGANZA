@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://dau2ogyjubxbh"]
+[gd_scene load_steps=9 format=3 uid="uid://dau2ogyjubxbh"]
 
 [ext_resource type="Script" path="res://scripts/cannon_explosion.gd" id="1_jhjlw"]
+[ext_resource type="AudioStream" uid="uid://bavtev77dtdf4" path="res://sounds/127722__nicstage__civil-war-era-cannon-1.wav" id="2_koim2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5wd7u"]
 radius = 83.0542
@@ -72,6 +73,11 @@ randomness = 1.0
 [node name="KILLTIMER" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_koim2")
+volume_db = 5.0
+pitch_scale = 0.8
 
 [connection signal="timeout" from="disableCollision" to="." method="_on_disable_collision_timeout"]
 [connection signal="timeout" from="KILLTIMER" to="." method="_on_killtimer_timeout"]

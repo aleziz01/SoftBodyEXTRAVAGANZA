@@ -24,6 +24,7 @@ func Float():
 func explodeCursor():
 	await get_tree().create_timer(0.4).timeout
 	var explosionInstance=explosion.instantiate()
+	explosionInstance.audio=false
 	explosionInstance.global_position=Vector2(61,-255)
 	explosionInstance.gravity=0
 	explosion_holder.add_child(explosionInstance)
@@ -32,6 +33,7 @@ var selfDestructExplosion=preload("res://scenes/SelfDestructExplosion.tscn")
 func showSelfDestruct():
 	await get_tree().create_timer(0.4).timeout
 	var selfDestructExplosionInstance=selfDestructExplosion.instantiate()
+	selfDestructExplosionInstance.audio=false
 	selfDestructExplosionInstance.global_position=Vector2(-450,-40)
 	selfDestructExplosionInstance.gravity=0
 	selfDestructExplosionInstance.ok=false

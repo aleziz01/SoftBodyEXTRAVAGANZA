@@ -1,7 +1,12 @@
 extends Area2D
 
+@onready var audio_stream_player: AudioStreamPlayer = $AudioStreamPlayer
+var audio=true
 #apply all upgrades to the explosion
 func _ready() -> void:
+	if audio and audio_stream_player and !global.noCD:
+		audio_stream_player.pitch_scale*=randf_range(0.5,1)
+		audio_stream_player.play()
 	if(global.Upgrades[8] and global.Explosion1Done==false and global.gameStarted):
 		gravity-=global.Upgrades[8]*100000
 		scale=Vector2(2,2)
