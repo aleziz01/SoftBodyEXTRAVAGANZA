@@ -28,10 +28,13 @@ func gameover():
 @onready var your_time: RichTextLabel = $VBoxContainer2/YourTime
 @onready var best_time: RichTextLabel = $VBoxContainer2/BestTime
 @onready var bonus_stars: RichTextLabel = $VBoxContainer2/BonusStars
+@onready var encouraging_text: RichTextLabel = $EncouragingText
 
+var encouragingTexts = ["REALLY?", "YOU CAN DO BETTER!", "WOW...", "YOU LOSE YOU SNOOZE!", "BETTER LUCK NEXT TIME!", "YOUVE GOTTA BE BETTER THAN THAT!", "DONT WORRY YOU GOT IT CHAMP.", "TRAIN FOR ANOTHER MILLION YEARS...","YOU SNOOZE YOU LOSE!","UNSUBSCRIBE","あなたは本を食べるOKです","تفجير عملة للفوز"]
 func updateLabels():
 	run_score.text="SCORE: " + str(global.maxScore)
 	high_score.text="HIGH SCORE: " + str(global.HighScore)
 	your_time.text="TIME: " + str(global.time[0]) + "H " + str(global.time[1]) + "M " + str(global.time[2]) + "S"
 	best_time.text="BEST TIME: " + str(global.BestTime[0]) + "H " + str(global.BestTime[1]) + "M " + str(global.BestTime[2]) + "S"
 	bonus_stars.text="BONUS STARS: " + str(global.maxScore/10)
+	encouraging_text.text=encouragingTexts[randi_range(0,11)]

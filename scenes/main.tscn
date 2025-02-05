@@ -1,4 +1,4 @@
-[gd_scene load_steps=149 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=150 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -32,6 +32,7 @@
 [ext_resource type="Texture2D" uid="uid://dmylp83juyuy5" path="res://art/Buttons/exitButton2.png" id="19_747ei"]
 [ext_resource type="Texture2D" uid="uid://lwujush58eo4" path="res://art/Buttons/Newgame3.png" id="19_cm7bm"]
 [ext_resource type="Texture2D" uid="uid://wjigsx5sprf8" path="res://art/cursor.png" id="19_lrjy6"]
+[ext_resource type="Texture2D" uid="uid://brex6277ifb7c" path="res://art/gayover.png" id="20_8o8j1"]
 [ext_resource type="Texture2D" uid="uid://c0mlj8uik4iqx" path="res://art/Buttons/Newgame2.png" id="20_iisou"]
 [ext_resource type="Script" path="res://scripts/shop_tab.gd" id="21_1i7fy"]
 [ext_resource type="Texture2D" uid="uid://cr6r7tv3t4q3g" path="res://art/Buttons/Controls1.png" id="21_a3ssr"]
@@ -789,8 +790,19 @@ color = Color(0, 0, 0, 0.670588)
 polygon = PackedVector2Array(-725, -431, 727, -431, 745, 446, -762, 444)
 
 [node name="gameOverSprite" type="Sprite2D" parent="Hud/GAMEOVER"]
+modulate = Color(0, 0, 0, 1)
 z_index = 5
 position = Vector2(120.135, -190.035)
+scale = Vector2(10, 10)
+texture = ExtResource("20_8o8j1")
+
+[node name="EncouragingText" type="RichTextLabel" parent="Hud/GAMEOVER"]
+offset_left = -603.0
+offset_top = 164.0
+offset_right = -401.0
+offset_bottom = 197.0
+scale = Vector2(5, 5)
+text = "REALLY?"
 
 [node name="PauseMenu" type="Node2D" parent="Hud"]
 modulate = Color(1, 1, 1, 0)
