@@ -1,4 +1,4 @@
-[gd_scene load_steps=150 format=3 uid="uid://c3ysapddbfdrv"]
+[gd_scene load_steps=149 format=3 uid="uid://c3ysapddbfdrv"]
 
 [ext_resource type="PackedScene" uid="uid://djsf0hc7nic0e" path="res://scenes/MainSoftBody.tscn" id="1_6q4na"]
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_ypgr0"]
@@ -9,7 +9,6 @@
 [ext_resource type="AudioStream" uid="uid://c836by3buunme" path="res://sounds/257225__javierzumer__8bit-powerup.wav" id="4_p0c3r"]
 [ext_resource type="Script" path="res://scripts/camera.gd" id="5_vp50i"]
 [ext_resource type="Texture2D" uid="uid://xtmbf33iebuo" path="res://art/cumbar.png" id="7_bkos6"]
-[ext_resource type="PackedScene" uid="uid://cerybj7coydvo" path="res://scenes/cannon.tscn" id="7_pgg0g"]
 [ext_resource type="Script" path="res://scripts/projectile_holder.gd" id="7_uarxb"]
 [ext_resource type="Texture2D" uid="uid://d15j8tnx5ti6v" path="res://art/redbar.png" id="8_qtoxl"]
 [ext_resource type="PackedScene" uid="uid://3p746m5gx6b4" path="res://scenes/BG.tscn" id="8_srnyt"]
@@ -682,8 +681,6 @@ script = ExtResource("3_c72lr")
 [node name="ProjectileHolder" type="Node2D" parent="NegativeManager/CannonHolder"]
 script = ExtResource("7_uarxb")
 
-[node name="Cannon" parent="NegativeManager/CannonHolder" instance=ExtResource("7_pgg0g")]
-
 [node name="mainSoftBody" parent="." instance=ExtResource("1_6q4na")]
 
 [node name="Hud" type="Camera2D" parent="."]
@@ -790,7 +787,6 @@ color = Color(0, 0, 0, 0.670588)
 polygon = PackedVector2Array(-725, -431, 727, -431, 745, 446, -762, 444)
 
 [node name="gameOverSprite" type="Sprite2D" parent="Hud/GAMEOVER"]
-modulate = Color(0, 0, 0, 1)
 z_index = 5
 position = Vector2(120.135, -190.035)
 scale = Vector2(10, 10)
@@ -932,6 +928,9 @@ skew = 0.0
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="14"]
 skew = 0.0
+
+[node name="Bone-15" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="15"]
+rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1100,9 +1099,6 @@ skew = 0.0
 
 [node name="Bone-14" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="14"]
 skew = 0.0
-
-[node name="Bone-15" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="15"]
-rotation = 3.14159
 
 [node name="Bone-16" parent="ProceduralWalls/Softwall2/SoftBody2D/Skeleton2D" index="16"]
 scale = Vector2(0.999998, 0.999998)
@@ -1649,7 +1645,7 @@ offset_top = 16.915
 offset_right = 242.975
 offset_bottom = 130.925
 scale = Vector2(0.5, 0.5)
-text = "SELFDESTRUCT AND SHIELD WILL BE UPDATED AFTER ROUND"
+text = "SELFDESTRUCT AND SHIELD AND 1 UP WILL BE UPDATED AFTER ROUND"
 
 [node name="skinSelector" type="TextureButton" parent="MainMenu/CanvasLayer/ShopTab" node_paths=PackedStringArray("mainSoftBody")]
 z_index = 3

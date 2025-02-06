@@ -13,6 +13,7 @@ func resetStats():
 	global.maxScore=0
 	global.HighScore=0
 	global.starScore=0
+	global.winningDistance=5000
 	global.paused=false
 	global.Upgrades=[0,0,0,0,0,0,0,0,0,0]
 	global.StarUpgradesPlus=[1,3,7,15,0,15,0,50]
