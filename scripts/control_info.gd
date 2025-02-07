@@ -36,6 +36,8 @@ func showSelfDestruct():
 	selfDestructExplosionInstance.audio=false
 	selfDestructExplosionInstance.global_position=Vector2(-450,-40)
 	selfDestructExplosionInstance.gravity=0
+	selfDestructExplosionInstance.set_collision_mask_value(1,false)
+	selfDestructExplosionInstance.set_collision_layer_value(1,false)
 	selfDestructExplosionInstance.ok=false
 	explosion_holder.add_child(selfDestructExplosionInstance)
 

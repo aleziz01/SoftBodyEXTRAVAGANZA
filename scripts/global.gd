@@ -29,9 +29,9 @@ func _ready() -> void:
 	secondLives=Upgrades[7]
 	countSeconds()
 	if wins==1:
-		winningDistance*=5
+		winningDistance=25000
 	if wins>=2:
-		winningDistance*=20
+		winningDistance=75000
 
 func countSeconds():
 	while(!gameOver and !gameWon):
