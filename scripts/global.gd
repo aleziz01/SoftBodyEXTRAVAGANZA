@@ -53,12 +53,12 @@ func switchFades(node1,node2):
 	fadeOut(node2)
 
 func fadeOut(node):
-	while(node.modulate.a>0.0):
+	while(node.modulate.a>0.0 and is_instance_valid(node)):
 		node.modulate.a-=0.01
 		await get_tree().create_timer(0.01).timeout
 
 func fadeIn(node):
-	while(node.modulate.a<=1.0):
+	while(node.modulate.a<=1.0 and is_instance_valid(node)):
 		node.modulate.a+=0.01
 		await get_tree().create_timer(0.01).timeout
 

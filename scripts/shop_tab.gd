@@ -25,7 +25,7 @@ func _on_back_button_pressed() -> void:
 	for i in get_children():
 		if i is TextureButton:
 			i.disabled=true
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.8).timeout
 	control_info_button.disabled=false
 	exit_button.disabled=false
 	play_button.disabled=false

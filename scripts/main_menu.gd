@@ -104,7 +104,7 @@ func _on_control_info_button_pressed() -> void:
 	exit_button.disabled=true
 	shop_button.disabled=true
 	continue_button.disabled=true
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.8).timeout
 	control_back_button.disabled=false
 
 func _on_shop_button_pressed() -> void:
@@ -115,7 +115,7 @@ func _on_shop_button_pressed() -> void:
 	exit_button.disabled=true
 	shop_button.disabled=true
 	continue_button.disabled=true
-	await get_tree().create_timer(1.2).timeout
+	await get_tree().create_timer(1.8).timeout
 	shop_back_button.disabled=false
 	shop_tab.shopOpened=true
 	playShopAnimationForward()
